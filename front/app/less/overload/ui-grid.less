@@ -1,0 +1,30 @@
+// main: ../app.less
+
+[angular-grid]{
+	&, & .ag-header-viewport{
+		width: 100%;
+	}
+	.ag-header-container{
+		display: flex;
+		.ag-header-cell{
+			flex: 1;
+			text-align: left;
+			font-weight: bold;
+			&:last-child{
+				border-right: 0px;
+			}
+		}
+	}
+	.ag-body-container{
+		&, & .ag-row{
+			width: 100% !important;
+			display: flex;
+			.ag-cell{
+				flex: 1;
+				&:last-child{
+					border-right: 0px;
+				}
+			}
+		}
+	}
+}

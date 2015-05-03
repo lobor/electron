@@ -1,0 +1,36 @@
+// main: ../app.less
+
+[ui-view="menu"]{
+	.sidebar-nav {
+	    margin: 0;
+	    list-style: none;
+		padding: 0px;
+		li {
+			a {
+			    display: block;
+			    text-decoration: none;
+			    // color: #999999;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			&:hover {
+				text-decoration: none;
+				color: #fff;
+				background: rgba(255,255,255,0.2);
+			}
+			&:focus {
+				text-decoration: none;
+			}
+		}
+		& > .sidebar-brand {
+		    font-size: 18px;
+			a {
+			    color: #999999;
+			}
+			&:hover {
+				color: #fff;
+				background: none;
+			}
+		}
+	}
+}
