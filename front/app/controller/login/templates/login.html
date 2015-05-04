@@ -4,7 +4,7 @@
 
     <p id="profile-name" class="profile-name-card"></p>
 
-	<span id="reauth-email" class="reauth-email" ng-model="message"></span>
+	<span id="reauth-email" class="reauth-email {{styleAlert}}">{{message}}</span>
 
     <form class="form-signin" ng-submit="submit()">
         <input type="text" id="inputEmail" name="email" ng-model="user.email" class="form-control" placeholder="Adresse email"  autofocus>

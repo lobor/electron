@@ -9,21 +9,49 @@ var AssocieSchema = new Schema({
             unique: true
         }
     },
-    email: {
+    nom: {
 		type: String,
 		required: true,
 		index: {
 			unique: true
 		}
 	},
-    password: {
+    prenom: {
 		type: String,
 		required: true
 	},
-    role: {
+    address: {
 		type: Number,
 		required: true
-	}
+	},
+    sci : {
+        type: Schema.Types.ObjectId,
+        ref: 'Sci'
+    },
+    cp : {
+        type: Number,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    birthday: {
+        type: Date,
+        required: true
+    },
+    city_birthday: {
+        type: String,
+        required: true
+    },
+    np_part: {
+        type: Number,
+        required: true
+    },
+    percent_part: {
+        type: Number,
+        required: true
+    }
 });
 
 
@@ -46,6 +74,7 @@ AssocieSchema.pre('save', function(next) {
     //         next();
     //     });
     // });
+    next();
 });
 
 mongoose.model('Associe', AssocieSchema);

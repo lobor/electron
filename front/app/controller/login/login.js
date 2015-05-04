@@ -6,33 +6,62 @@ define([
 ], function(angular, ngCookie) {
 	angular.module('locloud.login', ['ui.router', 'ngCookies']).
 	controller('LoginController', ['$scope', '$http', '$window', 'baseUrl', '$rootScope', '$state', '$cookies', '$cookieStore', function($scope, $http, $window, baseUrl, $rootScope, $state, $cookies, $cookieStore) {
-
+		$rootScope.login = 'login';
 		$scope.user = {email: 'lionel.bertrand@ymail.com'};
   		$scope.message = '';
 
 		$scope.submit = function () {
+			$scope.message = '';
+			$scope.styleAlert = '';
 		    $http.
-      		post(baseUrl+'/auth/authenticate', $scope.user, {withCredentials:true}).
-      		success(function (data, status, headers, config) {
-				if(data.status){
-					// $state.go('locloud.home',null,{
-					//   reload: true, notify: true
-					// });
-					$window.location.reload();
-				}
-      		})
-	      	.error(function (data, status, headers, config) {
-		        // Erase the token if the user fails to log in
-		        delete $window.sessionStorage.token;
+	      		post(baseUrl+'/auth/authenticate', $scope.user, {withCredentials:true}).
+	      		success(function (data, status, headers, config) {
+					if(data.status){
+						// $state.go('locloud.home',null,{
+						//   reload: true, notify: true
+						// });
+						$window.location.reload();
+						// $window.sessionStorage.token = data.token;
+					}
+					else{
+						switch(data.errorCode){
+							// 001 => not password or email
+							case '001':
+								$scope.message = 'Champs email et mot de passe obligatoires';
+								$scope.styleAlert = 'alert alert-danger';
+								break;
 
-		        // Handle login errors here
-		        $scope.message = 'Error: Invalid user or password';
-	      	});
+							// 002 => email not find
+							case '002':
+								$scope.message = 'Aucun compte associé à cet email';
+								$scope.styleAlert = 'alert alert-danger';
+								break;
+
+							// 003 => password incorrect
+							case '003':
+								$scope.message = 'Mot de passe incorrect';
+								$scope.styleAlert = 'alert alert-danger';
+								break;
+						}
+					}
+	      		})
+		      	.error(function (data, status, headers, config) {
+			        // Erase the token if the user fails to log in
+			        // delete $window.sessionStorage.token;
+
+			        // Handle login errors here
+			        $scope.message = 'Error: Invalid user or password';
+		      	});
 		};
 
 	}]).
-	controller('LogoutController', ['$state', function($state) {
-		document.cookie = 'Auth=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-		$state.go('locloud.login');
+	controller('LogoutController', ['$state', '$http', 'baseUrl', function($state, $http, baseUrl) {
+		$http.
+			get(baseUrl+'/auth/logout').
+			success(function (data, status, headers, config) {
+				$state.go('locloud.login');
+			})
+			.error(function (data, status, headers, config) {
+			});
 	}]);
 });

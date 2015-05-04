@@ -1,15 +1,33 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
+var jwt = require('jsonwebtoken');
 
 require('../models/User');
 
 
+// code error
+// 001 => not password or email
+// 002 => email not find
+// 003 => password incorrect
+
+router.get('/check', function(req, res){
+	if(!req.session.Auth){
+		res.status(401);
+		res.json({status: false});
+	}
+	else{
+		res.status(200);
+		res.json({status: true});
+	}
+});
+
+router.get('/logout', function(req, res){
+	req.session.destroy();
+	res.json({status: true});
+});
 
 router.post('/authenticate', function (req, res) {
-	res.header("Access-Control-Allow-Origin", "http://www.filecloud.local");
-  	res.header("Access-Control-Allow-Headers", "X-Requested-With");
-
 	var User = mongoose.model('User');
 	//
  //  	var profile = new User({
@@ -18,36 +36,32 @@ router.post('/authenticate', function (req, res) {
 	// 	role: 0,
 	// }).save();
 
-
-	var toto = User.findOne({email:req.body.email}, function(err, user){
-		if (err)
-			throw err;
-
-
-		// console.log(user);
-
-		user.comparePassword(req.body.password, function(err, isMatch) {
-            if (err)
+	if(req.body.email && req.body.password){
+		var toto = User.findOne({email:req.body.email}, function(err, user){
+			if (err)
 				throw err;
 
-			if(!req.session.Auth)
-				req.session.Auth = {};
+			if(user){
+				user.comparePassword(req.body.password, function(err, isMatch) {
+		            if (err)
+						throw err;
 
-			req.session.Auth = user;
-		  	res.json({ status: true});
-        });
+					if(!req.session.Auth)
+						req.session.Auth = {};
 
+					req.session.Auth = user;
 
-	});
+				 	res.json({ status: true, user: user});
+		        });
+			}
+			else{
+				res.json({ status: false, errorCode: '002'});
+			}
+		});
+	}
+	else{
+		res.json({ status: false, errorCode: '001'});
+	}
 });
-
-// router.get('/auth/api/restricted', function (req, res) {
-// 	// res.json(req.session);
-// 	res.status(401);
-//   	res.json({
-//     	error: 'foo'
-//   	});
-// });
-
 
 module.exports = router;

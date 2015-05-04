@@ -50,6 +50,10 @@ var SciSchema = new Schema({
 		type: Number,
 		required: true
 	},
+    // associe:{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Associes'
+    // }
 });
 
 function validate(next){

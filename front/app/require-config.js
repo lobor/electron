@@ -57,8 +57,9 @@ require.config({
 		'angularCookie': ['angular'],
 		'angular-notify': ['angular'],
 		'angular-grid': ['angular'],
+		'angular-sanitize': ['angular'],
 		'angular-schema-form-datepicker': ['angular', 'pickadate'],
-		'angular-schema-form'  : ['angular', 'angular-sanitize', 'ObjectPath', 'tv4'],
+		'angular-schema-form'  : ['angular-sanitize', 'ObjectPath', 'tv4'],
 		'bootstrap-decorator'  : ['angular-schema-form'],
 		'picker': ['jquery'],
 		'pickadate': {

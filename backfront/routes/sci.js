@@ -6,6 +6,7 @@ require('../models/Sci');
 require('../models/Associe');
 
 var Sci = mongoose.model('Sci');
+var Associe = mongoose.model('Associe');
 
 router.get('/list', function (req, res) {
 	Sci.
@@ -27,14 +28,34 @@ router.get('/get', function (req, res) {
 		});
 });
 
-router.post('/create', function (req, res) {
-	res.header("Access-Control-Allow-Origin", "http://www.filecloud.local");
-  	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+router.post('/update', function (req, res) {
+	for(var i = 0; i < req.body.associe.length; i++){
+		console.log(req.body.associe[i]);
+		var toto = new Associe(req.body.associe[i]).save(function(err){
+			console.log(err);
+		});
+		console.log(toto);
+	}
+	Sci.
+		update({_id: req.body._id}, req.body, function(err, sci){
+			console.log(err);
+			// foreach(req.body.associe as )
 
+			res.json({
+				status: true,
+				results: sci,
+			});
+		});
+});
+
+router.post('/create', function (req, res) {
 	console.log(req.body);
   	var sci = new Sci(req.body).save();
 
+	var associe = new Associe(req.body).save();
+
 	console.log(sci);
+	console.log(associe);
 
 	res.json({ status: true});
 	// var toto = User.findOne({email:req.body.email}, function(err, user){

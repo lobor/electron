@@ -14,7 +14,7 @@ define([
 			state('locloud', {
 				url:'/',
 				views: {
-					'@' : {
+					'container' : {
 						templateUrl: 'layout.html',
 					},
 					'menu@locloud' : {
@@ -26,14 +26,11 @@ define([
 			state('locloud.login', {
 				url: "login",
 				views: {
-					'main@locloud' : {
+					'container@':{
 						templateUrl: 'controller/login/templates/login.html',
 						controller: 'LoginController'
 					},
 				},
-				data: {
-					requireLogin: false
-				}
 			}).
 			state('locloud.sci', {
 				url: "sci",
@@ -50,9 +47,6 @@ define([
 						controller: 'SciListController'
 					}
 				},
-				data: {
-					requireLogin: false
-				}
 			}).
 			state('locloud.sci.create', {
 				url: "/create",
@@ -62,9 +56,6 @@ define([
 						controller: 'SciCreateController'
 					}
 				},
-				data: {
-					requireLogin: false
-				}
 			}).
 			state('locloud.sci.edit', {
 				url: "/edit/:id",
@@ -74,9 +65,6 @@ define([
 						controller: 'SciEditController'
 					}
 				},
-				data: {
-					requireLogin: false
-				}
 			}).
 			state('locloud.home', {
 				url: "home",
@@ -86,9 +74,6 @@ define([
 						controller: 'HomeController'
 					},
 				},
-				data: {
-					requireLogin: true
-				}
 			}).
 			state('locloud.logout',{
 				url: "logout",
@@ -106,9 +91,6 @@ define([
 						controller: 'Error500Controller'
 					},
 				},
-				data: {
-					requireLogin: false
-				}
 			});
 
 		// config rest html 5
@@ -118,74 +100,31 @@ define([
 
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
-		var interceptor = ['$location', '$q', '$injector', function($location, $q, $injector) {
+		var interceptor = ['$location', '$q', '$injector', '$window', function($location, $q, $injector, $window) {
 			return {
 				responseError: function(rejection) {
-					console.log(this);
 					switch (rejection.status){
-						case '302':
+						case 302:
 							break;
-						case '401':
+						case 401:
+							$injector.get('$state').go('locloud.login');
 							break;
-						case '404':
+						case 404:
+							$injector.get('$state').go('locloud.error404');
 							break;
-						case '500':
-							$state.go('locloud.error500');
+						case 500:
+							// $injector.get('$state').go('locloud.error500');
 							break;
 						default:
-							$state.go('locloud.error500');
-							console.log('toto');
+						// console.log(rejection.status);
+						// 	$injector.get('$state').go('locloud.error500')
 							break;
 					}
 					return $q.reject(rejection);
 				}
 			};
-		    // function success(response) {
-			// 	console.log('toto');
-		    //     return response;
-		    // }
-			//
-		    // function error(response) {
-			// 	console.log('toto');
-		    //     if(response.status === 401) {
-		    //         $injector.get('$state').transitionTo('public.login');
-		    //         return $q.reject(response);
-		    //     }
-		    //     else {
-		    //         return $q.reject(response);
-		    //     }
-		    // }
-			//
-		    // return function(promise) {
-		    //     return promise.then(success, error);
-		    // }
 		}];
 
 		$httpProvider.interceptors.push(interceptor);
-
-		// $provide.factory('errorInterceptor', function($q, $state) {
-			//  	return {
-			//    	responseError: function(rejection) {
-			// 		switch (rejection.status){
-			// 			case '302':
-			// 				break;
-			// 			case '401':
-			// 				break;
-			// 			case '404':
-			// 				break;
-			// 			case '500':
-			// 				$state.go('locloud.error500');
-			// 				break;
-			// 			default:
-			// 				$state.go('locloud.error500');
-			// 				console.log('toto');
-			// 				break;
-			// 		}
-			//       	return $q.reject(rejection);
-		    // 	}
-			//  	};
-		// });
-		//
-		// 	$httpProvider.interceptors.push('errorInterceptor');
 	}]
 });

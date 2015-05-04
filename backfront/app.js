@@ -43,37 +43,54 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'yoursecret',
     name: 'Auth',
+    resave: false,
+    saveUninitialized: false,
     cookie: {
         path: '/',
         domain: false,
-        maxAge: 1000 * 60 * 24, // 24 hours,
-        httpOnly: false
+        maxAge: 10000 * 60 * 24, // 24 hours,
+        httpOnly: true
     }
 }));
 
 app.use(function(req, res, next) {
-    if(req.headers.origin == 'http://www.filecloud.local'){
+    if(req.headers.origin == 'http://local.locloud.com'){
         res.header('Access-Control-Allow-Methods','GET, PUT, POST, DELETE, OPTIONS');
-        res.header('Access-Control-Allow-Origin', 'http://www.filecloud.local');
+        res.header('Access-Control-Allow-Origin', 'http://local.locloud.com');
         res.header('Access-Control-Allow-Credentials', true);
         res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+
+        if(!req.session.Auth && req.url != '/auth/authenticate' && req.url != '/auth/check'){
+            // var err = new Error('Not Found');
+            // err.status = 401;
+            // next(err);
+
+            // res.status(401);
+            // res.json({status:false});
+            // next();
+        }
     }
-  next();
+    next();
 });
 
 
-// Auth avec tocken
-app.use(function(err, req, res, next){
-    console.log(req.url);
-    if(!req.session.Auth && (req.url != '/auth/authenticate' || req.url != '/auth/api/restricted')){
-        var err = new Error('Unauthorized');
-        err.status = 401;
-        next(err);
-    }
-    else{
-        next();
-    }
-})
+// // Auth avec tocken
+// app.use(function(err, req, res, next){
+//     if(!req.session.Auth && (req.url != '/auth/authenticate')){
+//         var err = new Error('Unauthorized');
+//         err.status = 401;
+//         res.status(err.status);
+//         res.render('error', {
+//           message: err.message,
+//           error: err
+//         });
+//         // next(err);
+//     }
+//     else{
+//         next();
+//     }
+// })
+
 
 app.use('/', routes);
 app.use('/auth', login);
@@ -94,6 +111,7 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
+      console.log(err.status);
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -105,6 +123,7 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
+    console.log(err.status);
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
