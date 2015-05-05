@@ -23,5 +23,8 @@ define([
 	]).
 	run($stateRoutes).
 	config($routes).
+	config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+    	cfpLoadingBarProvider.includeSpinner = false;
+	}]).
 	constant('baseUrl', window.location.origin + ':3000');
 });

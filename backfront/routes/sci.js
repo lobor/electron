@@ -2,6 +2,8 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 
+var Promise = require("bluebird");
+
 require('../models/Sci');
 require('../models/Associe');
 
@@ -11,6 +13,7 @@ var Associe = mongoose.model('Associe');
 router.get('/list', function (req, res) {
 	Sci.
 		find(req.body, function(err, sci){
+			// console.log(sci.associe);
 			res.json({
 				status: true,
 				results: sci,
@@ -19,8 +22,9 @@ router.get('/list', function (req, res) {
 });
 
 router.get('/get', function (req, res) {
+
 	Sci.
-		find({}, function(err, sci){
+		findOne({_id:req.query.id}).populate('associes').exec(function(err, sci){
 			res.json({
 				status: true,
 				results: sci,
@@ -29,18 +33,26 @@ router.get('/get', function (req, res) {
 });
 
 router.post('/update', function (req, res) {
-	for(var i = 0; i < req.body.associe.length; i++){
-		console.log(req.body.associe[i]);
-		var toto = new Associe(req.body.associe[i]).save(function(err){
-			console.log(err);
-		});
-		console.log(toto);
-	}
-	Sci.
-		update({_id: req.body._id}, req.body, function(err, sci){
-			console.log(err);
-			// foreach(req.body.associe as )
 
+	Sci.
+		findOne({_id: req.body._id}, function(err, sci){
+			console.log('_______________ error find sci _______________');
+			console.log(err);
+
+			for(var i = 0; i < req.body.associe.length; i++){
+				// console.log(req.body.associe[i]);
+				var associe = new Associe(req.body.associe[i])
+				associe.sci = req.body._id;
+				associe.save(function(err){
+					console.log('_______________ error save associe _______________');
+					console.log(err);
+				});
+				sci.associe.push(associe._id)
+			}
+			sci.save(function(err){
+				console.log('_______________ error save sci _______________');
+				console.log(err);
+			});
 			res.json({
 				status: true,
 				results: sci,
@@ -48,45 +60,32 @@ router.post('/update', function (req, res) {
 		});
 });
 
+
+
+
 router.post('/create', function (req, res) {
-	console.log(req.body);
-  	var sci = new Sci(req.body).save();
+  	var sci = new Sci(req.body);
 
-	var associe = new Associe(req.body).save();
+	var promises = req.body.associe.map(function(associe){
+		associe.sci = sci._id;
+		return new Associe(associe).save(function(err, associe){
+			return associe
+		});
+	});
 
-	console.log(sci);
-	console.log(associe);
+	Promise.props({associes:promises})
+	.then(function(data){
+		for(var i = 0; i < data.associes.length; i++){
+			sci.associes.push(data.associes[i].emitted.fulfill[0]._id);
+		}
 
-	res.json({ status: true});
-	// var toto = User.findOne({email:req.body.email}, function(err, user){
-	// 	if (err)
-	// 		throw err;
-	//
-	//
-	// 	// console.log(user);
-	//
-	// 	user.comparePassword(req.body.password, function(err, isMatch) {
-    //         if (err)
-	// 			throw err;
-	//
-	// 		if(!req.session.Auth)
-	// 			req.session.Auth = {};
-	//
-	// 		req.session.Auth = user;
-	// 	  	res.json({ status: true});
-    //     });
-	//
-	//
-	// });
+		sci.save();
+		res.json({ status: false});
+	})
+	.catch(function(error){
+		res.json({ status: true});
+	}).done();
 });
-
-// router.get('/auth/api/restricted', function (req, res) {
-// 	// res.json(req.session);
-// 	res.status(401);
-//   	res.json({
-//     	error: 'foo'
-//   	});
-// });
 
 
 module.exports = router;

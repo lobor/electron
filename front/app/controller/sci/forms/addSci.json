@@ -26,7 +26,7 @@
 		      		"302": "Ce champs est requis"
 			    }
 			},
-			"associe":{
+			"associes":{
 				"type": "array",
 				"title": "Associés",
 				"items": {
@@ -163,7 +163,7 @@
 			]
 		},
 		{
-			"key": "associe",
+			"key": "associes",
 			"add": "New",
 			"htmlClass": "row",
 			"labelHtmlClass":"column",
@@ -180,11 +180,11 @@
 							"htmlClass": "column",
 							"items": [
 								{
-									"key": "associe[].nom",
+									"key": "associes[].nom",
 									"htmlClass": "col-md row"
 								},
 								{
-									"key": "associe[].prenom",
+									"key": "associes[].prenom",
 									"htmlClass": "col-md row"
 								}
 							]
@@ -194,15 +194,15 @@
 							"htmlClass": "column",
 							"items": [
 								{
-									"key": "associe[].address",
+									"key": "associes[].address",
 									"htmlClass": "col-md row"
 								},
 								{
-									"key": "associe[].cp",
+									"key": "associes[].cp",
 									"htmlClass": "col-md row"
 								},
 								{
-									"key": "associe[].city",
+									"key": "associes[].city",
 									"htmlClass": "col-md row"
 								}
 							]
@@ -212,13 +212,13 @@
 							"htmlClass": "column",
 							"items": [
 								{
-										"key": "associe[].birthday",
+										"key": "associes[].birthday",
 										"format": "dd-mm-yyyy",
 										"htmlClass": "col-md row has-feedback",
 										"type":"datepicker"
 								},
 								{
-									"key": "associe[].city_birthday",
+									"key": "associes[].city_birthday",
 									"htmlClass": "col-md row"
 								}
 							]
@@ -228,11 +228,11 @@
 							"htmlClass": "column",
 							"items": [
 								{
-									"key": "associe[].np_part",
+									"key": "associes[].np_part",
 									"htmlClass": "col-md row"
 								},
 								{
-									"key": "associe[].percent_part",
+									"key": "associes[].percent_part",
 									"htmlClass": "col-md row"
 								}
 							]

@@ -40,7 +40,7 @@ define([
 			rowSelected:function(row){
 				$state.go('locloud.sci.edit',{id:row._id});
 			}
-		}
+		};
 		$http.
 		get(baseUrl+'/sci/list').
 		success(function (data, status, headers, config) {
@@ -76,18 +76,22 @@ define([
 						notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
 			      	});
     		}
-  		}
+		};
 	}])
 	.controller('SciEditController', ['$scope', '$http', 'baseUrl', 'notify', '$state', '$stateParams', function($scope, $http, baseUrl, notify, $state, $stateParams) {
 		$scope.title_form_sci = 'Éditer une SCI';
 		$http.
-			get(baseUrl+'/sci/get', $stateParams, {withCredentials:true}).
+			get(baseUrl+'/sci/get', {params:$stateParams}, {withCredentials:true}).
 			success(function (data, status, headers, config) {
+
 				if(data.status){
-					$scope = angular.extend($scope, formSci)
-					$scope.sci = data.results[0];
+					// console.log(data.results);
+					$scope = angular.extend($scope, formSci);
+					$scope.sci = data.results;
+					// console.log($scope.sci = {});
 				}
 			})
+
 			.error(function (data, status, headers, config) {
 				notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
 			});
@@ -110,6 +114,6 @@ define([
 						notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
 			      	});
 	    		}
-  			}
+			};
 	}]);
 });

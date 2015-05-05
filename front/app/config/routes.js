@@ -13,6 +13,7 @@ define([
 		$stateProvider.
 			state('locloud', {
 				url:'/',
+				abstract:true,
 				views: {
 					'container' : {
 						templateUrl: 'layout.html',

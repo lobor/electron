@@ -2,6 +2,9 @@ var bootstrap = require('../config/Bootstrap');
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
+    require('../models/Associe');
+var Associe = mongoose.model('Associe');
+
 var Email = mongoose.SchemaTypes.Email;
 
 var SciSchema = new Schema({
@@ -50,11 +53,12 @@ var SciSchema = new Schema({
 		type: Number,
 		required: true
 	},
-    // associe:{
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Associes'
-    // }
+    associes:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Associe'
+    }]
 });
+
 
 function validate(next){
     var sci = this;

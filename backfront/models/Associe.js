@@ -3,18 +3,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var AssocieSchema = new Schema({
-    id:{
-        type: Number,
-        index: {
-            unique: true
-        }
-    },
     nom: {
 		type: String,
 		required: true,
-		index: {
-			unique: true
-		}
 	},
     prenom: {
 		type: String,

@@ -17,10 +17,11 @@ define([
 	      		post(baseUrl+'/auth/authenticate', $scope.user, {withCredentials:true}).
 	      		success(function (data, status, headers, config) {
 					if(data.status){
-						// $state.go('locloud.home',null,{
-						//   reload: true, notify: true
-						// });
-						$window.location.reload();
+						console.log($state);
+						$state.go('locloud.home',null,{
+						  reload: true, notify: true
+						});
+						// $window.location.reload();
 						// $window.sessionStorage.token = data.token;
 					}
 					else{
@@ -63,5 +64,15 @@ define([
 			})
 			.error(function (data, status, headers, config) {
 			});
+	}]).
+	controller('CheckAuthController', ['$state', '$http', 'baseUrl', function($state, $http, baseUrl) {
+		// console.log($state);
+		// console.log($state.$current);
+		// $http.get(baseUrl+'/auth/check')
+		// .success(function (data, status, headers, config) {
+		// }).
+		// error(function(data, status, headers, config){
+		// 	$state.go('locloud.login');
+		// });
 	}]);
 });
