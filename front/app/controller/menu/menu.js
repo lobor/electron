@@ -14,10 +14,6 @@ define([
 			{
 				'url':'locloud.sci',
 				'name':'SCI'
-			},
-			{
-				'url':'locloud.logout',
-				'name':'Se deconnecter'
 			}
 		];
 		$scope.style = '';

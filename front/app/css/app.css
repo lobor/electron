@@ -5067,7 +5067,7 @@ button.close {
 }
 .row {
   flex-direction: column;
-  flex: 1;
+  width: 100%;
 }
 .row .col-md-1 {
   flex-basis: 8.33333333%;
@@ -9421,6 +9421,9 @@ form .list-group {
 body > .container > .row,
 body > .container-fix > .row {
   display: flex;
+}
+[ui-view="container"] {
+  flex: 1;
 }
 .navbar-default.sidebar {
   width: auto;

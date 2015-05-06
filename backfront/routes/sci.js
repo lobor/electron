@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var _ = require('underscore');
 var router = express.Router();
 
 var Promise = require("bluebird");
@@ -34,6 +35,68 @@ router.get('/get', function (req, res) {
 
 router.post('/update', function (req, res) {
 
+	Sci.findOne({_id: req.body._id}).exec(function(err, sci){
+		if(err){
+			res.json({ status: false});
+		}
+		else{
+			var result = [];
+			var promises = req.body.associes.map(function(associe){
+				if(!associe._id){
+					associe.sci = sci._id;
+					new Associe(associe).save(function(err, associe){
+						result.push(associe._id);
+						return associe
+					});
+					return result;
+				}
+				else{
+					var data = _.extend({},associe);
+					delete data._id;
+					delete data.__v;
+					result.push(associe._id);
+					var toto = Associe.findOneAndUpdate({_id: associe._id},data, function(err, results){});
+				}
+			});
+
+
+			Promise
+				.props({associes:promises})
+				.then(function(data){
+					sci.associes = result;
+
+					sci.save(function(error){
+						if(error){
+							res.json({
+								status: false,
+								error: error
+							});
+						}
+						else{
+							Sci.
+								findOne({_id:sci._id}).populate('associes').exec(function(err, sci){
+									if(err){
+										res.json({
+											status: false,
+											error: err
+										});
+									}
+									else{
+										res.json({
+											status: true,
+											results: sci,
+										});
+									}
+								});
+						}
+					});
+				});
+		}
+	});
+});
+
+router.delete('/suppAssocie', function (req, res) {
+
 	Sci.
 		findOne({_id: req.body._id}, function(err, sci){
 			console.log('_______________ error find sci _______________');
@@ -66,7 +129,7 @@ router.post('/update', function (req, res) {
 router.post('/create', function (req, res) {
   	var sci = new Sci(req.body);
 
-	var promises = req.body.associe.map(function(associe){
+	var promises = req.body.associes.map(function(associe){
 		associe.sci = sci._id;
 		return new Associe(associe).save(function(err, associe){
 			return associe

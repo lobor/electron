@@ -9,8 +9,9 @@ define([
 	'bootstrap-decorator',
 	'angular-schema-form-datepicker',
 	'angular-notify',
+	'dialog',
 ], function(angular, formSci) {
-	angular.module('locloud.sci', ['ui.router','angularGrid','schemaForm', 'cgNotify'])
+	angular.module('locloud.sci', ['ui.router','angularGrid','schemaForm', 'cgNotify', 'dialogs.main'])
 	.controller('SciMenuController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
 		$scope.menus = [
 			{
@@ -78,7 +79,7 @@ define([
     		}
 		};
 	}])
-	.controller('SciEditController', ['$scope', '$http', 'baseUrl', 'notify', '$state', '$stateParams', function($scope, $http, baseUrl, notify, $state, $stateParams) {
+	.controller('SciEditController', ['$scope', '$http', 'baseUrl', 'notify', '$state', '$stateParams', 'dialogs', function($scope, $http, baseUrl, notify, $state, $stateParams, dialogs) {
 		$scope.title_form_sci = 'Éditer une SCI';
 		$http.
 			get(baseUrl+'/sci/get', {params:$stateParams}, {withCredentials:true}).
@@ -91,11 +92,45 @@ define([
 					// console.log($scope.sci = {});
 				}
 			})
-
 			.error(function (data, status, headers, config) {
 				notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
 			});
 
+			$scope.deleteUser = function(modelValue,form){
+				console.log(modelValue,form);
+				var dlg = dialogs.confirm('Confirmation demandé', 'Êtes vous sûr de vouloir supprimer cet associé ?');
+					dlg.result.then(function(btn){
+						console.log(this);
+						// $http.
+						// 	post(baseUrl+'/sci/suppAssocie', {params:$stateParams}, {withCredentials:true}).
+						// 	success(function (data, status, headers, config) {
+						//
+						// 		if(data.status){
+						// 			// console.log(data.results);
+						// 			$scope = angular.extend($scope, formSci);
+						// 			$scope.sci = data.results;
+						// 			// console.log($scope.sci = {});
+						// 		}
+						// 	})
+						// 	.error(function (data, status, headers, config) {
+						// 		notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
+						// 	});
+					});
+				// $http.
+				// 	get(baseUrl+'/sci/get', {params:$stateParams}, {withCredentials:true}).
+				// 	success(function (data, status, headers, config) {
+				//
+				// 		if(data.status){
+				// 			// console.log(data.results);
+				// 			$scope = angular.extend($scope, formSci);
+				// 			$scope.sci = data.results;
+				// 			// console.log($scope.sci = {});
+				// 		}
+				// 	})
+				// 	.error(function (data, status, headers, config) {
+				// 		notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
+				// 	});
+			};
 
 			$scope.onSubmit = function(form) {
 	    		// First we broadcast an event so all fields validate themselves

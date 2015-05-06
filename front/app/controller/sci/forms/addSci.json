@@ -32,6 +32,10 @@
 				"items": {
 					"type": "object",
 					"properties": {
+						"_id": {
+							"title": "id",
+							"type": "string"
+						},
 						"nom": {
 							"title": "Nom",
 							"type": "string"
@@ -164,7 +168,7 @@
 		},
 		{
 			"key": "associes",
-			"add": "New",
+			"add": "Ajouter",
 			"htmlClass": "row",
 			"labelHtmlClass":"column",
 			"style": {
@@ -236,6 +240,13 @@
 									"htmlClass": "col-md row"
 								}
 							]
+						},
+						{
+							"type": "button",
+							"title": "Supprimer",
+							"style": "btn btn-danger",
+							"key": "associes[]._id",
+							"onClick":"deleteUser(modelValue,form)"
 						}
 					]
 				}

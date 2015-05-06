@@ -15,6 +15,7 @@
     "cors": "^2.5.3",
     "debug": "~2.1.1",
     "deferred": "^0.7.2",
+    "deploy": "^1.0.3",
     "express": "~4.12.2",
     "express-jwt": "^2.1.0",
     "express-session": "^1.10.4",
@@ -23,6 +24,7 @@
     "mongoose": "^4.0.1",
     "mongoose-types": "^1.0.3",
     "morgan": "~1.5.1",
-    "serve-favicon": "~2.2.0"
+    "serve-favicon": "~2.2.0",
+    "underscore": "^1.8.3"
   }
 }

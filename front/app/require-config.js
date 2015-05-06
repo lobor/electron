@@ -37,6 +37,7 @@ require.config({
 		"picker":'bower_components/pickadate/lib/picker',
 		"pickadate":'bower_components/pickadate/lib/picker.date',
 		"angular-notify":'bower_components/angular-notify/dist/angular-notify.min',
+		"dialog":"bower_components/angular-dialog-service/dist/dialogs.min",
 
 
 
@@ -58,6 +59,7 @@ require.config({
 		'angular-notify': ['angular'],
 		'angular-grid': ['angular'],
 		'angular-sanitize': ['angular'],
+		'dialog': ['angular'],
 		'angular-schema-form-datepicker': ['angular', 'pickadate'],
 		'angular-schema-form'  : ['angular-sanitize', 'ObjectPath', 'tv4'],
 		'bootstrap-decorator'  : ['angular-schema-form'],

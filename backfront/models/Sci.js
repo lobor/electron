@@ -62,7 +62,7 @@ var SciSchema = new Schema({
 
 function validate(next){
     var sci = this;
-    console.log(sci);
+    // console.log(sci);
 
     next();
 }
