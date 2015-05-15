@@ -36,8 +36,9 @@ require.config({
 		"jquery":'bower_components/jquery/dist/jquery.min',
 		"picker":'bower_components/pickadate/lib/picker',
 		"pickadate":'bower_components/pickadate/lib/picker.date',
-		"angular-notify":'bower_components/angular-notify/dist/angular-notify.min',
+		"ng-notify":'bower_components/ng-notify/dist/ng-notify.min',
 		"dialog":"bower_components/angular-dialog-service/dist/dialogs.min",
+		"crAcl":"bower_components/cr-acl/cr-acl"
 
 
 
@@ -56,9 +57,10 @@ require.config({
 		'angularUi': ['angular'],
 		'angular-loading-bar': ['angular'],
 		'angularCookie': ['angular'],
-		'angular-notify': ['angular'],
+		'ng-notify': ['angular'],
 		'angular-grid': ['angular'],
 		'angular-sanitize': ['angular'],
+		'crAcl': ['angular'],
 		'dialog': ['angular'],
 		'angular-schema-form-datepicker': ['angular', 'pickadate'],
 		'angular-schema-form'  : ['angular-sanitize', 'ObjectPath', 'tv4'],

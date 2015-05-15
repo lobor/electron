@@ -2,13 +2,12 @@ var configDb = require("./db");
 var mongoose = require("mongoose");
 var mongooseTypes = require("mongoose-types");
 
-var deferred = require('deferred');
 
 var modelProto = mongoose.Model;
 
 
-mongoose.Model.find = deferred.promisify(mongoose.Model.find);
-mongoose.Model.findById = deferred.promisify(mongoose.Model.findById);
+// mongoose.Model.find = deferred.promisify(mongoose.Model.find);
+// mongoose.Model.findById = deferred.promisify(mongoose.Model.findById);
 
 
 

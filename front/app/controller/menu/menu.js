@@ -9,11 +9,23 @@ define([
 		$scope.menus = [
 			{
 				'url':'locloud.home',
+				'icon':'fa-home',
 				'name':'Acceuil'
 			},
 			{
 				'url':'locloud.sci',
+				'icon':'fa-institution',
 				'name':'SCI'
+			},
+			{
+				'url':'locloud.bien',
+				'icon':'fa-building',
+				'name':'Biens'
+			},
+			{
+				'url':'locloud.locataire',
+				'icon':'fa-users',
+				'name':'Locataires'
 			}
 		];
 		$scope.style = '';

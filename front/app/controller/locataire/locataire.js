@@ -1,7 +1,7 @@
 'use strict';
 define([
 	'angular',
-	'json!controller/sci/forms/addSci.json',
+	'json!controller/Locataire/forms/addSci.json',
 	'uiRouter',
 	'angular-grid',
 	'ObjectPath',
@@ -11,19 +11,19 @@ define([
 	'ng-notify',
 	'dialog',
 ], function(angular, formSci) {
-	angular.module('locloud.sci', ['ui.router','angularGrid','schemaForm', 'ngNotify', 'dialogs.main'])
-	.controller('SciMenuController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
+	angular.module('locloud.locataire', ['ui.router','angularGrid','schemaForm', 'ngNotify', 'dialogs.main'])
+	.controller('LocataireMenuController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
 		$scope.menus = [
 			{
-				'name':'Creer une SCI',
+				'name':'Creer un locataire',
 				'state':'locloud.sci.create'
 			}
 		];
 	}])
-	.controller('SciMenuCreateController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
+	.controller('LocataireMenuCreateController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
 
 	}])
-	.controller('SciListController', ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', function($scope, $http, baseUrl, $state, ngNotify) {
+	.controller('LocataireListController', ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', function($scope, $http, baseUrl, $state, ngNotify) {
 		$scope.gridOptions = {
 			columnDefs: [
 				{
@@ -42,18 +42,17 @@ define([
 				$state.go('locloud.sci.edit',{id:row._id});
 			}
 		};
-
 		$http.
-		get(baseUrl+'/scis').
+		get(baseUrl+'/sci/list').
 		success(function (data, status, headers, config) {
-			$scope.gridOptions.rowData =  data.scis;
+			$scope.gridOptions.rowData =  data.results;
 			$scope.gridOptions.api.onNewRows();
 		})
 		.error(function (data, status, headers, config) {
 			ngNotify.set('Une erreur est apparu', 'error');
 		});
 	}])
-	.controller('SciCreateController', ['$scope', '$http', 'baseUrl', 'ngNotify', '$state', function($scope, $http, baseUrl, ngNotify, $state) {
+	.controller('LocataireCreateController', ['$scope', '$http', 'baseUrl', '$state', function($scope, $http, baseUrl, $state) {
 		$scope = angular.extend($scope, formSci);
 		$scope.title_form_sci = 'Créer une SCI';
 		$scope.sci = {};
@@ -70,17 +69,15 @@ define([
 		      		success(function (data, status, headers, config) {
 
 						if(data.status){
-							ngNotify.set('La SCI a bien été enregistré', 'success');
 							$state.go('locloud.sci');
 						}
 		      		})
 			      	.error(function (data, status, headers, config) {
-						ngNotify.set('Une erreur est apparu', 'error');
 			      	});
     		}
 		};
 	}])
-	.controller('SciEditController', ['$scope', '$http', 'baseUrl', 'ngNotify', '$state', '$stateParams', 'dialogs', function($scope, $http, baseUrl, ngNotify, $state, $stateParams, dialogs) {
+	.controller('LocataireEditController', ['$scope', '$http', 'baseUrl', '$state', '$stateParams', 'dialogs', function($scope, $http, baseUrl, $state, $stateParams, dialogs) {
 		$scope.title_form_sci = 'Éditer une SCI';
 		$http.
 			get(baseUrl+'/sci/get', {params:$stateParams}, {withCredentials:true}).
@@ -94,43 +91,14 @@ define([
 				}
 			})
 			.error(function (data, status, headers, config) {
-				ngNotify.set('Une erreur est apparu', 'error');
+				notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
 			});
 
 			$scope.deleteUser = function(modelValue,form){
 				console.log(modelValue,form);
 				var dlg = dialogs.confirm('Confirmation demandé', 'Êtes vous sûr de vouloir supprimer cet associé ?');
 					dlg.result.then(function(btn){
-						console.log(this);
-						// $http.
-						// 	post(baseUrl+'/sci/suppAssocie', {params:$stateParams}, {withCredentials:true}).
-						// 	success(function (data, status, headers, config) {
-						//
-						// 		if(data.status){
-						// 			// console.log(data.results);
-						// 			$scope = angular.extend($scope, formSci);
-						// 			$scope.sci = data.results;
-						// 			// console.log($scope.sci = {});
-						// 		}
-						// 	})
-						// 	.error(function (data, status, headers, config) {
-						// 		notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
-						// 	});
 					});
-				// $http.
-				// 	get(baseUrl+'/sci/get', {params:$stateParams}, {withCredentials:true}).
-				// 	success(function (data, status, headers, config) {
-				//
-				// 		if(data.status){
-				// 			// console.log(data.results);
-				// 			$scope = angular.extend($scope, formSci);
-				// 			$scope.sci = data.results;
-				// 			// console.log($scope.sci = {});
-				// 		}
-				// 	})
-				// 	.error(function (data, status, headers, config) {
-				// 		notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
-				// 	});
 			};
 
 			$scope.onSubmit = function(form) {
@@ -143,11 +111,11 @@ define([
 		      		post(baseUrl+'/sci/update', $scope.sci, {withCredentials:true}).
 		      		success(function (data, status, headers, config) {
 						if(data.status){
-							ngNotify.set('La SCI a bien été enregistré', 'success');
+							// notify({ message:'La SCI a bien été enregistré', classes:'alert-success'} );
 						}
 		      		})
 			      	.error(function (data, status, headers, config) {
-						ngNotify.set('Une erreur est apparu', 'error');
+						// notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
 			      	});
 	    		}
 			};

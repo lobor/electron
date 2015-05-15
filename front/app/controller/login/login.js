@@ -14,10 +14,9 @@ define([
 			$scope.message = '';
 			$scope.styleAlert = '';
 		    $http.
-	      		post(baseUrl+'/auth/authenticate', $scope.user, {withCredentials:true}).
+	      		post(baseUrl+'/login', $scope.user, {withCredentials:true}).
 	      		success(function (data, status, headers, config) {
-					if(data.status){
-						console.log($state);
+					if(!data.error){
 						$state.go('locloud.home',null,{
 						  reload: true, notify: true
 						});
@@ -58,7 +57,7 @@ define([
 	}]).
 	controller('LogoutController', ['$state', '$http', 'baseUrl', function($state, $http, baseUrl) {
 		$http.
-			get(baseUrl+'/auth/logout').
+			get(baseUrl+'/logout').
 			success(function (data, status, headers, config) {
 				$state.go('locloud.login');
 			})

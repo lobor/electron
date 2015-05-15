@@ -1,7 +1,7 @@
 'use strict';
 define([
 	'angular',
-	'json!controller/sci/forms/addSci.json',
+	'json!controller/bien/forms/addSci.json',
 	'uiRouter',
 	'angular-grid',
 	'ObjectPath',
@@ -11,19 +11,19 @@ define([
 	'ng-notify',
 	'dialog',
 ], function(angular, formSci) {
-	angular.module('locloud.sci', ['ui.router','angularGrid','schemaForm', 'ngNotify', 'dialogs.main'])
-	.controller('SciMenuController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
+	angular.module('locloud.bien', ['ui.router','angularGrid','schemaForm', 'ngNotify', 'dialogs.main'])
+	.controller('BienMenuController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
 		$scope.menus = [
 			{
-				'name':'Creer une SCI',
+				'name':'Creer un bien',
 				'state':'locloud.sci.create'
 			}
 		];
 	}])
-	.controller('SciMenuCreateController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
+	.controller('BieniMenuCreateController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
 
 	}])
-	.controller('SciListController', ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', function($scope, $http, baseUrl, $state, ngNotify) {
+	.controller('BienListController', ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', function($scope, $http, baseUrl, $state, ngNotify) {
 		$scope.gridOptions = {
 			columnDefs: [
 				{
@@ -42,18 +42,17 @@ define([
 				$state.go('locloud.sci.edit',{id:row._id});
 			}
 		};
-
 		$http.
-		get(baseUrl+'/scis').
+		get(baseUrl+'/sci/list').
 		success(function (data, status, headers, config) {
-			$scope.gridOptions.rowData =  data.scis;
+			$scope.gridOptions.rowData =  data.results;
 			$scope.gridOptions.api.onNewRows();
 		})
 		.error(function (data, status, headers, config) {
 			ngNotify.set('Une erreur est apparu', 'error');
 		});
 	}])
-	.controller('SciCreateController', ['$scope', '$http', 'baseUrl', 'ngNotify', '$state', function($scope, $http, baseUrl, ngNotify, $state) {
+	.controller('BienCreateController', ['$scope', '$http', 'baseUrl', 'ngNotify', '$state', function($scope, $http, baseUrl, ngNotify, $state) {
 		$scope = angular.extend($scope, formSci);
 		$scope.title_form_sci = 'Créer une SCI';
 		$scope.sci = {};
@@ -80,7 +79,7 @@ define([
     		}
 		};
 	}])
-	.controller('SciEditController', ['$scope', '$http', 'baseUrl', 'ngNotify', '$state', '$stateParams', 'dialogs', function($scope, $http, baseUrl, ngNotify, $state, $stateParams, dialogs) {
+	.controller('BienEditController', ['$scope', '$http', 'baseUrl', 'ngNotify', '$state', '$stateParams', 'dialogs', function($scope, $http, baseUrl, ngNotify, $state, $stateParams, dialogs) {
 		$scope.title_form_sci = 'Éditer une SCI';
 		$http.
 			get(baseUrl+'/sci/get', {params:$stateParams}, {withCredentials:true}).

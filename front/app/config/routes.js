@@ -8,6 +8,8 @@ define([
 	'controller/home/home',
 	'controller/menu/menu',
 	'controller/sci/sci',
+	'controller/bien/bien',
+	'controller/locataire/locataire',
 ], function(angular) {
 	return ['$locationProvider', '$httpProvider', '$stateProvider', '$provide', function($locationProvider, $httpProvider, $stateProvider, $provide) {
 		$stateProvider.
@@ -32,6 +34,55 @@ define([
 						controller: 'LoginController'
 					},
 				},
+				data:{
+		          	is_granted: ["ROLE_GUEST"]
+		       	}
+			}).
+			state('locloud.unauthorized', {
+				url: "unauthorized",
+				views: {
+					'main' : {
+						templateUrl: 'controller/common/templates/unauthorized.html',
+					},
+				},
+				data:{
+		          	is_granted: ["ROLE_GUEST"]
+		       	}
+			}).
+			state('locloud.bien', {
+				url: "biens",
+				views: {
+					'main' : {
+						templateUrl: 'controller/bien/templates/layout.html',
+					},
+					'bien-menu@locloud.bien' : {
+						templateUrl: 'controller/bien/templates/menu.html',
+						controller: 'BienMenuController'
+					},
+					'bien-list@locloud.bien' : {
+						templateUrl: 'controller/bien/templates/list.html',
+						controller: 'BienListController'
+					}
+				},
+				data:{
+		          	is_granted: ["ROLE_USER"]
+		       	}
+			}).
+			state('locloud.locataire', {
+				url: "locataires",
+				views: {
+					'main' : {
+						templateUrl: 'controller/locataire/templates/layout.html',
+					},
+					'locataire-menu@locloud.locataire' : {
+						templateUrl: 'controller/locataire/templates/menu.html',
+						controller: 'LocataireMenuController'
+					},
+					'locataire-list@locloud.locataire' : {
+						templateUrl: 'controller/locataire/templates/list.html',
+						controller: 'LocataireListController'
+					}
+				},
 			}).
 			state('locloud.sci', {
 				url: "sci",
@@ -48,6 +99,9 @@ define([
 						controller: 'SciListController'
 					}
 				},
+				data:{
+		          	is_granted: ["ROLE_USER"]
+		       	}
 			}).
 			state('locloud.sci.create', {
 				url: "/create",
@@ -101,9 +155,11 @@ define([
 
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
-		var interceptor = ['$location', '$q', '$injector', '$window', function($location, $q, $injector, $window) {
+		var interceptor = ['$location', '$q', '$injector', '$window', 'cfpLoadingBar', function($location, $q, $injector, $window, cfpLoadingBar) {
 			return {
 				responseError: function(rejection) {
+					$injector.get('cfpLoadingBar').complete();
+					// cfpLoadingBar;
 					switch (rejection.status){
 						case 302:
 							break;
@@ -111,7 +167,7 @@ define([
 							$injector.get('$state').go('locloud.login');
 							break;
 						case 404:
-							$injector.get('$state').go('locloud.error404');
+							// $injector.get('$state').go('locloud.error404');
 							break;
 						case 500:
 							// $injector.get('$state').go('locloud.error500');

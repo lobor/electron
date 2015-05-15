@@ -8896,76 +8896,130 @@ a:visited {
 .fa-medium:before {
   content: "\f23a";
 }
-.cg-notify-message {
+.ngn {
+  color: #FFF;
+  cursor: default;
+  display: none;
+  font-size: 1.3em;
+  left: 0;
+  opacity: 1;
+  padding: 25px 80px;
   position: fixed;
-  top: 0px;
-  z-index: 9999;
-  max-width: 400px;
+  right: 0;
   text-align: center;
-  background-color: #d9edf7;
-  color: #31708f;
-  padding: 15px;
-  border: 1px solid #bce8f1;
-  border-radius: 4px;
-  -webkit-transition: top 0.5s ease-out, opacity 0.2s ease-out;
-  -moz-transition: top 0.5s ease-out, opacity 0.2s ease-out;
-  -o-transition: top 0.5s ease-out, opacity 0.2s ease-out;
-  transition: top 0.5s ease-out, opacity 0.2s ease-out;
-  visibility: hidden;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 9999;
 }
-.cg-notify-message-center {
-  left: 50%;
+.ngn-top {
+  top: 0;
 }
-.cg-notify-message-left {
-  left: 15px;
+.ngn-bottom {
+  bottom: 0;
 }
-.cg-notify-message-right {
-  right: 15px;
-}
-.cg-notify-message a {
-  font-weight: bold;
-  color: inherit;
-}
-.cg-notify-message a:hover {
-  color: inherit;
-}
-.cg-notify-close {
-  -webkit-appearance: none;
-  padding: 0;
+.ngn-dismiss {
+  background-color: #333;
+  border-radius: 15px;
+  box-shadow: inset 2px 2px 7px 2px #000;
+  color: #DDD;
   cursor: pointer;
-  background: 0 0;
-  border: 0;
-  font-size: 21px;
+  display: none;
+  font-size: 1.25em;
   font-weight: 700;
-  line-height: 1;
-  color: #000;
-  text-shadow: 0 1px 0 #fff;
-  filter: alpha(opacity=20);
+  height: 30px;
+  line-height: 30px;
   opacity: .2;
   position: absolute;
-  top: 0px;
-  right: 3px;
-  line-height: 15px;
+  right: 45px;
+  text-shadow: 1px 1px 5px #000;
+  width: 30px;
 }
-.cg-notify-close:hover,
-.cg-notify-close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-  filter: alpha(opacity=50);
-  opacity: .5;
+.ngn-sticky .ngn-dismiss {
+  display: block;
 }
-.cg-notify-sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+.ngn-dismiss:hover {
+  background-color: #000000;
+}
+.ngn-dismiss:active {
+  background-color: #666666;
+}
+@media only screen and (max-width: 480px) {
+  .ngn {
+    font-size: 1em;
+    padding: 12px 25px;
+  }
+  .ngn-dismiss {
+    font-size: 1em;
+    height: 20px;
+    line-height: 20px;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+  }
+}
+.ngn-info {
+  background-color: #0e90d2;
+}
+.ngn-error {
+  background-color: #dd514c;
+}
+.ngn-success {
+  background-color: #5eb95e;
+}
+.ngn-warn {
+  background-color: #f37b1d;
+}
+.ngn-grimace {
+  background-color: #8058a5;
+}
+.ngn-prime.ngn-info {
+  background-color: #0033cc;
+}
+.ngn-prime.ngn-error {
+  background-color: red;
+}
+.ngn-prime.ngn-success {
+  background-color: #00cc00;
+}
+.ngn-prime.ngn-warn {
+  background-color: #ff9900;
+}
+.ngn-prime.ngn-grimace {
+  background-color: #660099;
+}
+.ngn-pastel.ngn-info {
+  background-color: #7ea7d8;
+}
+.ngn-pastel.ngn-error {
+  background-color: #f6989d;
+}
+.ngn-pastel.ngn-success {
+  background-color: #82ca9d;
+}
+.ngn-pastel.ngn-warn {
+  background-color: #fdc68a;
+}
+.ngn-pastel.ngn-grimace {
+  background-color: #a187be;
+}
+.ngn-pitchy.ngn-info {
+  background-color: #003471;
+}
+.ngn-pitchy.ngn-error {
+  background-color: #9e0b0f;
+}
+.ngn-pitchy.ngn-success {
+  background-color: #007236;
+}
+.ngn-pitchy.ngn-warn {
+  background-color: #a36209;
+}
+.ngn-pitchy.ngn-grimace {
+  background-color: #440e62;
 }
 body {
   background-color: #f8f8f8;
