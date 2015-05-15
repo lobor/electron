@@ -30,6 +30,10 @@ restberry
         .use(restberryAuthLocal.config({
             passwordMinLength: 6,
             additionalFields: {
+                role: {
+            		type: String,
+            		required: true
+            	}
             }
         })))
     .use(restberryExpress.use(function(waf) {

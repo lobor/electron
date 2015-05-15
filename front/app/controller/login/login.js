@@ -4,8 +4,8 @@ define([
 	'angularCookie',
 	'uiRouter',
 ], function(angular, ngCookie) {
-	angular.module('locloud.login', ['ui.router', 'ngCookies']).
-	controller('LoginController', ['$scope', '$http', '$window', 'baseUrl', '$rootScope', '$state', '$cookies', '$cookieStore', function($scope, $http, $window, baseUrl, $rootScope, $state, $cookies, $cookieStore) {
+	angular.module('locloud.login', ['ui.router', 'ngCookies', 'cr.acl']).
+	controller('LoginController', ['$scope', '$http', '$window', 'baseUrl', '$rootScope', '$state', '$cookies', '$cookieStore', 'crAcl', function($scope, $http, $window, baseUrl, $rootScope, $state, $cookies, $cookieStore, crAcl) {
 		$rootScope.login = 'login';
 		$scope.user = {email: 'lionel.bertrand@ymail.com'};
   		$scope.message = '';
@@ -17,11 +17,11 @@ define([
 	      		post(baseUrl+'/login', $scope.user, {withCredentials:true}).
 	      		success(function (data, status, headers, config) {
 					if(!data.error){
+						crAcl.setRole(data.user.role);
+
 						$state.go('locloud.home',null,{
 						  reload: true, notify: true
 						});
-						// $window.location.reload();
-						// $window.sessionStorage.token = data.token;
 					}
 					else{
 						switch(data.errorCode){

@@ -83,6 +83,9 @@ define([
 						controller: 'LocataireListController'
 					}
 				},
+				data:{
+		          	is_granted: ["ROLE_USER"]
+		       	}
 			}).
 			state('locloud.sci', {
 				url: "sci",
@@ -111,6 +114,9 @@ define([
 						controller: 'SciCreateController'
 					}
 				},
+				data:{
+		          	is_granted: ["ROLE_USER"]
+		       	}
 			}).
 			state('locloud.sci.edit', {
 				url: "/edit/:id",
@@ -120,6 +126,9 @@ define([
 						controller: 'SciEditController'
 					}
 				},
+				data:{
+		          	is_granted: ["ROLE_USER"]
+		       	}
 			}).
 			state('locloud.home', {
 				url: "home",
@@ -129,6 +138,9 @@ define([
 						controller: 'HomeController'
 					},
 				},
+				data:{
+		          	is_granted: ["ROLE_USER"]
+		       	}
 			}).
 			state('locloud.logout',{
 				url: "logout",
@@ -138,6 +150,9 @@ define([
 						controller: 'LogoutController'
 					},
 				},
+				data:{
+		          	is_granted: ["ROLE_USER"]
+		       	}
 			}).
 			state('locloud.error500', {
 				views: {

@@ -13,8 +13,7 @@ define([
 		});
 
 		crAcl.setInheritanceRoles({
-		    "ROLE_FREE" : ["ROLE_USER"],
-	    	"ROLE_CLIENT" : ["ROLE_FREE", "ROLE_USER"]
+	    	"ROLE_ADMIN" : ["ROLE_USER"]
 	  	});
 
 		crAcl.setRedirect("locloud.unauthorized");
