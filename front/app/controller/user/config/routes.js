@@ -43,5 +43,6 @@ define([
 					is_granted: ["ROLE_ADMIN"]
 				}
 			});
+			
 	}]
 });
