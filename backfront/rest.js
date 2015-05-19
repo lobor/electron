@@ -5,6 +5,7 @@ var restberryAuth = require('restberry-auth');
 var restberryAuthLocal = require('restberry-auth-local');
 var session = require('express-session');
 
+
 restberry
     .config({
         apiPath: '',
@@ -30,6 +31,12 @@ restberry
         .use(restberryAuthLocal.config({
             passwordMinLength: 6,
             additionalFields: {
+                nom: {
+                    type: String,
+                },
+                prenom:{
+                    type: String,
+                },
                 role: {
             		type: String,
             		required: true
@@ -54,44 +61,39 @@ restberry
 
 
 
-
 restberry
     .routes
 	.addCustomRoute({
-            action: function(req, res, next) {
-				if(!req.session.passport.user){
-					res.status(401);
-					res.json({status: false});
-				}
-				else{
-					res.status(200);
-					res.json({status: true});
-				}
-				next();
-            },
-			path: '/check',
-            apiPath: '/auth',  // overrides the one set on Restberry
-            loginRequired: false,
-            method: 'GET',
-			verbose: false
-        });
+        action: function(req, res, next) {
+			if(!req.session.passport.user){
+				res.status(401);
+				res.json({status: false});
+			}
+			else{
+				res.status(200);
+				res.json({status: true});
+			}
+			next();
+        },
+		path: '/check',
+        apiPath: '/auth',  // overrides the one set on Restberry
+        loginRequired: false,
+        method: 'GET',
+		verbose: false
+    })
+    .addCustomRoute({
+        action: function(req, res, next) {
+            req.session.destroy();
+            req.logout();
+            res.status(200);
+            res.json({status: true});
+            next();
+        },
+        path: '/logout',
+        apiPath: '/user',  // overrides the one set on Restberry
+        loginRequired: false,
+        method: 'GET',
+    });
 
-// restberry.model('User');
 
-// var sci = require('./models/sciOld');
 require('./models/bootstrap');
-// console.log(sci);
-
-
-// restberry.use(sci);
-
-
-
-// restberry.model('Bar')
-//     .schema({
-//         foo: {type: restberry.odm.ObjectId, ref: 'Foo'},
-//         name: {type: String},
-//     })
-//     .routes.addCRUDRoutes({
-//         parentModel: restberry.model('Foo'),
-//     });

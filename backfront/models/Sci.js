@@ -54,3 +54,4 @@ restberry.model('Sci')
     })
     .loginRequired()
     .routes.addCRUDRoutes();
+    

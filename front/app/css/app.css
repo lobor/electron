@@ -9453,10 +9453,6 @@ body.login .forgot-password:focus {
   color: #fff;
   background: none;
 }
-[ui-view="sci-list"] {
-  margin-top: 20px;
-  width: 100%;
-}
 form .list-group {
   flex-direction: row;
   display: flex;
@@ -9478,6 +9474,10 @@ body > .container-fix > .row {
 }
 [ui-view="container"] {
   flex: 1;
+}
+[ui-view*="list"] {
+  margin-top: 20px;
+  width: 100%;
 }
 .navbar-default.sidebar {
   width: auto;

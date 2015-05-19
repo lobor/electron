@@ -1,37 +1,46 @@
 'use strict';
 define([
 	'angular',
-	'uiRouter',
+	'crAcl',
 ], function(angular) {
-	angular.module('locloud.menu', ['ui.router']).
-	controller('MenuController', ['$scope', '$state', '$window', function($scope, $state, $window) {
+	angular.module('locloud.menu', ['cr.acl']).
+	controller('MenuController', ['$scope', '$state', '$window', 'crAcl', MenuController]);
+
+
+	function MenuController($scope, $state, $window,crAcl){
 		$scope.style = 'display: none;';
 		$scope.menus = [
 			{
 				'url':'locloud.home',
 				'icon':'fa-home',
-				'name':'Acceuil'
+				'name':'Acceuil',
+				'acl':'ROLE_USER,ROLE_ADMIN'
 			},
 			{
 				'url':'locloud.sci',
 				'icon':'fa-institution',
-				'name':'SCI'
+				'name':'SCI',
+				'acl':'ROLE_USER,ROLE_ADMIN'
 			},
 			{
 				'url':'locloud.bien',
 				'icon':'fa-building',
-				'name':'Biens'
+				'name':'Biens',
+				'acl':'ROLE_USER,ROLE_ADMIN'
 			},
 			{
 				'url':'locloud.locataire',
 				'icon':'fa-users',
-				'name':'Locataires'
+				'name':'Locataires',
+				'acl':'ROLE_USER,ROLE_ADMIN'
+			},
+			{
+				'url':'locloud.user',
+				'icon':'fa-user',
+				'name':'Utilisateurs',
+				'acl':'ROLE_ADMIN'
 			}
 		];
 		$scope.style = '';
-
-		// $scope.logout = function () {
-		// 	console.log(3);
-		// };
-	}]);
+	}
 });

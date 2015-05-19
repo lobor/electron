@@ -12,9 +12,14 @@ define([
 		    duration: 3000,
 		});
 
+		if($window.sessionStorage.role){
+			crAcl.setRole($window.sessionStorage.role);
+		}
+
 		crAcl.setInheritanceRoles({
-	    	"ROLE_ADMIN" : ["ROLE_USER"]
-	  	});
+			"ROLE_TEST" : ["ROLE_USER","ROLE_GUEST"],
+			"ROLE_ADMIN" : ["ROLE_USER", "ROLE_TEST"]
+		});
 
 		crAcl.setRedirect("locloud.unauthorized");
 
@@ -24,11 +29,15 @@ define([
 				$state.go('locloud.home');
 			}
 			else if(!data.status){
-				$state.go('locloud.login');
+				$state.go('login');
 			}
 		}).
 		error(function(data, status, headers, config){
-			$state.go('locloud.login');
+			if($window.sessionStorage.role){
+				$window.sessionStorage.removeItem('role');
+			}
+			crAcl.setRole('ROLE_GUEST');
+			$state.go('login');
 		});
 	}];
 });

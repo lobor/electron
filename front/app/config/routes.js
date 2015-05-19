@@ -4,12 +4,13 @@ define([
 	'uiRouter',
 
 	// controller
-	'controller/login/login',
+	'controller/auth/auth',
 	'controller/home/home',
 	'controller/menu/menu',
 	'controller/sci/sci',
 	'controller/bien/bien',
 	'controller/locataire/locataire',
+	'controller/user/user',
 ], function(angular) {
 	return ['$locationProvider', '$httpProvider', '$stateProvider', '$provide', function($locationProvider, $httpProvider, $stateProvider, $provide) {
 		$stateProvider.
@@ -26,18 +27,6 @@ define([
 					},
 				}
 			}).
-			state('locloud.login', {
-				url: "login",
-				views: {
-					'container@':{
-						templateUrl: 'controller/login/templates/login.html',
-						controller: 'LoginController'
-					},
-				},
-				data:{
-		          	is_granted: ["ROLE_GUEST"]
-		       	}
-			}).
 			state('locloud.unauthorized', {
 				url: "unauthorized",
 				views: {
@@ -49,25 +38,8 @@ define([
 		          	is_granted: ["ROLE_GUEST"]
 		       	}
 			}).
-			state('locloud.bien', {
-				url: "biens",
-				views: {
-					'main' : {
-						templateUrl: 'controller/bien/templates/layout.html',
-					},
-					'bien-menu@locloud.bien' : {
-						templateUrl: 'controller/bien/templates/menu.html',
-						controller: 'BienMenuController'
-					},
-					'bien-list@locloud.bien' : {
-						templateUrl: 'controller/bien/templates/list.html',
-						controller: 'BienListController'
-					}
-				},
-				data:{
-		          	is_granted: ["ROLE_USER"]
-		       	}
-			}).
+
+			// Locataire
 			state('locloud.locataire', {
 				url: "locataires",
 				views: {
@@ -87,49 +59,10 @@ define([
 		          	is_granted: ["ROLE_USER"]
 		       	}
 			}).
-			state('locloud.sci', {
-				url: "sci",
-				views: {
-					'main' : {
-						templateUrl: 'controller/sci/templates/layout.html',
-					},
-					'sci-menu@locloud.sci' : {
-						templateUrl: 'controller/sci/templates/menu.html',
-						controller: 'SciMenuController'
-					},
-					'sci-list@locloud.sci' : {
-						templateUrl: 'controller/sci/templates/list.html',
-						controller: 'SciListController'
-					}
-				},
-				data:{
-		          	is_granted: ["ROLE_USER"]
-		       	}
-			}).
-			state('locloud.sci.create', {
-				url: "/create",
-				views: {
-					'main@locloud' : {
-						templateUrl: 'controller/sci/templates/create.html',
-						controller: 'SciCreateController'
-					}
-				},
-				data:{
-		          	is_granted: ["ROLE_USER"]
-		       	}
-			}).
-			state('locloud.sci.edit', {
-				url: "/edit/:id",
-				views: {
-					'main@locloud' : {
-						templateUrl: 'controller/sci/templates/create.html',
-						controller: 'SciEditController'
-					}
-				},
-				data:{
-		          	is_granted: ["ROLE_USER"]
-		       	}
-			}).
+
+
+
+			// Dashboard
 			state('locloud.home', {
 				url: "home",
 				views: {
@@ -139,21 +72,14 @@ define([
 					},
 				},
 				data:{
-		          	is_granted: ["ROLE_USER"]
+		          	is_granted: ["ROLE_USER","ROLE_ADMIN"]
 		       	}
 			}).
-			state('locloud.logout',{
-				url: "logout",
-				views: {
-					'main@locloud' : {
-						templateUrl: 'controller/login/templates/login.html',
-						controller: 'LogoutController'
-					},
-				},
-				data:{
-		          	is_granted: ["ROLE_USER"]
-		       	}
-			}).
+
+			
+
+
+
 			state('locloud.error500', {
 				views: {
 					'main@locloud' : {
@@ -179,7 +105,7 @@ define([
 						case 302:
 							break;
 						case 401:
-							$injector.get('$state').go('locloud.login');
+							$injector.get('$state').go('login');
 							break;
 						case 404:
 							// $injector.get('$state').go('locloud.error404');

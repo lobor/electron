@@ -26,6 +26,7 @@ define([
 		'locloud.sci',
 		'locloud.bien',
 		'locloud.locataire',
+		'locloud.user'
 	]).
 	run($stateRoutes).
 	config($routes).

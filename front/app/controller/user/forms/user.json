@@ -1,0 +1,94 @@
+{
+	"schema": {
+		"type": "object",
+		"properties": {
+			"email": {
+				"type": "string",
+				"title": "Email",
+				"required":true
+			},
+			"nom": {
+				"type": "string",
+				"title": "Nom",
+				"required":true
+			},
+			"prenom": {
+				"type": "string",
+				"title": "Prénom",
+				"required":true
+			},
+			"password": {
+				"type": "string",
+				"title": "Mot de passe",
+				"required":true,
+				"minLength": 6
+			},
+			"password_confirm": {
+				"type": "string",
+				"title": "Confirmation mot de passe",
+				"required":true,
+				"minLength": 6
+			},
+			"role": {
+				"type": "string",
+				"title": "Rôle de l'utilisateur",
+				"required":true
+			}
+		}
+	},
+	"form": [
+		{
+			"type": "section",
+			"htmlClass": "column",
+			"items": [
+				{
+					"key": "email",
+					"placeholder": "",
+					"htmlClass": "col-md row"
+				},
+				{
+						"key": "nom",
+						"placeholder": "",
+						"htmlClass": "col-md row"
+				},
+				{
+						"key": "prenom",
+						"placeholder": "",
+						"htmlClass": "col-md row"
+				},
+				{
+						"key": "password",
+						"placeholder": "",
+						"type":"password",
+						"htmlClass": "col-md row"
+				},
+				{
+						"key": "password_confirm",
+						"placeholder": "",
+						"type":"password",
+						"htmlClass": "col-md row has-feedback"
+				},
+				{
+						"key": "role",
+						"placeholder": "",
+						"type":"select",
+						"htmlClass": "col-md row has-feedback",
+						"titleMap": [
+					      	{
+								"value": "ROLE_USER",
+								"name": "Utilisateur simple"
+							},
+					      	{
+								"value": "ROLE_ADMIN",
+								"name": "Administrateur"
+							}
+					    ]
+				}
+			]
+		},
+		{
+			"type": "submit",
+			"title": "Save"
+		}
+	]
+}

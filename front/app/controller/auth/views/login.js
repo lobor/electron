@@ -1,11 +1,10 @@
 'use strict';
 define([
 	'angular',
-	'angularCookie',
-	'uiRouter',
-], function(angular, ngCookie) {
-	angular.module('locloud.login', ['ui.router', 'ngCookies', 'cr.acl']).
-	controller('LoginController', ['$scope', '$http', '$window', 'baseUrl', '$rootScope', '$state', '$cookies', '$cookieStore', 'crAcl', function($scope, $http, $window, baseUrl, $rootScope, $state, $cookies, $cookieStore, crAcl) {
+], function(angular) {
+	return ['$scope', '$http', '$window', 'baseUrl', '$rootScope', '$state', 'crAcl', LoginController];
+
+	function LoginController($scope, $http, $window, baseUrl, $rootScope, $state, crAcl){
 		$rootScope.login = 'login';
 		$scope.user = {email: 'lionel.bertrand@ymail.com'};
   		$scope.message = '';
@@ -13,11 +12,13 @@ define([
 		$scope.submit = function () {
 			$scope.message = '';
 			$scope.styleAlert = '';
-		    $http.
-	      		post(baseUrl+'/login', $scope.user, {withCredentials:true}).
-	      		success(function (data, status, headers, config) {
+		    $http
+	      		.post(baseUrl+'/login', $scope.user, {withCredentials:true})
+	      		.success(function (data, status, headers, config) {
 					if(!data.error){
 						crAcl.setRole(data.user.role);
+
+						$window.sessionStorage.setItem('role',data.user.role);
 
 						$state.go('locloud.home',null,{
 						  reload: true, notify: true
@@ -53,25 +54,5 @@ define([
 			        $scope.message = 'Error: Invalid user or password';
 		      	});
 		};
-
-	}]).
-	controller('LogoutController', ['$state', '$http', 'baseUrl', function($state, $http, baseUrl) {
-		$http.
-			get(baseUrl+'/logout').
-			success(function (data, status, headers, config) {
-				$state.go('locloud.login');
-			})
-			.error(function (data, status, headers, config) {
-			});
-	}]).
-	controller('CheckAuthController', ['$state', '$http', 'baseUrl', function($state, $http, baseUrl) {
-		// console.log($state);
-		// console.log($state.$current);
-		// $http.get(baseUrl+'/auth/check')
-		// .success(function (data, status, headers, config) {
-		// }).
-		// error(function(data, status, headers, config){
-		// 	$state.go('locloud.login');
-		// });
-	}]);
+	}
 });
