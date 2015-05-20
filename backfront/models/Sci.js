@@ -2,12 +2,6 @@ var restberry = require('restberry');
 
 restberry.model('Sci')
     .schema({
-        id:{
-            type: Number,
-            index: {
-                unique: true
-            }
-        },
         name: {
     		type: String,
     		required: true,
@@ -54,4 +48,3 @@ restberry.model('Sci')
     })
     .loginRequired()
     .routes.addCRUDRoutes();
-    

@@ -9,6 +9,10 @@ restberry.model('User')
     })
     .addReadRoute({
         loginRequired: true,
+        fieldName: [
+            'id',
+            'nom'
+        ]
     })
     .addCustomRoute({
         action: function(req, res, next) {

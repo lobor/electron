@@ -1,0 +1,104 @@
+// main: FoxBox.less
+
+.container{
+	flex-direction: column;
+	display: flex;
+  	flex: 1;
+	&.overflow{
+		overflow: auto;
+	}
+}
+
+.body-container{
+	display: flex;
+	overflow: auto;
+	flex: 1;
+	flex-direction: column;
+}
+
+.container-fix:extend(.container all){
+	@media (max-width: @screen-xs-max) {
+		width: 100%;
+	}
+	@media (min-width: @screen-sm-min) {
+		width: 100%;
+	}
+	@media (min-width: @screen-md-min) {
+		width: 1170px;
+	}
+	@media (min-width: @screen-lg-min) {
+		width: 1170px;
+	}
+
+  	margin: auto;
+	&:extend(.overflow);
+}
+
+
+.row{
+	flex-direction: column;
+	.generate-columns(@nb-column);
+	width: 100%;
+}
+
+.column{
+	flex-direction: row;
+	display: flex;
+	flex: 1;
+	.generate-row(@nb-row);
+}
+
+.col-md{
+	flex-basis: 0;
+	flex-grow: 1;
+	display: flex;
+}
+
+.expend{
+	flex: 1;
+}
+
+[class*="col-"]{
+	padding: @padding-column;
+}
+
+
+
+body, html{
+	display: flex;
+	flex: 1;
+	margin: 0px;
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, section{
+	flex-shrink: 0;
+}
+
+
+
+a{
+	text-decoration: none;
+	color: #337ab7;
+	&:hover{
+		text-decoration: underline;
+	}
+	&:visited{
+		color: #337ab7;
+	}
+}
+
+.text{
+	&-danger{
+		color: @brand-danger;
+	}
+	&-warning{
+		color: @brand-warning;
+	}
+	&-success{
+		color: @brand-success;
+	}
+	&-info{
+		color: @brand-info;
+	}
+}

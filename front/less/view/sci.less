@@ -1,0 +1,21 @@
+// main: ../app.less
+
+form{
+	.list-group {
+		flex-direction: row;
+		display: flex;
+		flex: 1;
+		flex-wrap: wrap;
+	}
+	sf-decorator{
+		& > .form-group{
+			padding: 5px;
+		}
+	}
+	.form-control-date{
+		.datepicker{
+			max-width: 500px !important;
+			width: 300px !important;
+		}
+	}
+}
