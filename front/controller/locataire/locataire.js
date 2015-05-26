@@ -60,7 +60,7 @@ define([
     		// Then we check if the form is valid
     		if (form.$valid) {
 				$http.
-		      		post(baseUrl+'/sci/create', $scope.sci, {withCredentials:true}).
+		      		post(baseUrl+'/sci/create', $scope.sci).
 		      		success(function (data, status, headers, config) {
 
 						if(data.status){

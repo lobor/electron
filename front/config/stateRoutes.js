@@ -22,22 +22,23 @@ define([
 		});
 
 		crAcl.setRedirect("locloud.unauthorized");
-
-		$http.get(baseUrl+'/auth/check')
-		.success(function (data, status, headers, config) {
-			if(data.status && $window.location.pathname.match('login')){
-				$state.go('locloud.home');
-			}
-			else if(!data.status){
+		if(!$window.location.pathname.match('install')){
+			$http.get(baseUrl+'/auth/check')
+			.success(function (data, status, headers, config) {
+				if(data.status && $window.location.pathname.match('login')){
+					$state.go('locloud.home');
+				}
+				else if(!data.status){
+					$state.go('login');
+				}
+			}).
+			error(function(data, status, headers, config){
+				if($window.sessionStorage.role){
+					$window.sessionStorage.removeItem('role');
+				}
+				crAcl.setRole('ROLE_GUEST');
 				$state.go('login');
-			}
-		}).
-		error(function(data, status, headers, config){
-			if($window.sessionStorage.role){
-				$window.sessionStorage.removeItem('role');
-			}
-			crAcl.setRole('ROLE_GUEST');
-			$state.go('login');
-		});
+			});
+		}
 	}];
 });

@@ -11,6 +11,7 @@ define([
 	'controller/bien/bien',
 	'controller/locataire/locataire',
 	'controller/user/user',
+	'controller/install/install',
 ], function(angular) {
 	return ['$locationProvider', '$httpProvider', '$stateProvider', '$provide', function($locationProvider, $httpProvider, $stateProvider, $provide) {
 		$stateProvider.
@@ -76,7 +77,7 @@ define([
 		       	}
 			}).
 
-			
+
 
 
 

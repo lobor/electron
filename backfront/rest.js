@@ -64,23 +64,23 @@ restberry
 restberry
     .routes
 	.addCustomRoute({
-        action: function(req, res, next) {
-			if(!req.session.passport.user){
-				res.status(401);
-				res.json({status: false});
-			}
-			else{
-				res.status(200);
-				res.json({status: true});
-			}
-			next();
-        },
-		path: '/check',
-        apiPath: '/auth',  // overrides the one set on Restberry
-        loginRequired: false,
-        method: 'GET',
-		verbose: false
-    })
+    action: function(req, res, next) {
+      if(!req.session.passport.user){
+        res.status(401);
+        res.json({status: false});
+      }
+      else{
+        res.status(200);
+        res.json({status: true});
+      }
+      next();
+    },
+    path: '/check',
+    apiPath: '/auth',  // overrides the one set on Restberry
+    loginRequired: false,
+    method: 'GET',
+    verbose: false
+  })
     .addCustomRoute({
         action: function(req, res, next) {
             req.session.destroy();

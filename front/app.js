@@ -5,8 +5,9 @@ define([
 	'config/routes',
 	'config/stateRoutes',
 
-	'uiRouter',
 	'crAcl',
+	'uiRouter',
+
 	'angularCookie',
 	'angular-loading-bar',
 	'ng-notify',
@@ -14,7 +15,8 @@ define([
 
 
 
-], function(angular, $routes, $stateRoutes) {
+], function(angular, $routes, $stateRoutes, crAcl) {
+	
 	// Declare app level module which depends on views, and components
 	return angular.module('locloud', [
 		'ui.router',
@@ -28,7 +30,8 @@ define([
 		'locloud.sci',
 		'locloud.bien',
 		'locloud.locataire',
-		'locloud.user'
+		'locloud.user',
+		'locloud.install'
 	]).
 	run($stateRoutes).
 	config($routes).

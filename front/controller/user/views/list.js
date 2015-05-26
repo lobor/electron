@@ -8,13 +8,17 @@ define([
 		$scope.gridUsers = {
 			columnDefs: [
 				{
-					displayName: "Id",
-					field: "id",
+					displayName: "Prénom",
+					field: "prenom",
 				},
 				{
-					displayName: "Utilisateurs",
-					field: "name",
-				}
+					displayName: "Nom",
+					field: "nom",
+				},
+				{
+					displayName: "Email",
+					field: "email",
+				},
 			],
 			rowData: null,
 			rowSelection: 'single',
@@ -24,7 +28,7 @@ define([
 			}
 		};
 
-		$http.get(baseUrl+'/users')
+		$http.get(baseUrl+'/users',{params:{fields:'nom,prenom,email'}})
 			.success(function(data, status, headers, config){
 				$scope.gridUsers.rowData =  data.users;
 				$scope.gridUsers.api.onNewRows();
