@@ -11,44 +11,36 @@ define([
 		$scope.title_form_sci = 'Créer une SCI';
 		$scope.sci = {};
 
+		$scope.onSubmit = Submit;
 
-		$scope.onSubmit = function(form) {
+		function Submit(form) {
     		// First we broadcast an event so all fields validate themselves
     		$scope.$broadcast('schemaFormValidate');
 
     		// Then we check if the form is valid
     		if (form.$valid) {
 				var sciData = angular.extend({},$scope.sci);
-				sciData.associes = [];
+				// sciData.associes = [];
 				sciData.date_immatriculation = moment(sciData.date_immatriculation, 'DD/MM/YYYY');
 				$http
 		      		.post(baseUrl+'/scis', sciData, {withCredentials:true})
 		      		.then(function (data, status, headers, config) {
-						if(data.status){
+						if(data.data.status){
 							ngNotify.set('La SCI a bien été enregistré', 'success');
+						}
+						else{
+							ngNotify.set('Une erreur est apparu', 'error');
 						}
 						return data;
 					}, function (data, status, headers, config) {
 						ngNotify.set('Une erreur est apparu', 'error');
+						return false;
 		      		})
 			      	.then(function (response){
-						$state.go('locloud.sci');
-						console.log(response);
+						if(response.data.status){
+							$state.go('locloud.sci');
+						}
 					});
-
-
-				// $http.
-				//     		post(baseUrl+'/scis', $scope.sci, {withCredentials:true}).
-				//     		success(function (data, status, headers, config) {
-				//
-				// 		if(data.status){
-				// 			ngNotify.set('La SCI a bien été enregistré', 'success');
-				// 			$state.go('locloud.sci');
-				// 		}
-				//     		})
-			    //   	.error(function (data, status, headers, config) {
-				// 		ngNotify.set('Une erreur est apparu', 'error');
-			    //   	});
     		}
 		};
 	}

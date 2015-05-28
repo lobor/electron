@@ -10,13 +10,14 @@ define([
 
 	'angularCookie',
 	'angular-loading-bar',
+	'angular-material',
 	'ng-notify',
 	'angularBootstrapTpl'
 
 
 
-], function(angular, $routes, $stateRoutes, crAcl) {
-	
+], function(angular, $routes, $stateRoutes) {
+
 	// Declare app level module which depends on views, and components
 	return angular.module('locloud', [
 		'ui.router',
@@ -24,6 +25,7 @@ define([
 		'angular-loading-bar',
 		'ngNotify',
 		'mgcrea.ngStrap',
+		'ngMaterial',
 		'locloud.login',
 		'locloud.home',
 		'locloud.menu',

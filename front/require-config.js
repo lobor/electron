@@ -40,7 +40,9 @@ require.config({
 		"angularBootstrapTpl":"bower_components/angular-strap/dist/angular-strap.tpl.min",
 		"angular-animate":"bower_components/angular-animate/angular-animate.min",
 		"schema-form":"bower_components/schema-form-datetimepicker/schema-form-date-time-picker.min",
-		"moment":"bower_components/moment/min/moment-with-locales.min"
+		"moment":"bower_components/moment/min/moment-with-locales.min",
+		"angular-aria":"bower_components/angular-aria/angular-aria.min",
+		"angular-material":"bower_components/angular-material/angular-material.min",
 
 
 
@@ -63,7 +65,9 @@ require.config({
 		'angular-loading-bar': ['angular'],
 		'angularCookie': ['angular'],
 		'ng-notify': ['angular'],
+		'angular-material':['angular', 'angular-aria', 'angular-animate'],
 		'angular-grid': ['angular'],
+		'angular-aria':['angular'],
 		'angular-sanitize': ['angular'],
 		'schema-form': ['angular', 'angular-schema-form'],
 		'angularBootstrapTpl': ['angular', 'angularBootstrap'],

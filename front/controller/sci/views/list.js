@@ -8,10 +8,6 @@ define([
 		$scope.gridOptions = {
 			columnDefs: [
 				{
-					displayName: "Id",
-					field: "_id",
-				},
-				{
 					displayName: "SCI",
 					field: "name",
 				}
@@ -20,13 +16,13 @@ define([
 			rowSelection: 'single',
 			enableSorting: true,
 			rowSelected:function(row){
-				$state.go('locloud.sci.edit',{id:row._id});
+				$state.go('locloud.sci.edit',{id:row.id});
 			}
 		};
 
 		$http.
-			get(baseUrl+'/scis').
-			success(function (data, status, headers, config) {
+			get(baseUrl+'/scis',{params:{fields:'name'}})
+			.success(function (data, status, headers, config) {
 				$scope.gridOptions.rowData =  data.scis;
 				$scope.gridOptions.api.onNewRows();
 			})

@@ -7,8 +7,10 @@
   },
   "dependencies": {
     "acl": "^0.4.7",
+    "bluebird": "^2.9.26",
     "express": "~4.12.2",
     "express-session": "^1.10.4",
+    "moment": "^2.10.3",
     "restberry": "^0.3.23",
     "restberry-auth": "^0.2.1",
     "restberry-auth-local": "^0.2.4",

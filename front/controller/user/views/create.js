@@ -26,14 +26,14 @@ define([
 
 		$scope.title_form_user = 'Créer un utilisateur';
 
-		$scope.onSubmit = function(form) {
+		$scope.onSubmit = Submit;
+
+		function Submit(form){
     		// First we broadcast an event so all fields validate themselves
     		$scope.$broadcast('schemaFormValidate');
 
     		// Then we check if the form is valid
     		if (form.$valid) {
-
-				console.log(3);
 
 				var data = angular.extend({}, $scope.user);
 				delete data.password_confirm;

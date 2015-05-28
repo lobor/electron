@@ -1,0 +1,121 @@
+{
+	"schema": {
+		"type": "object",
+		"properties": {
+			"name": {
+				"type": "string",
+				"title": "Nom de la SCI / Propriétaire",
+				"require":true
+			},
+			"rcs": {
+				"type": "string",
+				"title": "RCS",
+				"require":true
+			},
+			"date_immatriculation": {
+				"type": "string",
+				"format": "date",
+				"title": "Date d'immatriculation",
+				"require":true
+			},
+			"capital": {
+				"type": "number",
+				"title": "Capital Social",
+				"require":true,
+				"validationMessage": {
+		      		"302": "Ce champs est requis"
+			    }
+			},
+			"naf": {
+				"type": "string",
+				"title": "Code NAF",
+				"require":true
+			},
+			"adress": {
+				"type": "string",
+				"title": "N° et rue",
+				"require":true
+			},
+			"cp": {
+				"type": "number",
+				"title": "Code postale",
+				"require":true
+			},
+			"city": {
+				"type": "string",
+				"title": "Ville",
+				"require":true
+			},
+			"nb_part": {
+				"type": "string",
+				"title": "Nombre de parts totals",
+				"require":true
+			}
+		}
+	},
+	"form": [
+		{
+			"type": "section",
+			"htmlClass": "column",
+			"items": [
+				{
+					"key": "name",
+					"placeholder": "",
+					"htmlClass": "col-md row"
+				},
+				{
+						"key": "rcs",
+						"placeholder": "",
+						"htmlClass": "col-md row"
+				},
+				{
+						"key": "date_immatriculation",
+						"placeholder": "yyyy-mm-dd",
+						"htmlClass": "col-md row has-feedback",
+						"format": "yyyy-mm-dd",
+						"type":"datepicker"
+				},
+				{
+						"key": "capital",
+						"placeholder": "",
+						"htmlClass": "col-md row"
+				},
+				{
+						"key": "naf",
+						"placeholder": "",
+						"htmlClass": "col-md row"
+				},
+				{
+						"key": "nb_part",
+						"placeholder": "",
+						"htmlClass": "col-md row"
+				}
+			]
+		},
+		{
+			"type": "section",
+			"htmlClass": "column",
+			"items": [
+				{
+					"key": "adress",
+					"placeholder": "",
+					"htmlClass": "col-md row"
+				},
+				{
+					"key": "cp",
+					"placeholder": "",
+					"htmlClass": "col-md row"
+				},
+				{
+					"key": "city",
+					"placeholder": "",
+					"htmlClass": "col-md row"
+				}
+			]
+		},
+		{
+			"type": "submit",
+			"title": "Save"
+		}
+	]
+}

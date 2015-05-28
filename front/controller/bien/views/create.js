@@ -1,12 +1,13 @@
 'use strict';
 define([
 	'angular',
-], function(angular) {
+	'json!controller/bien/forms/bien.json',
+], function(angular, formBien) {
 	return ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', Create];
 
 	function Create($scope, $http, baseUrl, ngNotify, $state){
-		$scope = angular.extend($scope, formSci);
-		$scope.title_form_sci = 'Créer un bien';
+		$scope = angular.extend($scope, formBien);
+		$scope.title = 'Créer un bien';
 		$scope.sci = {};
 
 
