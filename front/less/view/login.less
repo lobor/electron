@@ -14,15 +14,6 @@ body.login{
     	margin: auto;
     }
 
-    .btn {
-        font-weight: 700;
-        height: 36px;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
-        cursor: default;
-    }
-
     /*
      * Card component
      */
@@ -80,7 +71,6 @@ body.login{
     .form-signin #inputEmail,
     .form-signin #inputPassword {
         direction: ltr;
-        height: 44px;
         font-size: 16px;
     }
 
@@ -106,9 +96,7 @@ body.login{
     }
 
     .btn-signin {
-        /*background-color: #4d90fe; */
         background-color: rgb(104, 145, 162);
-        /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
         padding: 0px;
         font-weight: 700;
         font-size: 14px;
@@ -121,6 +109,7 @@ body.login{
         -moz-transition: all 0.218s;
         -webkit-transition: all 0.218s;
         transition: all 0.218s;
+        margin: 0px;
     }
 
     .btn-signin:hover,
@@ -138,5 +127,7 @@ body.login{
     .forgot-password:focus{
         color: rgb(12, 97, 33);
     }
-
+    md-input-container{
+        padding-bottom: 0px;
+    }
 }

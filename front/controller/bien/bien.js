@@ -6,9 +6,10 @@ define([
 	'controller/bien/views/create',
 	'controller/bien/views/edit',
 	'angular-grid',
-	'bootstrap-decorator',
+	// 'bootstrap-decorator',
 ], function(angular, routes, ListController, CreateController, EditController) {
-	angular.module('locloud.bien', ['angularGrid','schemaForm'])
+	// angular.module('locloud.bien', ['angularGrid','schemaForm'])
+	angular.module('locloud.bien', ['angularGrid'])
 		.config(routes)
 		.controller('BienListController', ListController)
 		.controller('BienCreateController', CreateController)

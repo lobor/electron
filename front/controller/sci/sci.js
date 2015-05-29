@@ -6,7 +6,7 @@ define([
 	'controller/sci/views/list',
 	'controller/sci/views/edit',
 	'angular-grid',
-	'schema-form',
+	'angular-schema-form-material',
 ], function(angular, routesSci, CreateController, ListController, EditController) {
 	angular.module('locloud.sci', ['angularGrid', 'schemaForm', 'schemaForm-datepicker'])
 		.config(routesSci)
