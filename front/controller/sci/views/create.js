@@ -16,15 +16,15 @@ define([
 		function Submit(form) {
     		// First we broadcast an event so all fields validate themselves
     		$scope.$broadcast('schemaFormValidate');
-
     		// Then we check if the form is valid
     		if (form.$valid) {
 				var sciData = angular.extend({},$scope.sci);
+
 				// sciData.associes = [];
-				sciData.date_immatriculation = moment(sciData.date_immatriculation, 'DD/MM/YYYY');
+				sciData.date_immatriculation = moment(sciData.date_immatriculation, 'DD MMMM YYYY', 'fr');
 				$http
-		      		.post(baseUrl+'/scis', sciData, {withCredentials:true})
-		      		.then(function (data, status, headers, config) {
+		    		.post(baseUrl+'/scis', sciData, {withCredentials:true})
+		    		.then(function (data, status, headers, config) {
 						if(data.data.status){
 							ngNotify.set('La SCI a bien été enregistré', 'success');
 						}
@@ -35,7 +35,7 @@ define([
 					}, function (data, status, headers, config) {
 						ngNotify.set('Une erreur est apparu', 'error');
 						return false;
-		      		})
+				    		})
 			      	.then(function (response){
 						if(response.data.status){
 							$state.go('locloud.sci');

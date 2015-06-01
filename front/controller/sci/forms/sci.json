@@ -113,28 +113,29 @@
 			"items": [
 				{
 					"key": "name",
-					"htmlClass": "col-md row"
+					"htmlClass": "col-md row md-default-theme"
 				},
 				{
 						"key": "rcs",
-						"htmlClass": "col-md row"
+						"htmlClass": "col-md row md-default-theme"
 				},
 				{
 						"key": "date_immatriculation",
 						"format": "yyyy-mm-dd",
-						"type":"datepicker"
+						"type":"datepicker",
+						"htmlClass":"md-default-theme"
 				},
 				{
 						"key": "capital",
-						"htmlClass": "col-md row"
+						"htmlClass": "col-md row md-default-theme"
 				},
 				{
 						"key": "naf",
-						"htmlClass": "col-md row"
+						"htmlClass": "col-md row md-default-theme"
 				},
 				{
 						"key": "nb_part",
-						"htmlClass": "col-md row"
+						"htmlClass": "col-md row md-default-theme"
 				}
 			]
 		},
@@ -144,15 +145,15 @@
 			"items": [
 				{
 					"key": "adress",
-					"htmlClass": "col-md row"
+					"htmlClass": "col-md row md-default-theme"
 				},
 				{
 					"key": "cp",
-					"htmlClass": "col-md row"
+					"htmlClass": "col-md row md-default-theme"
 				},
 				{
 					"key": "city",
-					"htmlClass": "col-md row"
+					"htmlClass": "col-md row md-default-theme"
 				}
 			]
 		},
@@ -175,11 +176,11 @@
 							"items": [
 								{
 									"key": "associes[].nom",
-									"htmlClass": "col-md row"
+									"htmlClass": "col-md row md-default-theme"
 								},
 								{
 									"key": "associes[].prenom",
-									"htmlClass": "col-md row"
+									"htmlClass": "col-md row md-default-theme"
 								}
 							]
 						},
@@ -189,15 +190,15 @@
 							"items": [
 								{
 									"key": "associes[].address",
-									"htmlClass": "col-md row"
+									"htmlClass": "col-md row md-default-theme"
 								},
 								{
 									"key": "associes[].cp",
-									"htmlClass": "col-md row"
+									"htmlClass": "col-md row md-default-theme"
 								},
 								{
 									"key": "associes[].city",
-									"htmlClass": "col-md row"
+									"htmlClass": "col-md row md-default-theme"
 								}
 							]
 						},
@@ -208,12 +209,12 @@
 								{
 										"key": "associes[].birthday",
 										"format": "dd-mm-yyyy",
-										"htmlClass": "col-md row has-feedback",
+										"htmlClass": "col-md row md-default-theme",
 										"type":"datepicker"
 								},
 								{
 									"key": "associes[].city_birthday",
-									"htmlClass": "col-md row"
+									"htmlClass": "col-md row md-default-theme"
 								}
 							]
 						},
@@ -223,11 +224,11 @@
 							"items": [
 								{
 									"key": "associes[].np_part",
-									"htmlClass": "col-md row"
+									"htmlClass": "col-md row md-default-theme"
 								},
 								{
 									"key": "associes[].percent_part",
-									"htmlClass": "col-md row"
+									"htmlClass": "col-md row md-default-theme"
 								}
 							]
 						},

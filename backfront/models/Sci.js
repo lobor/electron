@@ -45,44 +45,62 @@ restberry.model('Sci')
     		required: true
     	},
         associes:[{
-            type: restberry.odm.ObjectId,
-            ref: 'Associe'
+            nom: {
+        		type: String,
+        		required: true,
+        	},
+            prenom: {
+        		type: String,
+        		required: true
+        	},
+            address: {
+        		type: String,
+        		required: true
+        	},
+            cp : {
+                type: Number,
+                required: true
+            },
+            city: {
+                type: String,
+                required: true
+            },
+            birthday: {
+                type: Date,
+                required: true
+            },
+            city_birthday: {
+                type: String,
+                required: true
+            },
+            np_part: {
+                type: Number,
+                required: true
+            },
+            percent_part: {
+                type: Number,
+                required: true
+            }
         }]
     })
     .loginRequired()
     .routes
     .addCustomRoute({
         action: function(req, res, next){
+            for(var i = 0; i < req.body.associes.length; i++){
+                req.body.associes[i].birthday = moment(req.body.associes[i].birthday, 'DD MMMM YYYY', 'fr');
+            }
+
             var sci = new restberryMongoose.mongoose.models.Sci(req.body);
+            sci.save(function(err){
+                if(err){
+                    res.json({ status: false, error: err});
+                }
+                else{
+                    res.json({ status: true});
+                }
+            });
 
-        	var promises = req.body.associes.map(function(associe){
-        		associe.sci = sci._id;
-                associe.birthday = moment(associe.birthday, 'DD/MM/YYYY');
-        		return new restberryMongoose.mongoose.models.Associe(associe).save(function(err, dataAssocie){
-                    console.log(dataAssocie)
-        			return dataAssocie;
-        		});
-        	});
-
-        	Promise.props({associes:promises})
-        	.then(function(data){
-                console.log(data.associes)
-        		// for(var i = 0; i < data.associes.length; i++){
-        		// 	sci.associes.push(data.associes[i].emitted.fulfill[0]._id);
-        		// }
-        		// sci.save(function(err){
-                //     if(err){
-                //         res.json({ status: false, error: err});
-                //     }
-                //     else{
-                //         res.json({ status: true});
-                //     }
-                // });
-        	})
-        	.catch(function(error){
-                console.log(arguments);
-        		res.json({ status: false, error:error, catch:true});
-        	}).done();
         },
         path: '/scis',
         loginRequired: true,

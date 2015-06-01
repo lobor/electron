@@ -13,7 +13,7 @@ define([
 	'controller/user/user',
 	'controller/install/install',
 ], function(angular) {
-	return ['$locationProvider', '$httpProvider', '$stateProvider', '$provide', function($locationProvider, $httpProvider, $stateProvider, $provide) {
+	return ['$locationProvider', '$httpProvider', '$stateProvider', '$provide', '$mdThemingProvider', function($locationProvider, $httpProvider, $stateProvider, $provide, $mdThemingProvider) {
 		$stateProvider.
 			state('locloud', {
 				url:'/',
@@ -94,6 +94,8 @@ define([
 		$locationProvider.html5Mode(true);
 		$httpProvider.defaults.useXDomain = true;
 		$httpProvider.defaults.withCredentials = true;
+
+		$mdThemingProvider.alwaysWatchTheme(true);
 
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
