@@ -13,7 +13,7 @@ restberry.model('Sci')
     		}
     	},
         rcs: {
-    		type: Number,
+    		type: String,
     		required: true
     	},
         date_immatriculation: {
@@ -45,8 +45,42 @@ restberry.model('Sci')
     		required: true
     	},
         associes:[{
-            type: restberry.odm.ObjectId,
-            ref: 'Associe'
+            nom: {
+        		type: String,
+        		required: true,
+        	},
+            prenom: {
+        		type: String,
+        		required: true
+        	},
+            address: {
+        		type: String,
+        		required: true
+        	},
+            cp : {
+                type: Number,
+                required: true
+            },
+            city: {
+                type: String,
+                required: true
+            },
+            birthday: {
+                type: Date,
+                required: true
+            },
+            city_birthday: {
+                type: String,
+                required: true
+            },
+            np_part: {
+                type: Number,
+                required: true
+            },
+            percent_part: {
+                type: Number,
+                required: true
+            }
         }]
     })
     .loginRequired()

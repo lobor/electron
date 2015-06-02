@@ -30,10 +30,7 @@ require.config({
 		"angular-sanitize":'bower_components/angular-sanitize/angular-sanitize.min',
 		"ObjectPath":'bower_components/objectpath/lib/ObjectPath',
 		"tv4":'bower_components/tv4/tv4',
-		"bootstrap-decorator":'bower_components/angular-schema-form/dist/bootstrap-decorator',
 		"jquery":'bower_components/jquery/dist/jquery.min',
-		"picker":'bower_components/pickadate/lib/picker',
-		"pickadate":'bower_components/pickadate/lib/picker.date',
 		"ng-notify":'bower_components/ng-notify/dist/ng-notify.min',
 		"crAcl":"bower_components/cr-acl/cr-acl",
 		"angularBootstrap":"bower_components/angular-strap/dist/angular-strap.min",
@@ -43,6 +40,8 @@ require.config({
 		"moment":"bower_components/moment/min/moment-with-locales.min",
 		"angular-aria":"bower_components/angular-aria/angular-aria.min",
 		"angular-material":"bower_components/angular-material/angular-material.min",
+		"angular-schema-form-material":"bower_components/angular-schema-form-material/material-decorator.min",
+		"angular-material-components":"bower_components/angular-material-components/dist/angular-material-components"
 
 
 
@@ -69,17 +68,12 @@ require.config({
 		'angular-grid': ['angular'],
 		'angular-aria':['angular'],
 		'angular-sanitize': ['angular'],
-		'schema-form': ['angular', 'angular-schema-form'],
 		'angularBootstrapTpl': ['angular', 'angularBootstrap'],
 		'angularBootstrap': ['angular', 'angular-animate'],
 		'crAcl': ['angular'],
 		'angular-schema-form'  : ['angular-sanitize', 'ObjectPath', 'tv4'],
-		'bootstrap-decorator'  : ['angular-schema-form'],
-		'picker': ['jquery'],
-		'pickadate': {
-	        deps: ['jquery', 'picker'],
-	        exports: 'DatePicker'
-	    },
+		'angular-schema-form-material'  : ['angular', 'angular-schema-form'],
+		'angular-material-components':['angular', 'jquery', 'moment'],
 		'angularMocks': {
 			deps:['angular'],
 			'exports':'angular.mock'

@@ -1,0 +1,65 @@
+// main: ../app.less
+
+md-input-container{
+	height: auto;
+}
+
+mdc-date-picker{
+	md-input-container.md-default-theme{
+		padding: 0px;
+		label{
+			color: rgba(0, 0, 0, 0.870588);
+		}
+		input{
+			border-bottom-style: inset;
+			&[disabled="disabled"]{
+				background-image: none !important;
+				border-bottom-color: #EEE !important;
+			}
+		}
+	}
+}
+
+.schema-form-datepicker {
+	padding: 5px;
+}
+
+
+.mdc-date-picker__nav button{
+	top: 0px;
+}
+
+.mdc-date-picker__day a{
+	font-size: 12px;
+}
+
+.mdc-date-picker__days-of-week span {
+	font-size: 12px;
+}
+
+.mdc-date-picker__current-day-of-week span {
+	font-size: 14px;
+}
+
+.md-button.md-fab {
+	line-height: 0;
+}
+
+.mdc-date-picker__nav span {
+	font-size: 14px;
+}
+
+.mdc-date-picker__current-date span, .mdc-date-picker__current-date a {
+	font-size: 24px;
+	color: white;
+}
+.mdc-date-picker__year span {
+	font-size: 16px;
+}
+
+md-bottom-sheet{
+	.md-grid-item-content{
+		height: 100%;
+		font-size: 30px;
+	}
+}

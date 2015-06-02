@@ -16,28 +16,31 @@ define([
 		function Submit(form) {
     		// First we broadcast an event so all fields validate themselves
     		$scope.$broadcast('schemaFormValidate');
-
-    		// Then we check if the form is valid
     		if (form.$valid) {
 				var sciData = angular.extend({},$scope.sci);
-				// sciData.associes = [];
-				sciData.date_immatriculation = moment(sciData.date_immatriculation, 'DD/MM/YYYY');
+				sciData.date_immatriculation = moment(sciData.date_immatriculation, 'DD MMMM YYYY');
+
+				angular.forEach(sciData.associes, function(associe, key){
+					sciData.associes[key].birthday = moment(associe.birthday, 'DD MMMM YYYY');
+
+				});
+
 				$http
-		      		.post(baseUrl+'/scis', sciData, {withCredentials:true})
-		      		.then(function (data, status, headers, config) {
-						if(data.data.status){
-							ngNotify.set('La SCI a bien été enregistré', 'success');
-						}
-						else{
+		    		.post(baseUrl+'/scis', sciData)
+		    		.then(function (data, status, headers, config) {
+							if(data.data.sci){
+								ngNotify.set('La SCI a bien été enregistré', 'success');
+							}
+							else{
+								ngNotify.set('Une erreur est apparu', 'error');
+							}
+							return data;
+						}, function (data, status, headers, config) {
 							ngNotify.set('Une erreur est apparu', 'error');
-						}
-						return data;
-					}, function (data, status, headers, config) {
-						ngNotify.set('Une erreur est apparu', 'error');
-						return false;
-		      		})
+							return false;
+			    		})
 			      	.then(function (response){
-						if(response.data.status){
+						if(response.data.sci){
 							$state.go('locloud.sci');
 						}
 					});

@@ -3,7 +3,6 @@ define([
 	'angular',
 	'json!controller/Locataire/forms/addSci.json',
 	'angular-grid',
-	'bootstrap-decorator',
 	'ng-notify',
 ], function(angular, formSci) {
 	angular.module('locloud.locataire', ['ui.router','angularGrid','schemaForm', 'ngNotify'])

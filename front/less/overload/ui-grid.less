@@ -13,6 +13,9 @@
 			&:last-child{
 				border-right: 0px;
 			}
+			&[style="width: 88px;"]{
+				flex: initial;
+			}
 		}
 	}
 	.ag-body-container{
@@ -23,6 +26,16 @@
 				flex: 1;
 				&:last-child{
 					border-right: 0px;
+				}
+				.md-button{
+					margin: 0px;
+					min-height: initial;
+					line-height: 30px;
+				}
+				&.colButton{
+					min-width: 88px;
+					max-width: 88px;
+					padding: 0px;
 				}
 			}
 		}
