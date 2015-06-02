@@ -49,7 +49,7 @@ define([
 		.module("schemaForm")
 		.run(["$templateCache", function($templateCache) {
 			$templateCache.put("directives/decorators/materialDesign/datepicker.html","<md-input-container class=\"schema-form-{{form.type}} {{form.htmlClass}}\">  <mdc-date-picker  aria-label model=\"$$value$$\" label=\"{{form.title}}\" locale=\"fr\" dialog-md-theme=\"datePickerTheme\"/>  </md-input-container>\n");
-			$templateCache.put("decorators/material/select.html","<md-select ng-model=\"$$value$$\" placeholder=\"{{form.title}}\" name=\"{{form.key.slice(-1)[0]}}\"><md-option ng-repeat=\"item.value as item.name group by item.group for item in form.titleMap\" value=\"{{item.value}}\">{{item.name}}</md-option></md-select>");
+			$templateCache.put("decorators/material/select.html","<md-select ng-model=\"$$value$$\" placeholder=\"{{form.title}}\" ><md-option ng-repeat=\"item in form.titleMap\" value=\"{{item.value}}\">{{item.name}}</md-option></md-select>");
 		}]);
 
 	angular
