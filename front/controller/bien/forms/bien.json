@@ -2,36 +2,17 @@
 	"schema": {
 		"type": "object",
 		"properties": {
-			"name": {
+			"type": {
 				"type": "string",
-				"title": "Nom de la SCI / Propriétaire",
+				"title": "Type du bien",
 				"require":true
 			},
-			"rcs": {
+			"identifiant": {
 				"type": "string",
-				"title": "RCS",
+				"title": "Identifiant",
 				"require":true
 			},
-			"date_immatriculation": {
-				"type": "string",
-				"format": "date",
-				"title": "Date d'immatriculation",
-				"require":true
-			},
-			"capital": {
-				"type": "number",
-				"title": "Capital Social",
-				"require":true,
-				"validationMessage": {
-		      		"302": "Ce champs est requis"
-			    }
-			},
-			"naf": {
-				"type": "string",
-				"title": "Code NAF",
-				"require":true
-			},
-			"adress": {
+			"address": {
 				"type": "string",
 				"title": "N° et rue",
 				"require":true
@@ -46,9 +27,29 @@
 				"title": "Ville",
 				"require":true
 			},
-			"nb_part": {
+			"surface": {
+				"type": "number",
+				"title": "Surface",
+				"require":true
+			},
+			"nb_piece": {
+				"type": "number",
+				"title": "Nombre de pièces",
+				"require":true
+			},
+			"description": {
 				"type": "string",
-				"title": "Nombre de parts totals",
+				"title": "Description",
+				"require":true
+			},
+			"note": {
+				"type": "string",
+				"title": "Note",
+				"require":true
+			},
+			"photo": {
+				"type": "string",
+				"title": "Les photos",
 				"require":true
 			}
 		}
@@ -59,36 +60,31 @@
 			"htmlClass": "column",
 			"items": [
 				{
-					"key": "name",
-					"placeholder": "",
+					"key": "type",
+					"htmlClass": "col-md row",
+					"type":"select",
+					"titleMap": [
+				    	{
+							"value": "yes",
+							"name": "Yes I do"
+						},
+				    	{
+							"value": "no",
+							"name": "Hell no"
+						}
+				  	]
+				},
+				{
+					"key": "identifiant",
 					"htmlClass": "col-md row"
 				},
 				{
-						"key": "rcs",
-						"placeholder": "",
-						"htmlClass": "col-md row"
+					"key": "surface",
+					"htmlClass": "col-md row "
 				},
 				{
-						"key": "date_immatriculation",
-						"placeholder": "yyyy-mm-dd",
-						"htmlClass": "col-md row has-feedback",
-						"format": "yyyy-mm-dd",
-						"type":"datepicker"
-				},
-				{
-						"key": "capital",
-						"placeholder": "",
-						"htmlClass": "col-md row"
-				},
-				{
-						"key": "naf",
-						"placeholder": "",
-						"htmlClass": "col-md row"
-				},
-				{
-						"key": "nb_part",
-						"placeholder": "",
-						"htmlClass": "col-md row"
+					"key": "nb_piece",
+					"htmlClass": "col-md row"
 				}
 			]
 		},
@@ -97,19 +93,43 @@
 			"htmlClass": "column",
 			"items": [
 				{
-					"key": "adress",
-					"placeholder": "",
+					"key": "description",
+					"htmlClass": "col-md row",
+					"type":"textarea"
+				},
+				{
+					"key": "note",
+					"htmlClass": "col-md row",
+					"type":"textarea"
+				}
+			]
+		},
+		{
+			"type": "section",
+			"htmlClass": "column",
+			"items": [
+				{
+					"key": "address",
 					"htmlClass": "col-md row"
 				},
 				{
 					"key": "cp",
-					"placeholder": "",
 					"htmlClass": "col-md row"
 				},
 				{
 					"key": "city",
-					"placeholder": "",
 					"htmlClass": "col-md row"
+				}
+			]
+		},
+		{
+			"type": "section",
+			"htmlClass": "column",
+			"items": [
+				{
+					"key": "photo",
+					"htmlClass": "col-md row",
+					"type":"textarea"
 				}
 			]
 		},

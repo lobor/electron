@@ -231,13 +231,6 @@
 									"htmlClass": "col-md row md-default-theme"
 								}
 							]
-						},
-						{
-							"type": "button",
-							"title": "Supprimer",
-							"style": "btn btn-danger",
-							"key": "associes[]._id",
-							"onClick":"deleteUser(modelValue,form)"
 						}
 					]
 				}

@@ -13,7 +13,7 @@ restberry.model('Sci')
     		}
     	},
         rcs: {
-    		type: Number,
+    		type: String,
     		required: true
     	},
         date_immatriculation: {
@@ -85,25 +85,4 @@ restberry.model('Sci')
     })
     .loginRequired()
     .routes
-    .addCustomRoute({
-        action: function(req, res, next){
-            for(var i = 0; i < req.body.associes.length; i++){
-                req.body.associes[i].birthday = moment(req.body.associes[i].birthday, 'DD MMMM YYYY', 'fr');
-            }
-
-            var sci = new restberryMongoose.mongoose.models.Sci(req.body);
-            sci.save(function(err){
-                if(err){
-                    res.json({ status: false, error: err});
-                }
-                else{
-                    res.json({ status: true});
-                }
-            });
-
-        },
-        path: '/scis',
-        loginRequired: true,
-        method: 'POST'
-    })
     .addCRUDRoutes();

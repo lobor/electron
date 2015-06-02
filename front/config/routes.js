@@ -14,6 +14,8 @@ define([
 	'controller/install/install',
 ], function(angular) {
 	return ['$locationProvider', '$httpProvider', '$stateProvider', '$provide', '$mdThemingProvider', function($locationProvider, $httpProvider, $stateProvider, $provide, $mdThemingProvider) {
+		// console.log(ngMaterialProvider);
+
 		$stateProvider.
 			state('locloud', {
 				url:'/',
