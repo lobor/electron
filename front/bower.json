@@ -46,7 +46,8 @@
     "angular-schema-form-material": "https://github.com/Textalk/angular-schema-form-material.git",
     "md-date-time": "~0.0.14",
     "angular-material-components": "~0.0.1",
-    "MaterialDesign": "https://github.com/Templarian/MaterialDesign.git"
+    "MaterialDesign": "https://github.com/Templarian/MaterialDesign.git",
+    "schema-form-file-upload": "chengz/schema-form-file-upload"
   },
   "resolutions": {
     "font-awesome": "~4.3.0",

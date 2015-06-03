@@ -48,9 +48,9 @@
 				"require":true
 			},
 			"photo": {
-				"type": "string",
-				"title": "Les photos",
-				"require":true
+				"type":"object",
+				"format":"file_upload",
+				"title": "Les photos"
 			}
 		}
 	},
@@ -65,12 +65,20 @@
 					"type":"select",
 					"titleMap": [
 				    	{
-							"value": "yes",
-							"name": "Yes I do"
+							"value": "Appartement",
+							"name": "Appartement"
 						},
 				    	{
-							"value": "no",
-							"name": "Hell no"
+							"value": "Maison",
+							"name": "Maison"
+						},
+				    	{
+							"value": "Local commercial",
+							"name": "Local commercial"
+						},
+				    	{
+							"value": "Box",
+							"name": "Box"
 						}
 				  	]
 				},
@@ -128,8 +136,17 @@
 			"items": [
 				{
 					"key": "photo",
-					"htmlClass": "col-md row",
-					"type":"textarea"
+					"uploadOptions": {
+		         		"backdrop": true,
+	         			"modal": {
+		           			"uploadStarted": "$scope.uploadStarted",
+		           			"flow": {
+		             			"imageOnly": true,
+		             			"dropEnabled": true,
+		             			"fileSuccess": "success"
+		           			}
+	         			}
+       				}
 				}
 			]
 		},

@@ -41,7 +41,9 @@ require.config({
 		"angular-aria":"bower_components/angular-aria/angular-aria.min",
 		"angular-material":"bower_components/angular-material/angular-material.min",
 		"angular-schema-form-material":"bower_components/angular-schema-form-material/material-decorator.min",
-		"angular-material-components":"bower_components/angular-material-components/dist/angular-material-components"
+		"angular-material-components":"bower_components/angular-material-components/dist/angular-material-components",
+		"schema-form-file-upload":"bower_components/schema-form-file-upload/schema-form-file-upload",
+		"ng-flow":"bower_components/ng-flow/dist/ng-flow-standalone"
 
 
 
@@ -72,8 +74,10 @@ require.config({
 		'angularBootstrap': ['angular', 'angular-animate'],
 		'crAcl': ['angular'],
 		'angular-schema-form'  : ['angular-sanitize', 'ObjectPath', 'tv4'],
-		'angular-schema-form-material'  : ['angular', 'angular-schema-form'],
+		'angular-schema-form-material'  : ['angular', 'angular-schema-form', 'schema-form-file-upload'],
 		'angular-material-components':['angular', 'jquery', 'moment'],
+		'schema-form-file-upload':['ng-flow', 'angular', 'angular-schema-form'],
+		'ng-flow':['angular'],
 		'angularMocks': {
 			deps:['angular'],
 			'exports':'angular.mock'

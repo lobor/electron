@@ -8,7 +8,7 @@ define([
 	'angular-grid',
 	'angular-schema-form-material',
 ], function(angular, routes, ListController, CreateController, EditController) {
-	angular.module('locloud.bien', ['angularGrid', 'schemaForm', 'ngMaterial'])
+	angular.module('locloud.bien', ['angularGrid', 'schemaForm', 'schemaForm-file-upload', 'ngMaterial'])
 		.config(routes)
 		.controller('BienListController', ListController)
 		.controller('BienCreateController', CreateController)
