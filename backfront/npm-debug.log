@@ -1,0 +1,1274 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/usr/local/zend/apache2/htdocs/locloud/backfront',
+5 verbose install   [ 'acl',
+5 verbose install     'bluebird',
+5 verbose install     'express',
+5 verbose install     'express-session',
+5 verbose install     'moment',
+5 verbose install     'restberry',
+5 verbose install     'restberry-auth',
+5 verbose install     'restberry-auth-local',
+5 verbose install     'restberry-express',
+5 verbose install     'restberry-mongoose',
+5 verbose install     'underscore' ] ]
+6 info preinstall backfront@0.0.0
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'acl@^0.4.7', null ]
+9 verbose cache add name=undefined spec="acl@^0.4.7" args=["acl@^0.4.7",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'acl@^0.4.7',
+10 verbose parsed url   path: 'acl@^0.4.7',
+10 verbose parsed url   href: 'acl@^0.4.7' }
+11 verbose cache add [ 'bluebird@^2.9.26', null ]
+12 verbose cache add name=undefined spec="bluebird@^2.9.26" args=["bluebird@^2.9.26",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'bluebird@^2.9.26',
+13 verbose parsed url   path: 'bluebird@^2.9.26',
+13 verbose parsed url   href: 'bluebird@^2.9.26' }
+14 verbose cache add [ 'express@~4.12.2', null ]
+15 verbose cache add name=undefined spec="express@~4.12.2" args=["express@~4.12.2",null]
+16 verbose parsed url { protocol: null,
+16 verbose parsed url   slashes: null,
+16 verbose parsed url   auth: null,
+16 verbose parsed url   host: null,
+16 verbose parsed url   port: null,
+16 verbose parsed url   hostname: null,
+16 verbose parsed url   hash: null,
+16 verbose parsed url   search: null,
+16 verbose parsed url   query: null,
+16 verbose parsed url   pathname: 'express@~4.12.2',
+16 verbose parsed url   path: 'express@~4.12.2',
+16 verbose parsed url   href: 'express@~4.12.2' }
+17 verbose cache add [ 'express-session@^1.10.4', null ]
+18 verbose cache add name=undefined spec="express-session@^1.10.4" args=["express-session@^1.10.4",null]
+19 verbose parsed url { protocol: null,
+19 verbose parsed url   slashes: null,
+19 verbose parsed url   auth: null,
+19 verbose parsed url   host: null,
+19 verbose parsed url   port: null,
+19 verbose parsed url   hostname: null,
+19 verbose parsed url   hash: null,
+19 verbose parsed url   search: null,
+19 verbose parsed url   query: null,
+19 verbose parsed url   pathname: 'express-session@^1.10.4',
+19 verbose parsed url   path: 'express-session@^1.10.4',
+19 verbose parsed url   href: 'express-session@^1.10.4' }
+20 verbose cache add [ 'moment@^2.10.3', null ]
+21 verbose cache add name=undefined spec="moment@^2.10.3" args=["moment@^2.10.3",null]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: 'moment@^2.10.3',
+22 verbose parsed url   path: 'moment@^2.10.3',
+22 verbose parsed url   href: 'moment@^2.10.3' }
+23 verbose cache add name="acl" spec="^0.4.7" args=["acl","^0.4.7"]
+24 verbose parsed url { protocol: null,
+24 verbose parsed url   slashes: null,
+24 verbose parsed url   auth: null,
+24 verbose parsed url   host: null,
+24 verbose parsed url   port: null,
+24 verbose parsed url   hostname: null,
+24 verbose parsed url   hash: null,
+24 verbose parsed url   search: null,
+24 verbose parsed url   query: null,
+24 verbose parsed url   pathname: '^0.4.7',
+24 verbose parsed url   path: '^0.4.7',
+24 verbose parsed url   href: '^0.4.7' }
+25 verbose addNamed [ 'acl', '^0.4.7' ]
+26 verbose addNamed [ null, '>=0.4.7-0 <0.5.0-0' ]
+27 verbose cache add name="bluebird" spec="^2.9.26" args=["bluebird","^2.9.26"]
+28 verbose parsed url { protocol: null,
+28 verbose parsed url   slashes: null,
+28 verbose parsed url   auth: null,
+28 verbose parsed url   host: null,
+28 verbose parsed url   port: null,
+28 verbose parsed url   hostname: null,
+28 verbose parsed url   hash: null,
+28 verbose parsed url   search: null,
+28 verbose parsed url   query: null,
+28 verbose parsed url   pathname: '^2.9.26',
+28 verbose parsed url   path: '^2.9.26',
+28 verbose parsed url   href: '^2.9.26' }
+29 verbose addNamed [ 'bluebird', '^2.9.26' ]
+30 verbose addNamed [ null, '>=2.9.26-0 <3.0.0-0' ]
+31 verbose cache add name="express" spec="~4.12.2" args=["express","~4.12.2"]
+32 verbose parsed url { protocol: null,
+32 verbose parsed url   slashes: null,
+32 verbose parsed url   auth: null,
+32 verbose parsed url   host: null,
+32 verbose parsed url   port: null,
+32 verbose parsed url   hostname: null,
+32 verbose parsed url   hash: null,
+32 verbose parsed url   search: null,
+32 verbose parsed url   query: null,
+32 verbose parsed url   pathname: '~4.12.2',
+32 verbose parsed url   path: '~4.12.2',
+32 verbose parsed url   href: '~4.12.2' }
+33 verbose addNamed [ 'express', '~4.12.2' ]
+34 verbose addNamed [ null, '>=4.12.2-0 <4.13.0-0' ]
+35 verbose cache add name="express-session" spec="^1.10.4" args=["express-session","^1.10.4"]
+36 verbose parsed url { protocol: null,
+36 verbose parsed url   slashes: null,
+36 verbose parsed url   auth: null,
+36 verbose parsed url   host: null,
+36 verbose parsed url   port: null,
+36 verbose parsed url   hostname: null,
+36 verbose parsed url   hash: null,
+36 verbose parsed url   search: null,
+36 verbose parsed url   query: null,
+36 verbose parsed url   pathname: '^1.10.4',
+36 verbose parsed url   path: '^1.10.4',
+36 verbose parsed url   href: '^1.10.4' }
+37 verbose addNamed [ 'express-session', '^1.10.4' ]
+38 verbose addNamed [ null, '>=1.10.4-0 <2.0.0-0' ]
+39 verbose cache add [ 'restberry@^0.3.23', null ]
+40 verbose cache add name=undefined spec="restberry@^0.3.23" args=["restberry@^0.3.23",null]
+41 verbose parsed url { protocol: null,
+41 verbose parsed url   slashes: null,
+41 verbose parsed url   auth: null,
+41 verbose parsed url   host: null,
+41 verbose parsed url   port: null,
+41 verbose parsed url   hostname: null,
+41 verbose parsed url   hash: null,
+41 verbose parsed url   search: null,
+41 verbose parsed url   query: null,
+41 verbose parsed url   pathname: 'restberry@^0.3.23',
+41 verbose parsed url   path: 'restberry@^0.3.23',
+41 verbose parsed url   href: 'restberry@^0.3.23' }
+42 verbose cache add [ 'restberry-auth@^0.2.1', null ]
+43 verbose cache add name=undefined spec="restberry-auth@^0.2.1" args=["restberry-auth@^0.2.1",null]
+44 verbose parsed url { protocol: null,
+44 verbose parsed url   slashes: null,
+44 verbose parsed url   auth: null,
+44 verbose parsed url   host: null,
+44 verbose parsed url   port: null,
+44 verbose parsed url   hostname: null,
+44 verbose parsed url   hash: null,
+44 verbose parsed url   search: null,
+44 verbose parsed url   query: null,
+44 verbose parsed url   pathname: 'restberry-auth@^0.2.1',
+44 verbose parsed url   path: 'restberry-auth@^0.2.1',
+44 verbose parsed url   href: 'restberry-auth@^0.2.1' }
+45 verbose cache add [ 'restberry-auth-local@^0.2.4', null ]
+46 verbose cache add name=undefined spec="restberry-auth-local@^0.2.4" args=["restberry-auth-local@^0.2.4",null]
+47 verbose parsed url { protocol: null,
+47 verbose parsed url   slashes: null,
+47 verbose parsed url   auth: null,
+47 verbose parsed url   host: null,
+47 verbose parsed url   port: null,
+47 verbose parsed url   hostname: null,
+47 verbose parsed url   hash: null,
+47 verbose parsed url   search: null,
+47 verbose parsed url   query: null,
+47 verbose parsed url   pathname: 'restberry-auth-local@^0.2.4',
+47 verbose parsed url   path: 'restberry-auth-local@^0.2.4',
+47 verbose parsed url   href: 'restberry-auth-local@^0.2.4' }
+48 verbose cache add [ 'restberry-express@^4.12.1', null ]
+49 verbose cache add name=undefined spec="restberry-express@^4.12.1" args=["restberry-express@^4.12.1",null]
+50 verbose parsed url { protocol: null,
+50 verbose parsed url   slashes: null,
+50 verbose parsed url   auth: null,
+50 verbose parsed url   host: null,
+50 verbose parsed url   port: null,
+50 verbose parsed url   hostname: null,
+50 verbose parsed url   hash: null,
+50 verbose parsed url   search: null,
+50 verbose parsed url   query: null,
+50 verbose parsed url   pathname: 'restberry-express@^4.12.1',
+50 verbose parsed url   path: 'restberry-express@^4.12.1',
+50 verbose parsed url   href: 'restberry-express@^4.12.1' }
+51 verbose cache add name="moment" spec="^2.10.3" args=["moment","^2.10.3"]
+52 verbose parsed url { protocol: null,
+52 verbose parsed url   slashes: null,
+52 verbose parsed url   auth: null,
+52 verbose parsed url   host: null,
+52 verbose parsed url   port: null,
+52 verbose parsed url   hostname: null,
+52 verbose parsed url   hash: null,
+52 verbose parsed url   search: null,
+52 verbose parsed url   query: null,
+52 verbose parsed url   pathname: '^2.10.3',
+52 verbose parsed url   path: '^2.10.3',
+52 verbose parsed url   href: '^2.10.3' }
+53 verbose addNamed [ 'moment', '^2.10.3' ]
+54 verbose addNamed [ null, '>=2.10.3-0 <3.0.0-0' ]
+55 silly lockFile 6d4e21de-acl-0-4-7 acl@^0.4.7
+56 verbose lock acl@^0.4.7 /Users/lionelbertrand/.npm/6d4e21de-acl-0-4-7.lock
+57 silly lockFile 4efe5d86-bluebird-2-9-26 bluebird@^2.9.26
+58 verbose lock bluebird@^2.9.26 /Users/lionelbertrand/.npm/4efe5d86-bluebird-2-9-26.lock
+59 silly lockFile 702f5120-express-4-12-2 express@~4.12.2
+60 verbose lock express@~4.12.2 /Users/lionelbertrand/.npm/702f5120-express-4-12-2.lock
+61 silly lockFile 77677783-express-session-1-10-4 express-session@^1.10.4
+62 verbose lock express-session@^1.10.4 /Users/lionelbertrand/.npm/77677783-express-session-1-10-4.lock
+63 silly lockFile 84b73f9b-moment-2-10-3 moment@^2.10.3
+64 verbose lock moment@^2.10.3 /Users/lionelbertrand/.npm/84b73f9b-moment-2-10-3.lock
+65 verbose cache add name="restberry" spec="^0.3.23" args=["restberry","^0.3.23"]
+66 verbose parsed url { protocol: null,
+66 verbose parsed url   slashes: null,
+66 verbose parsed url   auth: null,
+66 verbose parsed url   host: null,
+66 verbose parsed url   port: null,
+66 verbose parsed url   hostname: null,
+66 verbose parsed url   hash: null,
+66 verbose parsed url   search: null,
+66 verbose parsed url   query: null,
+66 verbose parsed url   pathname: '^0.3.23',
+66 verbose parsed url   path: '^0.3.23',
+66 verbose parsed url   href: '^0.3.23' }
+67 verbose addNamed [ 'restberry', '^0.3.23' ]
+68 verbose addNamed [ null, '>=0.3.23-0 <0.4.0-0' ]
+69 silly lockFile 154be676-restberry-0-3-23 restberry@^0.3.23
+70 verbose lock restberry@^0.3.23 /Users/lionelbertrand/.npm/154be676-restberry-0-3-23.lock
+71 verbose cache add name="restberry-auth" spec="^0.2.1" args=["restberry-auth","^0.2.1"]
+72 verbose parsed url { protocol: null,
+72 verbose parsed url   slashes: null,
+72 verbose parsed url   auth: null,
+72 verbose parsed url   host: null,
+72 verbose parsed url   port: null,
+72 verbose parsed url   hostname: null,
+72 verbose parsed url   hash: null,
+72 verbose parsed url   search: null,
+72 verbose parsed url   query: null,
+72 verbose parsed url   pathname: '^0.2.1',
+72 verbose parsed url   path: '^0.2.1',
+72 verbose parsed url   href: '^0.2.1' }
+73 verbose addNamed [ 'restberry-auth', '^0.2.1' ]
+74 verbose addNamed [ null, '>=0.2.1-0 <0.3.0-0' ]
+75 silly lockFile 66feb297-restberry-auth-0-2-1 restberry-auth@^0.2.1
+76 verbose lock restberry-auth@^0.2.1 /Users/lionelbertrand/.npm/66feb297-restberry-auth-0-2-1.lock
+77 verbose cache add name="restberry-auth-local" spec="^0.2.4" args=["restberry-auth-local","^0.2.4"]
+78 verbose parsed url { protocol: null,
+78 verbose parsed url   slashes: null,
+78 verbose parsed url   auth: null,
+78 verbose parsed url   host: null,
+78 verbose parsed url   port: null,
+78 verbose parsed url   hostname: null,
+78 verbose parsed url   hash: null,
+78 verbose parsed url   search: null,
+78 verbose parsed url   query: null,
+78 verbose parsed url   pathname: '^0.2.4',
+78 verbose parsed url   path: '^0.2.4',
+78 verbose parsed url   href: '^0.2.4' }
+79 verbose addNamed [ 'restberry-auth-local', '^0.2.4' ]
+80 verbose addNamed [ null, '>=0.2.4-0 <0.3.0-0' ]
+81 silly lockFile 08995c55-restberry-auth-local-0-2-4 restberry-auth-local@^0.2.4
+82 verbose lock restberry-auth-local@^0.2.4 /Users/lionelbertrand/.npm/08995c55-restberry-auth-local-0-2-4.lock
+83 verbose cache add [ 'restberry-mongoose@^3.8.0', null ]
+84 verbose cache add name=undefined spec="restberry-mongoose@^3.8.0" args=["restberry-mongoose@^3.8.0",null]
+85 verbose parsed url { protocol: null,
+85 verbose parsed url   slashes: null,
+85 verbose parsed url   auth: null,
+85 verbose parsed url   host: null,
+85 verbose parsed url   port: null,
+85 verbose parsed url   hostname: null,
+85 verbose parsed url   hash: null,
+85 verbose parsed url   search: null,
+85 verbose parsed url   query: null,
+85 verbose parsed url   pathname: 'restberry-mongoose@^3.8.0',
+85 verbose parsed url   path: 'restberry-mongoose@^3.8.0',
+85 verbose parsed url   href: 'restberry-mongoose@^3.8.0' }
+86 verbose cache add [ 'underscore@^1.8.3', null ]
+87 verbose cache add name=undefined spec="underscore@^1.8.3" args=["underscore@^1.8.3",null]
+88 verbose parsed url { protocol: null,
+88 verbose parsed url   slashes: null,
+88 verbose parsed url   auth: null,
+88 verbose parsed url   host: null,
+88 verbose parsed url   port: null,
+88 verbose parsed url   hostname: null,
+88 verbose parsed url   hash: null,
+88 verbose parsed url   search: null,
+88 verbose parsed url   query: null,
+88 verbose parsed url   pathname: 'underscore@^1.8.3',
+88 verbose parsed url   path: 'underscore@^1.8.3',
+88 verbose parsed url   href: 'underscore@^1.8.3' }
+89 verbose cache add name="restberry-express" spec="^4.12.1" args=["restberry-express","^4.12.1"]
+90 verbose parsed url { protocol: null,
+90 verbose parsed url   slashes: null,
+90 verbose parsed url   auth: null,
+90 verbose parsed url   host: null,
+90 verbose parsed url   port: null,
+90 verbose parsed url   hostname: null,
+90 verbose parsed url   hash: null,
+90 verbose parsed url   search: null,
+90 verbose parsed url   query: null,
+90 verbose parsed url   pathname: '^4.12.1',
+90 verbose parsed url   path: '^4.12.1',
+90 verbose parsed url   href: '^4.12.1' }
+91 verbose addNamed [ 'restberry-express', '^4.12.1' ]
+92 verbose addNamed [ null, '>=4.12.1-0 <5.0.0-0' ]
+93 silly lockFile 34f19d0a-restberry-express-4-12-1 restberry-express@^4.12.1
+94 verbose lock restberry-express@^4.12.1 /Users/lionelbertrand/.npm/34f19d0a-restberry-express-4-12-1.lock
+95 verbose cache add name="restberry-mongoose" spec="^3.8.0" args=["restberry-mongoose","^3.8.0"]
+96 verbose parsed url { protocol: null,
+96 verbose parsed url   slashes: null,
+96 verbose parsed url   auth: null,
+96 verbose parsed url   host: null,
+96 verbose parsed url   port: null,
+96 verbose parsed url   hostname: null,
+96 verbose parsed url   hash: null,
+96 verbose parsed url   search: null,
+96 verbose parsed url   query: null,
+96 verbose parsed url   pathname: '^3.8.0',
+96 verbose parsed url   path: '^3.8.0',
+96 verbose parsed url   href: '^3.8.0' }
+97 verbose addNamed [ 'restberry-mongoose', '^3.8.0' ]
+98 verbose addNamed [ null, '>=3.8.0-0 <4.0.0-0' ]
+99 silly lockFile 80feefd8-restberry-mongoose-3-8-0 restberry-mongoose@^3.8.0
+100 verbose lock restberry-mongoose@^3.8.0 /Users/lionelbertrand/.npm/80feefd8-restberry-mongoose-3-8-0.lock
+101 verbose cache add name="underscore" spec="^1.8.3" args=["underscore","^1.8.3"]
+102 verbose parsed url { protocol: null,
+102 verbose parsed url   slashes: null,
+102 verbose parsed url   auth: null,
+102 verbose parsed url   host: null,
+102 verbose parsed url   port: null,
+102 verbose parsed url   hostname: null,
+102 verbose parsed url   hash: null,
+102 verbose parsed url   search: null,
+102 verbose parsed url   query: null,
+102 verbose parsed url   pathname: '^1.8.3',
+102 verbose parsed url   path: '^1.8.3',
+102 verbose parsed url   href: '^1.8.3' }
+103 verbose addNamed [ 'underscore', '^1.8.3' ]
+104 verbose addNamed [ null, '>=1.8.3-0 <2.0.0-0' ]
+105 silly lockFile 763d0bdd-underscore-1-8-3 underscore@^1.8.3
+106 verbose lock underscore@^1.8.3 /Users/lionelbertrand/.npm/763d0bdd-underscore-1-8-3.lock
+107 silly addNameRange { name: 'acl', range: '>=0.4.7-0 <0.5.0-0', hasData: false }
+108 silly addNameRange { name: 'bluebird',
+108 silly addNameRange   range: '>=2.9.26-0 <3.0.0-0',
+108 silly addNameRange   hasData: false }
+109 silly addNameRange { name: 'express',
+109 silly addNameRange   range: '>=4.12.2-0 <4.13.0-0',
+109 silly addNameRange   hasData: false }
+110 silly addNameRange { name: 'moment', range: '>=2.10.3-0 <3.0.0-0', hasData: false }
+111 silly addNameRange { name: 'restberry-auth',
+111 silly addNameRange   range: '>=0.2.1-0 <0.3.0-0',
+111 silly addNameRange   hasData: false }
+112 silly addNameRange { name: 'restberry',
+112 silly addNameRange   range: '>=0.3.23-0 <0.4.0-0',
+112 silly addNameRange   hasData: false }
+113 silly addNameRange { name: 'express-session',
+113 silly addNameRange   range: '>=1.10.4-0 <2.0.0-0',
+113 silly addNameRange   hasData: false }
+114 silly addNameRange { name: 'restberry-auth-local',
+114 silly addNameRange   range: '>=0.2.4-0 <0.3.0-0',
+114 silly addNameRange   hasData: false }
+115 verbose request where is /moment
+116 verbose request registry https://registry.npmjs.org/
+117 verbose request id 02f19e8335601f23
+118 verbose url raw /moment
+119 verbose url resolving [ 'https://registry.npmjs.org/', './moment' ]
+120 verbose url resolved https://registry.npmjs.org/moment
+121 verbose request where is https://registry.npmjs.org/moment
+122 info trying registry request attempt 1 at 15:37:19
+123 http GET https://registry.npmjs.org/moment
+124 silly addNameRange { name: 'restberry-express',
+124 silly addNameRange   range: '>=4.12.1-0 <5.0.0-0',
+124 silly addNameRange   hasData: false }
+125 verbose request where is /restberry-auth
+126 verbose request registry https://registry.npmjs.org/
+127 verbose url raw /restberry-auth
+128 verbose url resolving [ 'https://registry.npmjs.org/', './restberry-auth' ]
+129 verbose url resolved https://registry.npmjs.org/restberry-auth
+130 verbose request where is https://registry.npmjs.org/restberry-auth
+131 info trying registry request attempt 1 at 15:37:19
+132 http GET https://registry.npmjs.org/restberry-auth
+133 verbose request where is /restberry
+134 verbose request registry https://registry.npmjs.org/
+135 verbose url raw /restberry
+136 verbose url resolving [ 'https://registry.npmjs.org/', './restberry' ]
+137 verbose url resolved https://registry.npmjs.org/restberry
+138 verbose request where is https://registry.npmjs.org/restberry
+139 info trying registry request attempt 1 at 15:37:19
+140 http GET https://registry.npmjs.org/restberry
+141 silly addNameRange { name: 'restberry-mongoose',
+141 silly addNameRange   range: '>=3.8.0-0 <4.0.0-0',
+141 silly addNameRange   hasData: false }
+142 silly addNameRange { name: 'underscore',
+142 silly addNameRange   range: '>=1.8.3-0 <2.0.0-0',
+142 silly addNameRange   hasData: false }
+143 verbose request where is /restberry-auth-local
+144 verbose request registry https://registry.npmjs.org/
+145 verbose url raw /restberry-auth-local
+146 verbose url resolving [ 'https://registry.npmjs.org/', './restberry-auth-local' ]
+147 verbose url resolved https://registry.npmjs.org/restberry-auth-local
+148 verbose request where is https://registry.npmjs.org/restberry-auth-local
+149 info trying registry request attempt 1 at 15:37:19
+150 http GET https://registry.npmjs.org/restberry-auth-local
+151 verbose request where is /restberry-express
+152 verbose request registry https://registry.npmjs.org/
+153 verbose url raw /restberry-express
+154 verbose url resolving [ 'https://registry.npmjs.org/', './restberry-express' ]
+155 verbose url resolved https://registry.npmjs.org/restberry-express
+156 verbose request where is https://registry.npmjs.org/restberry-express
+157 info trying registry request attempt 1 at 15:37:19
+158 http GET https://registry.npmjs.org/restberry-express
+159 verbose request where is /restberry-mongoose
+160 verbose request registry https://registry.npmjs.org/
+161 verbose url raw /restberry-mongoose
+162 verbose url resolving [ 'https://registry.npmjs.org/', './restberry-mongoose' ]
+163 verbose url resolved https://registry.npmjs.org/restberry-mongoose
+164 verbose request where is https://registry.npmjs.org/restberry-mongoose
+165 info trying registry request attempt 1 at 15:37:19
+166 http GET https://registry.npmjs.org/restberry-mongoose
+167 verbose request where is /acl
+168 verbose request registry https://registry.npmjs.org/
+169 verbose url raw /acl
+170 verbose url resolving [ 'https://registry.npmjs.org/', './acl' ]
+171 verbose url resolved https://registry.npmjs.org/acl
+172 verbose request where is https://registry.npmjs.org/acl
+173 info trying registry request attempt 1 at 15:37:19
+174 verbose etag "95NYTZ6O1AWQ0ABTK0GEPRBFQ"
+175 http GET https://registry.npmjs.org/acl
+176 verbose request where is /underscore
+177 verbose request registry https://registry.npmjs.org/
+178 verbose url raw /underscore
+179 verbose url resolving [ 'https://registry.npmjs.org/', './underscore' ]
+180 verbose url resolved https://registry.npmjs.org/underscore
+181 verbose request where is https://registry.npmjs.org/underscore
+182 info trying registry request attempt 1 at 15:37:19
+183 verbose etag "D8XQ0WC6XGGYC94ZKAXNNQ9AH"
+184 http GET https://registry.npmjs.org/underscore
+185 verbose request where is /express
+186 verbose request registry https://registry.npmjs.org/
+187 verbose url raw /express
+188 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+189 verbose url resolved https://registry.npmjs.org/express
+190 verbose request where is https://registry.npmjs.org/express
+191 info trying registry request attempt 1 at 15:37:19
+192 verbose etag "7I63LK5Q9XT6GTV1RUU2Y3TUJ"
+193 http GET https://registry.npmjs.org/express
+194 verbose request where is /express-session
+195 verbose request registry https://registry.npmjs.org/
+196 verbose url raw /express-session
+197 verbose url resolving [ 'https://registry.npmjs.org/', './express-session' ]
+198 verbose url resolved https://registry.npmjs.org/express-session
+199 verbose request where is https://registry.npmjs.org/express-session
+200 info trying registry request attempt 1 at 15:37:19
+201 verbose etag "2RJS7MBMRMYQLERH2TT21407P"
+202 http GET https://registry.npmjs.org/express-session
+203 verbose request where is /bluebird
+204 verbose request registry https://registry.npmjs.org/
+205 verbose url raw /bluebird
+206 verbose url resolving [ 'https://registry.npmjs.org/', './bluebird' ]
+207 verbose url resolved https://registry.npmjs.org/bluebird
+208 verbose request where is https://registry.npmjs.org/bluebird
+209 info trying registry request attempt 1 at 15:37:19
+210 verbose etag "451DCBGX1RT0KYHAH28SXOZZW"
+211 http GET https://registry.npmjs.org/bluebird
+212 info retry will retry, error on last attempt: Error: socket hang up
+213 info retry will retry, error on last attempt: Error: socket hang up
+214 info retry will retry, error on last attempt: Error: socket hang up
+215 info retry will retry, error on last attempt: Error: socket hang up
+216 info retry will retry, error on last attempt: Error: socket hang up
+217 http 200 https://registry.npmjs.org/restberry-mongoose
+218 silly registry.get cb [ 200,
+218 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+218 silly registry.get     etag: '"415N5VXR1RJC9A4BD0M8UUSFL"',
+218 silly registry.get     'content-type': 'application/json',
+218 silly registry.get     'cache-control': 'max-age=60',
+218 silly registry.get     'content-length': '6607',
+218 silly registry.get     'accept-ranges': 'bytes',
+218 silly registry.get     date: 'Fri, 05 Jun 2015 13:38:45 GMT',
+218 silly registry.get     via: '1.1 varnish',
+218 silly registry.get     age: '0',
+218 silly registry.get     connection: 'keep-alive',
+218 silly registry.get     'x-served-by': 'cache-fra1247-FRA',
+218 silly registry.get     'x-cache': 'MISS',
+218 silly registry.get     'x-cache-hits': '0',
+218 silly registry.get     'x-timer': 'S1433511525.329654,VS0,VE106',
+218 silly registry.get     vary: 'Accept' } ]
+219 silly addNameRange number 2 { name: 'restberry-mongoose',
+219 silly addNameRange   range: '>=3.8.0-0 <4.0.0-0',
+219 silly addNameRange   hasData: true }
+220 silly addNameRange versions [ 'restberry-mongoose',
+220 silly addNameRange   [ '0.1.0', '0.2.0', '3.8.0', '3.8.1', '3.8.2' ] ]
+221 verbose addNamed [ 'restberry-mongoose', '3.8.2' ]
+222 verbose addNamed [ '3.8.2', '3.8.2' ]
+223 silly lockFile a6a90b66-restberry-mongoose-3-8-2 restberry-mongoose@3.8.2
+224 verbose lock restberry-mongoose@3.8.2 /Users/lionelbertrand/.npm/a6a90b66-restberry-mongoose-3-8-2.lock
+225 silly lockFile 84f97052-ose-restberry-mongoose-3-8-2-tgz https://registry.npmjs.org/restberry-mongoose/-/restberry-mongoose-3.8.2.tgz
+226 verbose lock https://registry.npmjs.org/restberry-mongoose/-/restberry-mongoose-3.8.2.tgz /Users/lionelbertrand/.npm/84f97052-ose-restberry-mongoose-3-8-2-tgz.lock
+227 verbose addRemoteTarball [ 'https://registry.npmjs.org/restberry-mongoose/-/restberry-mongoose-3.8.2.tgz',
+227 verbose addRemoteTarball   'db55cc59d06e7380a8ff590e41dc1d0e8cd63e87' ]
+228 info retry fetch attempt 1 at 15:38:45
+229 verbose fetch to= /var/folders/qv/329g7gh579sc4nmy04jplpz80000gn/T/npm-1296--4GM2aBl/registry.npmjs.org/restberry-mongoose/-/restberry-mongoose-3.8.2.tgz
+230 http GET https://registry.npmjs.org/restberry-mongoose/-/restberry-mongoose-3.8.2.tgz
+231 http 200 https://registry.npmjs.org/underscore
+232 silly registry.get cb [ 200,
+232 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+232 silly registry.get     etag: '"5KBVQ0CE8WTH6QFBTT14W7KDG"',
+232 silly registry.get     'content-type': 'application/json',
+232 silly registry.get     'cache-control': 'max-age=60',
+232 silly registry.get     'content-length': '40699',
+232 silly registry.get     'accept-ranges': 'bytes',
+232 silly registry.get     date: 'Fri, 05 Jun 2015 13:38:45 GMT',
+232 silly registry.get     via: '1.1 varnish',
+232 silly registry.get     age: '44',
+232 silly registry.get     connection: 'keep-alive',
+232 silly registry.get     'x-served-by': 'cache-fra1227-FRA',
+232 silly registry.get     'x-cache': 'HIT',
+232 silly registry.get     'x-cache-hits': '3',
+232 silly registry.get     'x-timer': 'S1433511525.338406,VS0,VE0',
+232 silly registry.get     vary: 'Accept' } ]
+233 silly addNameRange number 2 { name: 'underscore',
+233 silly addNameRange   range: '>=1.8.3-0 <2.0.0-0',
+233 silly addNameRange   hasData: true }
+234 silly addNameRange versions [ 'underscore',
+234 silly addNameRange   [ '1.0.3',
+234 silly addNameRange     '1.0.4',
+234 silly addNameRange     '1.1.0',
+234 silly addNameRange     '1.1.1',
+234 silly addNameRange     '1.1.2',
+234 silly addNameRange     '1.1.3',
+234 silly addNameRange     '1.1.4',
+234 silly addNameRange     '1.1.5',
+234 silly addNameRange     '1.1.6',
+234 silly addNameRange     '1.1.7',
+234 silly addNameRange     '1.2.0',
+234 silly addNameRange     '1.2.1',
+234 silly addNameRange     '1.2.2',
+234 silly addNameRange     '1.2.3',
+234 silly addNameRange     '1.2.4',
+234 silly addNameRange     '1.3.0',
+234 silly addNameRange     '1.3.1',
+234 silly addNameRange     '1.3.2',
+234 silly addNameRange     '1.3.3',
+234 silly addNameRange     '1.4.0',
+234 silly addNameRange     '1.4.1',
+234 silly addNameRange     '1.4.2',
+234 silly addNameRange     '1.4.3',
+234 silly addNameRange     '1.4.4',
+234 silly addNameRange     '1.5.0',
+234 silly addNameRange     '1.5.1',
+234 silly addNameRange     '1.5.2',
+234 silly addNameRange     '1.6.0',
+234 silly addNameRange     '1.7.0',
+234 silly addNameRange     '1.8.0',
+234 silly addNameRange     '1.8.1',
+234 silly addNameRange     '1.8.2',
+234 silly addNameRange     '1.8.3' ] ]
+235 verbose addNamed [ 'underscore', '1.8.3' ]
+236 verbose addNamed [ '1.8.3', '1.8.3' ]
+237 silly lockFile e5e32fca-underscore-1-8-3 underscore@1.8.3
+238 verbose lock underscore@1.8.3 /Users/lionelbertrand/.npm/e5e32fca-underscore-1-8-3.lock
+239 silly lockFile d5ea30aa--underscore-underscore-1-8-3-tgz https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz
+240 verbose lock https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz /Users/lionelbertrand/.npm/d5ea30aa--underscore-underscore-1-8-3-tgz.lock
+241 verbose addRemoteTarball [ 'https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz',
+241 verbose addRemoteTarball   '4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022' ]
+242 info retry fetch attempt 1 at 15:38:47
+243 verbose fetch to= /var/folders/qv/329g7gh579sc4nmy04jplpz80000gn/T/npm-1296--4GM2aBl/registry.npmjs.org/underscore/-/underscore-1.8.3.tgz
+244 http GET https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz
+245 http 200 https://registry.npmjs.org/express-session
+246 silly registry.get cb [ 200,
+246 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+246 silly registry.get     etag: '"A9O3QGXAFFOVQREVLGERHFIZE"',
+246 silly registry.get     'content-type': 'application/json',
+246 silly registry.get     'cache-control': 'max-age=60',
+246 silly registry.get     'content-length': '84698',
+246 silly registry.get     'accept-ranges': 'bytes',
+246 silly registry.get     date: 'Fri, 05 Jun 2015 13:38:45 GMT',
+246 silly registry.get     via: '1.1 varnish',
+246 silly registry.get     age: '43',
+246 silly registry.get     connection: 'keep-alive',
+246 silly registry.get     'x-served-by': 'cache-fra1247-FRA',
+246 silly registry.get     'x-cache': 'HIT',
+246 silly registry.get     'x-cache-hits': '1',
+246 silly registry.get     'x-timer': 'S1433511525.383592,VS0,VE0',
+246 silly registry.get     vary: 'Accept' } ]
+247 silly addNameRange number 2 { name: 'express-session',
+247 silly addNameRange   range: '>=1.10.4-0 <2.0.0-0',
+247 silly addNameRange   hasData: true }
+248 silly addNameRange versions [ 'express-session',
+248 silly addNameRange   [ '1.0.0',
+248 silly addNameRange     '1.0.1',
+248 silly addNameRange     '1.0.2',
+248 silly addNameRange     '1.0.3',
+248 silly addNameRange     '1.0.4',
+248 silly addNameRange     '1.1.0',
+248 silly addNameRange     '1.2.0',
+248 silly addNameRange     '1.2.1',
+248 silly addNameRange     '1.3.0',
+248 silly addNameRange     '1.3.1',
+248 silly addNameRange     '1.4.0',
+248 silly addNameRange     '1.5.0',
+248 silly addNameRange     '1.5.1',
+248 silly addNameRange     '1.5.2',
+248 silly addNameRange     '1.6.0',
+248 silly addNameRange     '1.6.1',
+248 silly addNameRange     '1.6.2',
+248 silly addNameRange     '1.6.3',
+248 silly addNameRange     '1.6.4',
+248 silly addNameRange     '1.6.5',
+248 silly addNameRange     '1.7.0',
+248 silly addNameRange     '1.7.1',
+248 silly addNameRange     '1.7.2',
+248 silly addNameRange     '1.7.3',
+248 silly addNameRange     '1.7.4',
+248 silly addNameRange     '1.7.5',
+248 silly addNameRange     '1.7.6',
+248 silly addNameRange     '1.8.0',
+248 silly addNameRange     '1.8.1',
+248 silly addNameRange     '1.8.2',
+248 silly addNameRange     '1.9.0',
+248 silly addNameRange     '1.9.1',
+248 silly addNameRange     '1.9.2',
+248 silly addNameRange     '1.9.3',
+248 silly addNameRange     '1.10.0',
+248 silly addNameRange     '1.10.1',
+248 silly addNameRange     '1.10.2',
+248 silly addNameRange     '1.10.3',
+248 silly addNameRange     '1.10.4',
+248 silly addNameRange     '1.11.0',
+248 silly addNameRange     '1.11.1',
+248 silly addNameRange     '1.11.2' ] ]
+249 verbose addNamed [ 'express-session', '1.11.2' ]
+250 verbose addNamed [ '1.11.2', '1.11.2' ]
+251 silly lockFile 185c5f9f-express-session-1-11-2 express-session@1.11.2
+252 verbose lock express-session@1.11.2 /Users/lionelbertrand/.npm/185c5f9f-express-session-1-11-2.lock
+253 http 200 https://registry.npmjs.org/acl
+254 silly registry.get cb [ 200,
+254 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+254 silly registry.get     etag: '"BVRJ345A3L97AE3V1403K3MH7"',
+254 silly registry.get     'content-type': 'application/json',
+254 silly registry.get     'cache-control': 'max-age=60',
+254 silly registry.get     'content-length': '40466',
+254 silly registry.get     'accept-ranges': 'bytes',
+254 silly registry.get     date: 'Fri, 05 Jun 2015 13:38:45 GMT',
+254 silly registry.get     via: '1.1 varnish',
+254 silly registry.get     age: '0',
+254 silly registry.get     connection: 'keep-alive',
+254 silly registry.get     'x-served-by': 'cache-fra1225-FRA',
+254 silly registry.get     'x-cache': 'MISS',
+254 silly registry.get     'x-cache-hits': '0',
+254 silly registry.get     'x-timer': 'S1433511525.335805,VS0,VE113',
+254 silly registry.get     vary: 'Accept' } ]
+255 silly lockFile 54bda92a-ssion-express-session-1-11-2-tgz https://registry.npmjs.org/express-session/-/express-session-1.11.2.tgz
+256 verbose lock https://registry.npmjs.org/express-session/-/express-session-1.11.2.tgz /Users/lionelbertrand/.npm/54bda92a-ssion-express-session-1-11-2-tgz.lock
+257 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-session/-/express-session-1.11.2.tgz',
+257 verbose addRemoteTarball   'a165c9cfe158c8ada18e67d9e0d73e9eb35fa575' ]
+258 silly addNameRange number 2 { name: 'acl', range: '>=0.4.7-0 <0.5.0-0', hasData: true }
+259 silly addNameRange versions [ 'acl',
+259 silly addNameRange   [ '0.0.1',
+259 silly addNameRange     '0.0.2',
+259 silly addNameRange     '0.0.3',
+259 silly addNameRange     '0.0.4',
+259 silly addNameRange     '0.1.0',
+259 silly addNameRange     '0.1.1',
+259 silly addNameRange     '0.1.2',
+259 silly addNameRange     '0.1.3',
+259 silly addNameRange     '0.1.4',
+259 silly addNameRange     '0.2.0',
+259 silly addNameRange     '0.2.1',
+259 silly addNameRange     '0.2.2',
+259 silly addNameRange     '0.2.3',
+259 silly addNameRange     '0.2.4',
+259 silly addNameRange     '0.2.5',
+259 silly addNameRange     '0.2.6',
+259 silly addNameRange     '0.3.0',
+259 silly addNameRange     '0.4.0',
+259 silly addNameRange     '0.4.1',
+259 silly addNameRange     '0.4.2',
+259 silly addNameRange     '0.4.3',
+259 silly addNameRange     '0.4.4',
+259 silly addNameRange     '0.4.6',
+259 silly addNameRange     '0.4.7' ] ]
+260 verbose addNamed [ 'acl', '0.4.7' ]
+261 verbose addNamed [ '0.4.7', '0.4.7' ]
+262 silly lockFile e1c8ef61-acl-0-4-7 acl@0.4.7
+263 verbose lock acl@0.4.7 /Users/lionelbertrand/.npm/e1c8ef61-acl-0-4-7.lock
+264 info retry fetch attempt 1 at 15:38:47
+265 verbose fetch to= /var/folders/qv/329g7gh579sc4nmy04jplpz80000gn/T/npm-1296--4GM2aBl/registry.npmjs.org/express-session/-/express-session-1.11.2.tgz
+266 http GET https://registry.npmjs.org/express-session/-/express-session-1.11.2.tgz
+267 silly lockFile e1c8ef61-acl-0-4-7 acl@0.4.7
+268 silly lockFile e1c8ef61-acl-0-4-7 acl@0.4.7
+269 silly lockFile 6d4e21de-acl-0-4-7 acl@^0.4.7
+270 silly lockFile 6d4e21de-acl-0-4-7 acl@^0.4.7
+271 http 200 https://registry.npmjs.org/restberry-mongoose/-/restberry-mongoose-3.8.2.tgz
+272 silly lockFile 84f97052-ose-restberry-mongoose-3-8-2-tgz https://registry.npmjs.org/restberry-mongoose/-/restberry-mongoose-3.8.2.tgz
+273 silly lockFile 84f97052-ose-restberry-mongoose-3-8-2-tgz https://registry.npmjs.org/restberry-mongoose/-/restberry-mongoose-3.8.2.tgz
+274 silly lockFile a6a90b66-restberry-mongoose-3-8-2 restberry-mongoose@3.8.2
+275 silly lockFile a6a90b66-restberry-mongoose-3-8-2 restberry-mongoose@3.8.2
+276 silly lockFile 80feefd8-restberry-mongoose-3-8-0 restberry-mongoose@^3.8.0
+277 silly lockFile 80feefd8-restberry-mongoose-3-8-0 restberry-mongoose@^3.8.0
+278 http 200 https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz
+279 silly lockFile d5ea30aa--underscore-underscore-1-8-3-tgz https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz
+280 silly lockFile d5ea30aa--underscore-underscore-1-8-3-tgz https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz
+281 silly lockFile e5e32fca-underscore-1-8-3 underscore@1.8.3
+282 silly lockFile e5e32fca-underscore-1-8-3 underscore@1.8.3
+283 silly lockFile 763d0bdd-underscore-1-8-3 underscore@^1.8.3
+284 silly lockFile 763d0bdd-underscore-1-8-3 underscore@^1.8.3
+285 http 200 https://registry.npmjs.org/bluebird
+286 silly registry.get cb [ 200,
+286 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+286 silly registry.get     etag: '"AT3WRIU1NKPZ12G82QCL5YSU8"',
+286 silly registry.get     'content-type': 'application/json',
+286 silly registry.get     'cache-control': 'max-age=60',
+286 silly registry.get     'content-length': '323057',
+286 silly registry.get     'accept-ranges': 'bytes',
+286 silly registry.get     date: 'Fri, 05 Jun 2015 13:38:46 GMT',
+286 silly registry.get     via: '1.1 varnish',
+286 silly registry.get     age: '9',
+286 silly registry.get     connection: 'keep-alive',
+286 silly registry.get     'x-served-by': 'cache-fra1247-FRA',
+286 silly registry.get     'x-cache': 'HIT',
+286 silly registry.get     'x-cache-hits': '1',
+286 silly registry.get     'x-timer': 'S1433511526.255128,VS0,VE2',
+286 silly registry.get     vary: 'Accept' } ]
+287 silly addNameRange number 2 { name: 'bluebird', range: '>=2.9.26-0 <3.0.0-0', hasData: true }
+288 silly addNameRange versions [ 'bluebird',
+288 silly addNameRange   [ '0.7.1-1',
+288 silly addNameRange     '0.7.1-2',
+288 silly addNameRange     '0.7.1-3',
+288 silly addNameRange     '0.7.1-4',
+288 silly addNameRange     '0.7.1-5',
+288 silly addNameRange     '0.7.2-0',
+288 silly addNameRange     '0.7.3-0',
+288 silly addNameRange     '0.7.4-0',
+288 silly addNameRange     '0.7.4-1',
+288 silly addNameRange     '0.7.5-0',
+288 silly addNameRange     '0.7.6-0',
+288 silly addNameRange     '0.7.7-0',
+288 silly addNameRange     '0.7.7-1',
+288 silly addNameRange     '0.7.8-0',
+288 silly addNameRange     '0.7.8-1',
+288 silly addNameRange     '0.7.9-0',
+288 silly addNameRange     '0.7.9-1',
+288 silly addNameRange     '0.7.10-0',
+288 silly addNameRange     '0.7.10-1',
+288 silly addNameRange     '0.7.11-0',
+288 silly addNameRange     '0.7.12-0',
+288 silly addNameRange     '0.7.12-1',
+288 silly addNameRange     '0.7.12-2',
+288 silly addNameRange     '0.8.0-0',
+288 silly addNameRange     '0.8.0-1',
+288 silly addNameRange     '0.8.0-2',
+288 silly addNameRange     '0.8.0-3',
+288 silly addNameRange     '0.8.1-0',
+288 silly addNameRange     '0.8.2-0',
+288 silly addNameRange     '0.8.2-1',
+288 silly addNameRange     '0.8.2-2',
+288 silly addNameRange     '0.8.3-0',
+288 silly addNameRange     '0.8.3-1',
+288 silly addNameRange     '0.8.3-2',
+288 silly addNameRange     '0.8.3-3',
+288 silly addNameRange     '0.8.4-0',
+288 silly addNameRange     '0.8.4-1',
+288 silly addNameRange     '0.8.5-0',
+288 silly addNameRange     '0.8.5-1',
+288 silly addNameRange     '0.9.0-0',
+288 silly addNameRange     '0.9.1-0',
+288 silly addNameRange     '0.9.1-1',
+288 silly addNameRange     '0.9.2-0',
+288 silly addNameRange     '0.9.2-1',
+288 silly addNameRange     '0.9.3-0',
+288 silly addNameRange     '0.9.4-0',
+288 silly addNameRange     '0.9.4-1',
+288 silly addNameRange     '0.9.5-0',
+288 silly addNameRange     '0.9.6-0',
+288 silly addNameRange     '0.9.7-0',
+288 silly addNameRange     '0.9.8-0',
+288 silly addNameRange     '0.9.9-0',
+288 silly addNameRange     '0.9.10-0',
+288 silly addNameRange     '0.9.10-1',
+288 silly addNameRange     '0.9.11-0',
+288 silly addNameRange     '0.9.11-1',
+288 silly addNameRange     '0.10.0-0',
+288 silly addNameRange     '0.10.0-1',
+288 silly addNameRange     '0.10.1-0',
+288 silly addNameRange     '0.10.2-0',
+288 silly addNameRange     '0.10.2-1',
+288 silly addNameRange     '0.10.3-0',
+288 silly addNameRange     '0.10.4-0',
+288 silly addNameRange     '0.10.4-1',
+288 silly addNameRange     '0.10.5-0',
+288 silly addNameRange     '0.10.6-0',
+288 silly addNameRange     '0.10.7-0',
+288 silly addNameRange     '0.10.8-0',
+288 silly addNameRange     '0.10.9-0',
+288 silly addNameRange     '0.10.9-1',
+288 silly addNameRange     '0.10.10-0',
+288 silly addNameRange     '0.10.11-0',
+288 silly addNameRange     '0.10.11-1',
+288 silly addNameRange     '0.10.11-2',
+288 silly addNameRange     '0.10.11-4',
+288 silly addNameRange     '0.10.12-0',
+288 silly addNameRange     '0.10.13-0',
+288 silly addNameRange     '0.10.13-1',
+288 silly addNameRange     '0.10.14-0',
+288 silly addNameRange     '0.11.0-0',
+288 silly addNameRange     '0.11.1-0',
+288 silly addNameRange     '0.11.2-0',
+288 silly addNameRange     '0.11.3-0',
+288 silly addNameRange     '0.11.4-0',
+288 silly addNameRange     '0.11.4-1',
+288 silly addNameRange     '0.11.5-0',
+288 silly addNameRange     '0.11.5-1',
+288 silly addNameRange     '0.11.6-0',
+288 silly addNameRange     '1.0.0',
+288 silly addNameRange     '1.0.1',
+288 silly addNameRange     '1.0.2',
+288 silly addNameRange     '1.0.3',
+288 silly addNameRange     '1.0.4',
+288 silly addNameRange     '1.0.5',
+288 silly addNameRange     '1.0.7',
+288 silly addNameRange     '1.0.8',
+288 silly addNameRange     '1.1.0',
+288 silly addNameRange     '1.1.1',
+288 silly addNameRange     '1.2.0',
+288 silly addNameRange     '1.2.1',
+288 silly addNameRange     '1.2.2',
+288 silly addNameRange     '1.2.3',
+288 silly addNameRange     '1.2.4',
+288 silly addNameRange     '2.0.2',
+288 silly addNameRange     '2.0.3',
+288 silly addNameRange     '2.0.4',
+288 silly addNameRange     '2.0.5',
+288 silly addNameRange     '2.0.6',
+288 silly addNameRange     '2.0.7',
+288 silly addNameRange     '2.1.1',
+288 silly addNameRange     '2.1.2',
+288 silly addNameRange     '2.1.3',
+288 silly addNameRange     '2.2.0',
+288 silly addNameRange     '2.2.1',
+288 silly addNameRange     '2.2.2',
+288 silly addNameRange     '2.3.0',
+288 silly addNameRange     '2.3.1',
+288 silly addNameRange     '2.3.2',
+288 silly addNameRange     '2.3.3',
+288 silly addNameRange     '2.3.4',
+288 silly addNameRange     '2.3.5',
+288 silly addNameRange     '0.11.6',
+288 silly addNameRange     '2.3.6',
+288 silly addNameRange     '2.3.9',
+288 silly addNameRange     '2.3.10',
+288 silly addNameRange     '2.3.11',
+288 silly addNameRange     '2.4.0',
+288 silly addNameRange     '2.4.1',
+288 silly addNameRange     '2.4.2',
+288 silly addNameRange     '2.4.3',
+288 silly addNameRange     '2.5.0',
+288 silly addNameRange     '2.5.1',
+288 silly addNameRange     '2.5.2',
+288 silly addNameRange     '2.5.3',
+288 silly addNameRange     '2.6.0',
+288 silly addNameRange     '2.6.1',
+288 silly addNameRange     '2.6.2',
+288 silly addNameRange     '2.6.3',
+288 silly addNameRange     '2.6.4',
+288 silly addNameRange     '2.7.0',
+288 silly addNameRange     '2.7.1',
+288 silly addNameRange     '2.8.0',
+288 silly addNameRange     '2.8.1',
+288 silly addNameRange     '2.8.2',
+288 silly addNameRange     '2.9.0',
+288 silly addNameRange     '2.9.1',
+288 silly addNameRange     '2.9.2',
+288 silly addNameRange     '2.9.3',
+288 silly addNameRange     '2.9.4',
+288 silly addNameRange     '2.9.5',
+288 silly addNameRange     '2.9.6',
+288 silly addNameRange     '2.9.7',
+288 silly addNameRange     '2.9.8',
+288 silly addNameRange     '2.9.9',
+288 silly addNameRange     '2.9.10',
+288 silly addNameRange     '2.9.11',
+288 silly addNameRange     '2.9.12',
+288 silly addNameRange     '2.9.13',
+288 silly addNameRange     '2.9.14',
+288 silly addNameRange     '2.9.15',
+288 silly addNameRange     '2.9.16',
+288 silly addNameRange     '2.9.17',
+288 silly addNameRange     '2.9.18',
+288 silly addNameRange     '2.9.19',
+288 silly addNameRange     '2.9.20',
+288 silly addNameRange     '2.9.21',
+288 silly addNameRange     '2.9.22',
+288 silly addNameRange     '2.9.23',
+288 silly addNameRange     '2.9.24',
+288 silly addNameRange     '2.9.25',
+288 silly addNameRange     '2.9.26',
+288 silly addNameRange     '2.9.27' ] ]
+289 verbose addNamed [ 'bluebird', '2.9.27' ]
+290 verbose addNamed [ '2.9.27', '2.9.27' ]
+291 silly lockFile 04680ac0-bluebird-2-9-27 bluebird@2.9.27
+292 verbose lock bluebird@2.9.27 /Users/lionelbertrand/.npm/04680ac0-bluebird-2-9-27.lock
+293 silly lockFile 85cfd40c-org-bluebird-bluebird-2-9-27-tgz https://registry.npmjs.org/bluebird/-/bluebird-2.9.27.tgz
+294 verbose lock https://registry.npmjs.org/bluebird/-/bluebird-2.9.27.tgz /Users/lionelbertrand/.npm/85cfd40c-org-bluebird-bluebird-2-9-27-tgz.lock
+295 verbose addRemoteTarball [ 'https://registry.npmjs.org/bluebird/-/bluebird-2.9.27.tgz',
+295 verbose addRemoteTarball   '8eab7da1e866998f9f71c209b9875f9949a7adca' ]
+296 info retry fetch attempt 1 at 15:38:49
+297 verbose fetch to= /var/folders/qv/329g7gh579sc4nmy04jplpz80000gn/T/npm-1296--4GM2aBl/registry.npmjs.org/bluebird/-/bluebird-2.9.27.tgz
+298 http GET https://registry.npmjs.org/bluebird/-/bluebird-2.9.27.tgz
+299 http 200 https://registry.npmjs.org/express-session/-/express-session-1.11.2.tgz
+300 silly lockFile 54bda92a-ssion-express-session-1-11-2-tgz https://registry.npmjs.org/express-session/-/express-session-1.11.2.tgz
+301 silly lockFile 54bda92a-ssion-express-session-1-11-2-tgz https://registry.npmjs.org/express-session/-/express-session-1.11.2.tgz
+302 silly lockFile 185c5f9f-express-session-1-11-2 express-session@1.11.2
+303 silly lockFile 185c5f9f-express-session-1-11-2 express-session@1.11.2
+304 silly lockFile 77677783-express-session-1-10-4 express-session@^1.10.4
+305 silly lockFile 77677783-express-session-1-10-4 express-session@^1.10.4
+306 http 200 https://registry.npmjs.org/express
+307 silly registry.get cb [ 200,
+307 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+307 silly registry.get     etag: '"4OTHHU65LP8RQOUU7RM36H1IC"',
+307 silly registry.get     'content-type': 'application/json',
+307 silly registry.get     'cache-control': 'max-age=60',
+307 silly registry.get     'content-length': '499637',
+307 silly registry.get     'accept-ranges': 'bytes',
+307 silly registry.get     date: 'Fri, 05 Jun 2015 13:38:45 GMT',
+307 silly registry.get     via: '1.1 varnish',
+307 silly registry.get     age: '2',
+307 silly registry.get     connection: 'keep-alive',
+307 silly registry.get     'x-served-by': 'cache-fra1228-FRA',
+307 silly registry.get     'x-cache': 'HIT',
+307 silly registry.get     'x-cache-hits': '1',
+307 silly registry.get     'x-timer': 'S1433511525.354524,VS0,VE2',
+307 silly registry.get     vary: 'Accept' } ]
+308 silly addNameRange number 2 { name: 'express', range: '>=4.12.2-0 <4.13.0-0', hasData: true }
+309 silly addNameRange versions [ 'express',
+309 silly addNameRange   [ '0.14.0',
+309 silly addNameRange     '0.14.1',
+309 silly addNameRange     '1.0.0',
+309 silly addNameRange     '1.0.1',
+309 silly addNameRange     '1.0.2',
+309 silly addNameRange     '1.0.3',
+309 silly addNameRange     '1.0.4',
+309 silly addNameRange     '1.0.5',
+309 silly addNameRange     '1.0.6',
+309 silly addNameRange     '1.0.7',
+309 silly addNameRange     '1.0.8',
+309 silly addNameRange     '2.0.0',
+309 silly addNameRange     '2.1.0',
+309 silly addNameRange     '2.1.1',
+309 silly addNameRange     '2.2.0',
+309 silly addNameRange     '2.2.1',
+309 silly addNameRange     '2.2.2',
+309 silly addNameRange     '2.3.0',
+309 silly addNameRange     '2.3.1',
+309 silly addNameRange     '2.3.2',
+309 silly addNameRange     '2.3.3',
+309 silly addNameRange     '2.3.4',
+309 silly addNameRange     '2.3.5',
+309 silly addNameRange     '2.3.6',
+309 silly addNameRange     '2.3.7',
+309 silly addNameRange     '2.3.8',
+309 silly addNameRange     '2.3.9',
+309 silly addNameRange     '2.3.10',
+309 silly addNameRange     '2.3.11',
+309 silly addNameRange     '2.3.12',
+309 silly addNameRange     '2.4.0',
+309 silly addNameRange     '2.4.1',
+309 silly addNameRange     '2.4.2',
+309 silly addNameRange     '2.4.3',
+309 silly addNameRange     '2.4.4',
+309 silly addNameRange     '2.4.5',
+309 silly addNameRange     '2.4.6',
+309 silly addNameRange     '2.4.7',
+309 silly addNameRange     '2.5.0',
+309 silly addNameRange     '2.5.1',
+309 silly addNameRange     '2.5.2',
+309 silly addNameRange     '2.5.3',
+309 silly addNameRange     '2.5.4',
+309 silly addNameRange     '2.5.5',
+309 silly addNameRange     '2.5.6',
+309 silly addNameRange     '2.5.7',
+309 silly addNameRange     '2.5.8',
+309 silly addNameRange     '2.5.9',
+309 silly addNameRange     '2.5.10',
+309 silly addNameRange     '2.5.11',
+309 silly addNameRange     '3.0.0',
+309 silly addNameRange     '3.0.1',
+309 silly addNameRange     '3.0.2',
+309 silly addNameRange     '3.0.3',
+309 silly addNameRange     '3.0.4',
+309 silly addNameRange     '3.0.5',
+309 silly addNameRange     '3.0.6',
+309 silly addNameRange     '3.1.0',
+309 silly addNameRange     '3.1.1',
+309 silly addNameRange     '3.1.2',
+309 silly addNameRange     '3.2.0',
+309 silly addNameRange     '3.2.1',
+309 silly addNameRange     '3.2.2',
+309 silly addNameRange     '3.2.3',
+309 silly addNameRange     '3.2.4',
+309 silly addNameRange     '3.2.5',
+309 silly addNameRange     '3.2.6',
+309 silly addNameRange     '3.3.0',
+309 silly addNameRange     '3.3.1',
+309 silly addNameRange     '3.3.2',
+309 silly addNameRange     '3.3.3',
+309 silly addNameRange     '3.3.4',
+309 silly addNameRange     '3.3.5',
+309 silly addNameRange     '3.3.6',
+309 silly addNameRange     '1.0.0-beta',
+309 silly addNameRange     '1.0.0-beta2',
+309 silly addNameRange     '1.0.0-rc',
+309 silly addNameRange     '1.0.0-rc2',
+309 silly addNameRange     '1.0.0-rc3',
+309 silly addNameRange     '1.0.0-rc4',
+309 silly addNameRange     '2.0.0-beta',
+309 silly addNameRange     '2.0.0-beta2',
+309 silly addNameRange     '2.0.0-beta3',
+309 silly addNameRange     '2.0.0-rc',
+309 silly addNameRange     '2.0.0-rc2',
+309 silly addNameRange     '2.0.0-rc3',
+309 silly addNameRange     '3.0.0-alpha1',
+309 silly addNameRange     '3.0.0-alpha2',
+309 silly addNameRange     '3.0.0-alpha3',
+309 silly addNameRange     '3.0.0-alpha4',
+309 silly addNameRange     '3.0.0-alpha5',
+309 silly addNameRange     '3.0.0-beta1',
+309 silly addNameRange     '3.0.0-beta2',
+309 silly addNameRange     '3.0.0-beta3',
+309 silly addNameRange     '3.0.0-beta4',
+309 silly addNameRange     '3.0.0-beta6',
+309 silly addNameRange     '3.0.0-beta7',
+309 silly addNameRange     '3.0.0-rc1',
+309 silly addNameRange     '3.0.0-rc2',
+309 silly addNameRange     '3.0.0-rc3',
+309 silly addNameRange     '3.0.0-rc4',
+309 silly addNameRange     '3.0.0-rc5',
+309 silly addNameRange     '3.3.7',
+309 silly addNameRange     '3.3.8',
+309 silly addNameRange     '3.4.0',
+309 silly addNameRange     '3.4.1',
+309 silly addNameRange     '3.4.2',
+309 silly addNameRange     '3.4.3',
+309 silly addNameRange     '3.4.4',
+309 silly addNameRange     '3.4.5',
+309 silly addNameRange     '3.4.6',
+309 silly addNameRange     '3.4.7',
+309 silly addNameRange     '3.4.8',
+309 silly addNameRange     '4.0.0-rc1',
+309 silly addNameRange     '4.0.0-rc2',
+309 silly addNameRange     '3.5.0',
+309 silly addNameRange     '4.0.0-rc3',
+309 silly addNameRange     '4.0.0-rc4',
+309 silly addNameRange     '3.5.1',
+309 silly addNameRange     '4.0.0',
+309 silly addNameRange     '3.5.2',
+309 silly addNameRange     '4.1.0',
+309 silly addNameRange     '4.1.1',
+309 silly addNameRange     '3.5.3',
+309 silly addNameRange     '4.1.2',
+309 silly addNameRange     '3.6.0',
+309 silly addNameRange     '4.2.0',
+309 silly addNameRange     '3.7.0',
+309 silly addNameRange     '3.8.0',
+309 silly addNameRange     '4.3.0',
+309 silly addNameRange     '4.3.1',
+309 silly addNameRange     '3.8.1',
+309 silly addNameRange     '4.3.2',
+309 silly addNameRange     '3.9.0',
+309 silly addNameRange     '4.4.0',
+309 silly addNameRange     '4.4.1',
+309 silly addNameRange     '3.10.0',
+309 silly addNameRange     '3.10.1',
+309 silly addNameRange     '3.10.2',
+309 silly addNameRange     '3.10.3',
+309 silly addNameRange     '3.10.4',
+309 silly addNameRange     '4.4.2',
+309 silly addNameRange     '3.10.5',
+309 silly addNameRange     '4.4.3',
+309 silly addNameRange     '3.11.0',
+309 silly addNameRange     '4.4.4',
+309 silly addNameRange     '3.12.0',
+309 silly addNameRange     '3.12.1',
+309 silly addNameRange     '4.4.5',
+309 silly addNameRange     '3.13.0',
+309 silly addNameRange     '4.5.0',
+309 silly addNameRange     '4.5.1',
+309 silly addNameRange     '3.14.0',
+309 silly addNameRange     '4.6.0',
+309 silly addNameRange     '4.6.1',
+309 silly addNameRange     '3.15.0',
+309 silly addNameRange     '4.7.0',
+309 silly addNameRange     '3.15.1',
+309 silly addNameRange     '4.7.1',
+309 silly addNameRange     '3.15.2',
+309 silly addNameRange     '4.7.2',
+309 silly addNameRange     '4.7.3',
+309 silly addNameRange     '3.15.3',
+309 silly addNameRange     '4.7.4',
+309 silly addNameRange     '3.16.0',
+309 silly addNameRange     '4.8.0',
+309 silly addNameRange     '3.16.1',
+309 silly addNameRange     '4.8.1',
+309 silly addNameRange     '3.16.2',
+309 silly addNameRange     '4.8.2',
+309 silly addNameRange     '3.16.3',
+309 silly addNameRange     '3.16.4',
+309 silly addNameRange     '4.8.3',
+309 silly addNameRange     '3.16.5',
+309 silly addNameRange     '3.16.6',
+309 silly addNameRange     '4.8.4',
+309 silly addNameRange     '3.16.7',
+309 silly addNameRange     '4.8.5',
+309 silly addNameRange     '3.16.8',
+309 silly addNameRange     '4.8.6',
+309 silly addNameRange     '3.16.9',
+309 silly addNameRange     '4.8.7',
+309 silly addNameRange     '3.16.10',
+309 silly addNameRange     '4.8.8',
+309 silly addNameRange     '3.17.0',
+309 silly addNameRange     '3.17.1',
+309 silly addNameRange     '4.9.0',
+309 silly addNameRange     '3.17.2',
+309 silly addNameRange     '4.9.1',
+309 silly addNameRange     '4.9.2',
+309 silly addNameRange     '3.17.3',
+309 silly addNameRange     '4.9.3',
+309 silly addNameRange     '3.17.4',
+309 silly addNameRange     '4.9.4',
+309 silly addNameRange     '3.17.5',
+309 silly addNameRange     '4.9.5',
+309 silly addNameRange     '3.17.6',
+309 silly addNameRange     '3.17.7',
+309 silly addNameRange     '4.9.6',
+309 silly addNameRange     '4.9.7',
+309 silly addNameRange     '3.17.8',
+309 silly addNameRange     '4.9.8',
+309 silly addNameRange     '3.18.0',
+309 silly addNameRange     '3.18.1',
+309 silly addNameRange     '4.10.0',
+309 silly addNameRange     '3.18.2',
+309 silly addNameRange     '4.10.1',
+309 silly addNameRange     '5.0.0-alpha.1',
+309 silly addNameRange     '3.18.3',
+309 silly addNameRange     '4.10.2',
+309 silly addNameRange     '3.18.4',
+309 silly addNameRange     '4.10.3',
+309 silly addNameRange     '4.10.4',
+309 silly addNameRange     '4.10.5',
+309 silly addNameRange     '3.18.5',
+309 silly addNameRange     '3.18.6',
+309 silly addNameRange     '4.10.6',
+309 silly addNameRange     '4.10.7',
+309 silly addNameRange     '3.19.0',
+309 silly addNameRange     '4.10.8',
+309 silly addNameRange     '4.11.0',
+309 silly addNameRange     '3.19.1',
+309 silly addNameRange     '4.11.1',
+309 silly addNameRange     '3.19.2',
+309 silly addNameRange     '4.11.2',
+309 silly addNameRange     '3.20.0',
+309 silly addNameRange     '4.12.0',
+309 silly addNameRange     '3.20.1',
+309 silly addNameRange     '4.12.1',
+309 silly addNameRange     '4.12.2',
+309 silly addNameRange     '3.20.2',
+309 silly addNameRange     '4.12.3',
+309 silly addNameRange     '3.20.3',
+309 silly addNameRange     '4.12.4' ] ]
+310 verbose addNamed [ 'express', '4.12.4' ]
+311 verbose addNamed [ '4.12.4', '4.12.4' ]
+312 silly lockFile 3b813118-express-4-12-4 express@4.12.4
+313 verbose lock express@4.12.4 /Users/lionelbertrand/.npm/3b813118-express-4-12-4.lock
+314 silly lockFile 018f992a-s-org-express-express-4-12-4-tgz https://registry.npmjs.org/express/-/express-4.12.4.tgz
+315 verbose lock https://registry.npmjs.org/express/-/express-4.12.4.tgz /Users/lionelbertrand/.npm/018f992a-s-org-express-express-4-12-4-tgz.lock
+316 verbose addRemoteTarball [ 'https://registry.npmjs.org/express/-/express-4.12.4.tgz',
+316 verbose addRemoteTarball   '8fec2510255bc6b2e58107c48239c0fa307c1aa2' ]
+317 info retry fetch attempt 1 at 15:38:52
+318 verbose fetch to= /var/folders/qv/329g7gh579sc4nmy04jplpz80000gn/T/npm-1296--4GM2aBl/registry.npmjs.org/express/-/express-4.12.4.tgz
+319 http GET https://registry.npmjs.org/express/-/express-4.12.4.tgz
+320 info trying registry request attempt 2 at 15:38:53
+321 http GET https://registry.npmjs.org/restberry
+322 info trying registry request attempt 2 at 15:38:53
+323 http GET https://registry.npmjs.org/restberry-auth-local
+324 info trying registry request attempt 2 at 15:38:53
+325 http GET https://registry.npmjs.org/restberry-auth
+326 info trying registry request attempt 2 at 15:38:53
+327 http GET https://registry.npmjs.org/moment
+328 info trying registry request attempt 2 at 15:38:53
+329 http GET https://registry.npmjs.org/restberry-express
+330 error fetch failed https://registry.npmjs.org/express/-/express-4.12.4.tgz
+331 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+332 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+333 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+334 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+335 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+336 info retry will retry, error on last attempt: Error: connect ETIMEDOUT
+337 info retry fetch attempt 2 at 15:40:18
+338 verbose fetch to= /var/folders/qv/329g7gh579sc4nmy04jplpz80000gn/T/npm-1296--4GM2aBl/registry.npmjs.org/express/-/express-4.12.4.tgz
+339 http GET https://registry.npmjs.org/express/-/express-4.12.4.tgz
+340 info trying registry request attempt 3 at 15:41:09
+341 http GET https://registry.npmjs.org/restberry
+342 info trying registry request attempt 3 at 15:41:09
+343 http GET https://registry.npmjs.org/restberry-auth-local
+344 info trying registry request attempt 3 at 15:41:09
+345 http GET https://registry.npmjs.org/restberry-auth
+346 info trying registry request attempt 3 at 15:41:09
+347 http GET https://registry.npmjs.org/moment
+348 info trying registry request attempt 3 at 15:41:09
+349 http GET https://registry.npmjs.org/restberry-express
+350 http 200 https://registry.npmjs.org/bluebird/-/bluebird-2.9.27.tgz
+351 silly lockFile 85cfd40c-org-bluebird-bluebird-2-9-27-tgz https://registry.npmjs.org/bluebird/-/bluebird-2.9.27.tgz
+352 silly lockFile 85cfd40c-org-bluebird-bluebird-2-9-27-tgz https://registry.npmjs.org/bluebird/-/bluebird-2.9.27.tgz
+353 silly lockFile 04680ac0-bluebird-2-9-27 bluebird@2.9.27
+354 silly lockFile 04680ac0-bluebird-2-9-27 bluebird@2.9.27
+355 silly lockFile 4efe5d86-bluebird-2-9-26 bluebird@^2.9.26
+356 silly lockFile 4efe5d86-bluebird-2-9-26 bluebird@^2.9.26
+357 error fetch failed https://registry.npmjs.org/express/-/express-4.12.4.tgz
+358 info retry will retry, error on last attempt: Error: socket hang up
+359 silly lockFile 154be676-restberry-0-3-23 restberry@^0.3.23
+360 silly lockFile 154be676-restberry-0-3-23 restberry@^0.3.23
+361 silly lockFile 08995c55-restberry-auth-local-0-2-4 restberry-auth-local@^0.2.4
+362 silly lockFile 08995c55-restberry-auth-local-0-2-4 restberry-auth-local@^0.2.4
+363 silly lockFile 66feb297-restberry-auth-0-2-1 restberry-auth@^0.2.1
+364 silly lockFile 66feb297-restberry-auth-0-2-1 restberry-auth@^0.2.1
+365 silly lockFile 84b73f9b-moment-2-10-3 moment@^2.10.3
+366 silly lockFile 84b73f9b-moment-2-10-3 moment@^2.10.3
+367 silly lockFile 34f19d0a-restberry-express-4-12-1 restberry-express@^4.12.1
+368 silly lockFile 34f19d0a-restberry-express-4-12-1 restberry-express@^4.12.1
+369 info retry fetch attempt 3 at 15:43:34
+370 verbose fetch to= /var/folders/qv/329g7gh579sc4nmy04jplpz80000gn/T/npm-1296--4GM2aBl/registry.npmjs.org/express/-/express-4.12.4.tgz
+371 http GET https://registry.npmjs.org/express/-/express-4.12.4.tgz
+372 http 200 https://registry.npmjs.org/express/-/express-4.12.4.tgz
+373 silly lockFile 018f992a-s-org-express-express-4-12-4-tgz https://registry.npmjs.org/express/-/express-4.12.4.tgz
+374 silly lockFile 018f992a-s-org-express-express-4-12-4-tgz https://registry.npmjs.org/express/-/express-4.12.4.tgz
+375 silly lockFile 3b813118-express-4-12-4 express@4.12.4
+376 silly lockFile 3b813118-express-4-12-4 express@4.12.4
+377 silly lockFile 702f5120-express-4-12-2 express@~4.12.2
+378 silly lockFile 702f5120-express-4-12-2 express@~4.12.2
+379 error Error: EACCES, mkdir '/Users/lionelbertrand/.npm/underscore/1.8.3'
+379 error  { [Error: EACCES, mkdir '/Users/lionelbertrand/.npm/underscore/1.8.3']
+379 error   errno: 3,
+379 error   code: 'EACCES',
+379 error   path: '/Users/lionelbertrand/.npm/underscore/1.8.3',
+379 error   parent: 'backfront' }
+380 error Please try running this command again as root/Administrator.
+381 error System Darwin 14.0.0
+382 error command "node" "/usr/local/bin/npm" "install"
+383 error cwd /usr/local/zend/apache2/htdocs/locloud/backfront
+384 error node -v v0.10.35
+385 error npm -v 1.4.28
+386 error path /Users/lionelbertrand/.npm/underscore/1.8.3
+387 error code EACCES
+388 error errno 3
+389 error stack Error: EACCES, mkdir '/Users/lionelbertrand/.npm/underscore/1.8.3'
+390 verbose exit [ 3, true ]

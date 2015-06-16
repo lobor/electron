@@ -1,4 +1,3 @@
-'use strict';
 define([
 	'angular',
 	'controller/sci/config/routes',
@@ -8,8 +7,10 @@ define([
 	'controller/sci/views/showMenuRow',
 	'angular-grid',
 	'angular-schema-form-material',
+	'material-wizard'
 ], function(angular, routesSci, CreateController, ListController, EditController, ShowMenuRowController) {
-	angular.module('locloud.sci', ['angularGrid', 'schemaForm', 'schemaForm-datepicker'])
+	'use strict';
+	angular.module('locloud.sci', ['angularGrid', 'schemaForm', 'schemaForm-datepicker', 'material.wizard'])
 		.config(routesSci)
 		.controller('SciCreateController', CreateController)
 		.controller('SciListController', ListController)

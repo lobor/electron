@@ -1,0 +1,74 @@
+{
+	"schemaBien": {
+		"type": "object",
+		"properties": {
+			"nom": {
+				"title": "Nom",
+				"type": "string"
+			},
+			"address": {
+				"title": "N° et rue",
+				"type": "string"
+			},
+			"cp": {
+				"title": "Code postale",
+				"type": "number"
+			},
+			"city": {
+				"title": "Ville",
+				"type": "string"
+			},
+			"photo": {
+				"type":"object",
+				"format":"file_upload",
+				"title": "Les photos"
+			}
+		}
+	},
+	"formBien": [
+		{
+			"type": "section",
+			"htmlClass": "row",
+			"items": [
+				{
+					"type": "section",
+					"htmlClass": "column",
+					"items": [
+						{
+							"key": "nom",
+							"htmlClass": "col-md row md-default-theme"
+						}
+					]
+				},
+				{
+					"type": "section",
+					"htmlClass": "column",
+					"items": [
+						{
+							"key": "address",
+							"htmlClass": "col-md row md-default-theme"
+						},
+						{
+							"key": "cp",
+							"htmlClass": "col-md row md-default-theme"
+						},
+						{
+							"key": "city",
+							"htmlClass": "col-md row md-default-theme"
+						}
+					]
+				},
+				{
+					"type": "section",
+					"htmlClass": "column",
+					"items": [
+						{
+							"key": "photo",
+							"type":"file_upload"
+						}
+					]
+				}
+			]
+		}
+	]
+}

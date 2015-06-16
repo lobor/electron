@@ -136,17 +136,7 @@
 			"items": [
 				{
 					"key": "photo",
-					"uploadOptions": {
-		         		"backdrop": true,
-	         			"modal": {
-		           			"uploadStarted": "$scope.uploadStarted",
-		           			"flow": {
-		             			"imageOnly": true,
-		             			"dropEnabled": true,
-		             			"fileSuccess": "success"
-		           			}
-	         			}
-       				}
+					"type":"file_upload"
 				}
 			]
 		},

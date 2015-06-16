@@ -4,6 +4,12 @@ define([
 	'angular',
 	'config/routes',
 	'config/stateRoutes',
+	'config/loadingBar',
+	'config/datepicker',
+
+	// directives
+	'directives/decorators/materialDesign/datepicker',
+	'directives/decorators/materialDesign/fileUpload',
 
 	'crAcl',
 	'uiRouter',
@@ -13,12 +19,10 @@ define([
 	'angular-material',
 	'ng-notify',
 	'angularBootstrapTpl',
-	'angular-material-components'
-
-
-
-], function(angular, $routes, $stateRoutes) {
-	angular
+	'angular-material-components',
+	'imgLiquid'
+], function (angular, $routes, $stateRoutes, $loadingBar) {
+	return angular
 		.module('locloud', [
 			'ui.router',
 			'cr.acl',
@@ -30,46 +34,32 @@ define([
 			'locloud.home',
 			'locloud.menu',
 			'locloud.sci',
-			'locloud.bien',
+			'locloud.lot',
 			'locloud.locataire',
 			'locloud.user',
 			'locloud.install'
 		])
 		.run($stateRoutes)
 		.config($routes)
-		.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
-	    	cfpLoadingBarProvider.includeSpinner = false;
-		}])
-		.config(function($mdThemingProvider) {
-	  		$mdThemingProvider.theme('datePickerTheme').primaryPalette('teal');
-		})
-		.constant('baseUrl', window.location.origin + ':3000');
+		.config($loadingBar)
+		.constant('baseUrl', window.location.origin + ':3000')
+		.directive('imgliquid', function () {
+			return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+					element.imgLiquid();
+					if (!element.find('img').attr('src')) {
+						var reader  = new FileReader();
+						var file = scope.file;
+						reader.onloadend = function () {
+							element.css('background-image', 'url("' + reader.result + '")');
+						};
 
-	angular
-		.module("schemaForm")
-		.run(["$templateCache", function($templateCache) {
-			$templateCache.put("directives/decorators/materialDesign/datepicker.html","<md-input-container class=\"schema-form-{{form.type}} {{form.htmlClass}}\">  <mdc-date-picker  aria-label model=\"$$value$$\" label=\"{{form.title}}\" locale=\"fr\" dialog-md-theme=\"datePickerTheme\"/>  </md-input-container>\n");
-			$templateCache.put("decorators/material/select.html","<md-select ng-model=\"$$value$$\" placeholder=\"{{form.title}}\" ><md-option ng-repeat=\"item in form.titleMap\" value=\"{{item.value}}\">{{item.name}}</md-option></md-select>");
-		}]);
-
-	angular
-		.module('schemaForm-datepicker', ['schemaForm', 'ngMaterial.components'])
-		.config(['schemaFormProvider', 'schemaFormDecoratorsProvider', 'sfPathProvider', function(schemaFormProvider,  schemaFormDecoratorsProvider, sfPathProvider) {
-		    var picker = function(name, schema, options) {
-		    	if ((schema.type === 'string' || schema.type === 'number') && schema.format == 'datepicker') {
-		      		var f = schemaFormProvider.stdFormObj(name, schema, options);
-			   		options.lookup[sfPathProvider.stringify(options.path)] = f;
-		      		return f;
-		    	}
-		  	};
-
-			moment.locale('fr');
-
-		    schemaFormProvider.defaults.string.unshift(picker);
-
-		    schemaFormDecoratorsProvider.addMapping('materialDecorator', 'datepicker', 'directives/decorators/materialDesign/datepicker.html');
-		    schemaFormDecoratorsProvider.createDirective('datepicker', 'directives/decorators/materialDesign/datepicker.html');
-		}]);
-
-	return angular;
+						if (file) {
+							reader.readAsDataURL(file);
+						}
+					}
+        }
+			};
+		});
 });

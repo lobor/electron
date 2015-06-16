@@ -12,7 +12,7 @@ define([
 					field: "_id",
 				},
 				{
-					displayName: "Bien",
+					displayName: "Lot",
 					field: "name",
 				}
 			],
@@ -20,7 +20,7 @@ define([
 			rowSelection: 'single',
 			enableSorting: true,
 			rowSelected:function(row){
-				$state.go('locloud.sci.edit',{id:row._id});
+				$state.go('locloud.lot.edit',{id:row._id});
 			}
 		};
 

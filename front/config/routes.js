@@ -2,13 +2,12 @@
 define([
 	'angular',
 	'uiRouter',
-
 	// controller
 	'controller/auth/auth',
 	'controller/home/home',
 	'controller/menu/menu',
 	'controller/sci/sci',
-	'controller/bien/bien',
+	'controller/lot/lot',
 	'controller/locataire/locataire',
 	'controller/user/user',
 	'controller/install/install',

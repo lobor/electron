@@ -22,9 +22,9 @@ define([
 				'acl':'ROLE_USER,ROLE_ADMIN'
 			},
 			{
-				'url':'locloud.bien',
+				'url':'locloud.lot',
 				'icon':'fa-building',
-				'name':'Biens',
+				'name':'Lots',
 				'acl':'ROLE_USER,ROLE_ADMIN'
 			},
 			{

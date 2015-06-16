@@ -5,7 +5,6 @@ var restberryAuth = require('restberry-auth');
 var restberryAuthLocal = require('restberry-auth-local');
 var session = require('express-session');
 
-
 restberry
     .config({
         apiPath: '',
