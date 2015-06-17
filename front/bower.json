@@ -49,7 +49,8 @@
     "MaterialDesign": "https://github.com/Templarian/MaterialDesign.git",
     "ng-file-upload": "https://github.com/danialfarid/ng-file-upload.git#~5.0.0",
     "imgLiquid": "~0.9.944",
-    "material-wizard": "https://github.com/lobor/material-wizard.git#~0.0.2"
+    "material-wizard": "https://github.com/lobor/material-wizard.git#~0.0.2",
+    "angular-jwt": "~0.0.9"
   },
   "resolutions": {
     "font-awesome": "~4.3.0",

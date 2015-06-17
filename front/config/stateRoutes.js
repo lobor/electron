@@ -5,7 +5,7 @@ define([
 	'uiRouter',
 	'angularCookie',
 ], function(){
-	return ['$rootScope', '$state', '$controller', '$q', '$window', '$http', 'baseUrl', 'ngNotify', 'crAcl', function($rootScope, $state, $controller, $q, $window, $http, baseUrl, ngNotify, crAcl){
+	return ['$rootScope', '$state', '$controller', '$q', '$window', '$http', 'baseUrl', 'ngNotify', 'crAcl', 'jwtHelper', function($rootScope, $state, $controller, $q, $window, $http, baseUrl, ngNotify, crAcl, jwtHelper){
 		ngNotify.config({
 		    theme: 'pure',
 		    position: 'top',
@@ -21,24 +21,32 @@ define([
 			"ROLE_ADMIN" : ["ROLE_USER", "ROLE_TEST"]
 		});
 
-		crAcl.setRedirect("locloud.unauthorized");
+		crAcl.setRedirect("login");
 		if(!$window.location.pathname.match('install')){
-			$http.get(baseUrl+'/auth/check')
-			.success(function (data, status, headers, config) {
-				if(data.status && $window.location.pathname.match('login')){
+			var idToken = localStorage.getItem('id_token');
+			if(idToken){
+				if(idToken && !jwtHelper.isTokenExpired(idToken) && $window.location.pathname.match('login')){
 					$state.go('locloud.home');
 				}
-				else if(!data.status){
+				else if(jwtHelper.isTokenExpired(idToken)){
 					$state.go('login');
 				}
-			}).
-			error(function(data, status, headers, config){
+			}
+			else{
 				if($window.sessionStorage.role){
 					$window.sessionStorage.removeItem('role');
 				}
-				crAcl.setRole('ROLE_GUEST');
 				$state.go('login');
-			});
+				// crAcl.setRole('ROLE_GUEST');
+			}
+			// }).
+			// error(function(data, status, headers, config){
+			// 	if($window.sessionStorage.role){
+			// 		$window.sessionStorage.removeItem('role');
+			// 	}
+			// 	crAcl.setRole('ROLE_GUEST');
+			// 	$state.go('login');
+			// });
 		}
 	}];
 });

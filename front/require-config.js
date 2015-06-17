@@ -43,7 +43,8 @@ require.config({
 		'ng-file-upload-shim': 'bower_components/ng-file-upload/dist/ng-file-upload-shim.min',
 		'ng-file-upload': 'bower_components/ng-file-upload/dist/ng-file-upload.min',
 		'imgLiquid': 'bower_components/imgLiquid/js/imgLiquid-min',
-		'material-wizard': 'bower_components/material-wizard/dist/material-wizard'
+		'material-wizard': 'bower_components/material-wizard/dist/material-wizard',
+		'angular-jwt': 'bower_components/angular-jwt/dist/angular-jwt.min'
 	},
 	shim: {
 		'jquery': {
@@ -57,6 +58,7 @@ require.config({
 			deps: ['jquery']
 		},
 		'uiRouter': ['angular'],
+		'angular-jwt': ['angular'],
 		'angular-animate': ['angular'],
 		'angular-loading-bar': ['angular'],
 		'angularCookie': ['angular'],

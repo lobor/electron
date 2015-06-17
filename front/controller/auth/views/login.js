@@ -13,45 +13,25 @@ define([
 			$scope.message = '';
 			$scope.styleAlert = '';
 		    $http
-	      		.post(baseUrl+'/login', $scope.user, {withCredentials:true})
+	      		.post(baseUrl+'/login', $scope.user)
 	      		.success(function (data, status, headers, config) {
-					if(!data.error){
-						crAcl.setRole(data.user.role);
+					if(data.status){
+						localStorage.setItem('id_token', data.token);
 
-						$window.sessionStorage.setItem('role',data.user.role);
+						crAcl.setRole(data.role);
+
+						$window.sessionStorage.setItem('role', data.role);
 
 						$state.go('locloud.home',null,{
 						  reload: true, notify: true
 						});
 					}
 					else{
-						switch(data.errorCode){
-							// 001 => not password or email
-							case '001':
-								$scope.message = 'Champs email et mot de passe obligatoires';
-								$scope.styleAlert = 'alert alert-danger';
-								break;
-
-							// 002 => email not find
-							case '002':
-								$scope.message = 'Aucun compte associé à cet email';
-								$scope.styleAlert = 'alert alert-danger';
-								break;
-
-							// 003 => password incorrect
-							case '003':
-								$scope.message = 'Mot de passe incorrect';
-								$scope.styleAlert = 'alert alert-danger';
-								break;
-						}
+						$scope.message = data.msg;
 					}
 	      		})
 		      	.error(function (data, status, headers, config) {
-			        // Erase the token if the user fails to log in
-			        // delete $window.sessionStorage.token;
-
-			        // Handle login errors here
-			        $scope.message = 'Error: Invalid user or password';
+			        $scope.message = 'Utilisateur non enregistré';
 		      	});
 		};
 	}
