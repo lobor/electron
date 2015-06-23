@@ -7,10 +7,10 @@ define([
 	'controller/sci/views/showMenuRow',
 	'angular-grid',
 	'angular-schema-form-material',
-	'material-wizard'
+	'angular-multi-step-form'
 ], function(angular, routesSci, CreateController, ListController, EditController, ShowMenuRowController) {
 	'use strict';
-	angular.module('locloud.sci', ['angularGrid', 'schemaForm', 'schemaForm-datepicker', 'material.wizard'])
+	angular.module('locloud.sci', ['angularGrid', 'schemaForm', 'schemaForm-datepicker', 'multiStepForm'])
 		.config(routesSci)
 		.controller('SciCreateController', CreateController)
 		.controller('SciListController', ListController)

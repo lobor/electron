@@ -109,7 +109,7 @@ define([
 						case 302:
 							break;
 						case 401:
-							$injector.get('$state').go('login');
+							$injector.get('$state').go('logout');
 							break;
 						case 404:
 							// $injector.get('$state').go('locloud.error404');

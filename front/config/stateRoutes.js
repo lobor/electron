@@ -36,17 +36,9 @@ define([
 				if($window.sessionStorage.role){
 					$window.sessionStorage.removeItem('role');
 				}
+				crAcl.setRole('ROLE_GUEST');
 				$state.go('login');
-				// crAcl.setRole('ROLE_GUEST');
 			}
-			// }).
-			// error(function(data, status, headers, config){
-			// 	if($window.sessionStorage.role){
-			// 		$window.sessionStorage.removeItem('role');
-			// 	}
-			// 	crAcl.setRole('ROLE_GUEST');
-			// 	$state.go('login');
-			// });
 		}
 	}];
 });

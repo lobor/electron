@@ -43,8 +43,8 @@ require.config({
 		'ng-file-upload-shim': 'bower_components/ng-file-upload/dist/ng-file-upload-shim.min',
 		'ng-file-upload': 'bower_components/ng-file-upload/dist/ng-file-upload.min',
 		'imgLiquid': 'bower_components/imgLiquid/js/imgLiquid-min',
-		'material-wizard': 'bower_components/material-wizard/dist/material-wizard',
-		'angular-jwt': 'bower_components/angular-jwt/dist/angular-jwt.min'
+		'angular-jwt': 'bower_components/angular-jwt/dist/angular-jwt.min',
+		'angular-multi-step-form': 'bower_components/angular-multi-step-form/dist/angular-multi-step-form.min'
 	},
 	shim: {
 		'jquery': {
@@ -74,10 +74,10 @@ require.config({
 		'angular-schema-form-material': ['angular', 'angular-schema-form'],
 		'angular-material-components': ['angular', 'jquery', 'moment'],
 		'ng-flow': ['angular'],
+		'angular-multi-step-form': ['angular'],
 		'ng-file-upload-shim': ['angular'],
 		'ng-file-upload': ['angular', 'ng-file-upload-shim'],
 		'imgLiquid': ['jquery'],
-		'material-wizard': ['angular', 'angular-material'],
 		'angularMocks': {
 			deps: ['angular'],
 			'exports': 'angular.mock'

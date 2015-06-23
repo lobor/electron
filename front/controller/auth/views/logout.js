@@ -7,7 +7,10 @@ define([
 	function LogoutController($state, $http, baseUrl, crAcl, $window){
 		localStorage.removeItem('id_token');
 		$window.sessionStorage.removeItem('role');
-		$state.go('login');
+		crAcl.setRole('ROLE_GUEST');
+		$state.go('login',null,{
+			reload: true, notify: true
+		});
 		// $http
 		// 	.get(baseUrl+'/user/logout')
 		// 	.success(function (data, status, headers, config) {

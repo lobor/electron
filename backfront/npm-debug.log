@@ -1,0 +1,104 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'restberry-errors',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'restberry-errors', null ]
+6 verbose cache add name=undefined spec="restberry-errors" args=["restberry-errors",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'restberry-errors',
+7 verbose parsed url   path: 'restberry-errors',
+7 verbose parsed url   href: 'restberry-errors' }
+8 silly lockFile 018312d6-restberry-errors restberry-errors
+9 verbose lock restberry-errors /Users/lionelbertrand/.npm/018312d6-restberry-errors.lock
+10 silly lockFile 018312d6-restberry-errors restberry-errors
+11 silly lockFile 018312d6-restberry-errors restberry-errors
+12 verbose addNamed [ 'restberry-errors', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile dc7cafb2-restberry-errors restberry-errors@
+15 verbose lock restberry-errors@ /Users/lionelbertrand/.npm/dc7cafb2-restberry-errors.lock
+16 silly addNameRange { name: 'restberry-errors', range: '*', hasData: false }
+17 verbose request where is /restberry-errors
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id 4969889a03458e1e
+20 verbose url raw /restberry-errors
+21 verbose url resolving [ 'https://registry.npmjs.org/', './restberry-errors' ]
+22 verbose url resolved https://registry.npmjs.org/restberry-errors
+23 verbose request where is https://registry.npmjs.org/restberry-errors
+24 info trying registry request attempt 1 at 16:45:13
+25 verbose etag "771BPUDNPDUYZ0IB7KURLBJ1U"
+26 http GET https://registry.npmjs.org/restberry-errors
+27 http 200 https://registry.npmjs.org/restberry-errors
+28 silly registry.get cb [ 200,
+28 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     etag: '"1FSFNRA4FOKKVT6WNLIZDN0PU"',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=60',
+28 silly registry.get     'content-length': '12691',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     date: 'Thu, 18 Jun 2015 14:45:15 GMT',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     connection: 'keep-alive',
+28 silly registry.get     'x-served-by': 'cache-fra1225-FRA',
+28 silly registry.get     'x-cache': 'MISS',
+28 silly registry.get     'x-cache-hits': '0',
+28 silly registry.get     'x-timer': 'S1434638714.695249,VS0,VE416',
+28 silly registry.get     vary: 'Accept' } ]
+29 silly addNameRange number 2 { name: 'restberry-errors', range: '*', hasData: true }
+30 silly addNameRange versions [ 'restberry-errors',
+30 silly addNameRange   [ '0.1.0',
+30 silly addNameRange     '0.1.1',
+30 silly addNameRange     '0.2.0',
+30 silly addNameRange     '0.2.1',
+30 silly addNameRange     '0.2.2',
+30 silly addNameRange     '1.0.0',
+30 silly addNameRange     '1.0.1',
+30 silly addNameRange     '1.0.2' ] ]
+31 verbose addNamed [ 'restberry-errors', '1.0.2' ]
+32 verbose addNamed [ '1.0.2', '1.0.2' ]
+33 silly lockFile 21c2ab0c-restberry-errors-1-0-2 restberry-errors@1.0.2
+34 verbose lock restberry-errors@1.0.2 /Users/lionelbertrand/.npm/21c2ab0c-restberry-errors-1-0-2.lock
+35 silly lockFile ef33a993-rrors-restberry-errors-1-0-2-tgz https://registry.npmjs.org/restberry-errors/-/restberry-errors-1.0.2.tgz
+36 verbose lock https://registry.npmjs.org/restberry-errors/-/restberry-errors-1.0.2.tgz /Users/lionelbertrand/.npm/ef33a993-rrors-restberry-errors-1-0-2-tgz.lock
+37 verbose addRemoteTarball [ 'https://registry.npmjs.org/restberry-errors/-/restberry-errors-1.0.2.tgz',
+37 verbose addRemoteTarball   '2bf5a9dd029cb5c01e3f991573b8ffb7e05bf0b0' ]
+38 info retry fetch attempt 1 at 16:45:14
+39 verbose fetch to= /var/folders/qv/329g7gh579sc4nmy04jplpz80000gn/T/npm-87922-Uj4WEEcy/registry.npmjs.org/restberry-errors/-/restberry-errors-1.0.2.tgz
+40 http GET https://registry.npmjs.org/restberry-errors/-/restberry-errors-1.0.2.tgz
+41 http 200 https://registry.npmjs.org/restberry-errors/-/restberry-errors-1.0.2.tgz
+42 silly lockFile ef33a993-rrors-restberry-errors-1-0-2-tgz https://registry.npmjs.org/restberry-errors/-/restberry-errors-1.0.2.tgz
+43 silly lockFile ef33a993-rrors-restberry-errors-1-0-2-tgz https://registry.npmjs.org/restberry-errors/-/restberry-errors-1.0.2.tgz
+44 silly lockFile 21c2ab0c-restberry-errors-1-0-2 restberry-errors@1.0.2
+45 silly lockFile 21c2ab0c-restberry-errors-1-0-2 restberry-errors@1.0.2
+46 silly lockFile dc7cafb2-restberry-errors restberry-errors@
+47 silly lockFile dc7cafb2-restberry-errors restberry-errors@
+48 error Error: EACCES, mkdir '/Users/lionelbertrand/.npm/restberry-errors/1.0.2'
+48 error  { [Error: EACCES, mkdir '/Users/lionelbertrand/.npm/restberry-errors/1.0.2']
+48 error   errno: 3,
+48 error   code: 'EACCES',
+48 error   path: '/Users/lionelbertrand/.npm/restberry-errors/1.0.2',
+48 error   parent: 'backfront' }
+49 error Please try running this command again as root/Administrator.
+50 error System Darwin 14.0.0
+51 error command "node" "/usr/local/bin/npm" "install" "restberry-errors" "--save"
+52 error cwd /usr/local/zend/apache2/htdocs/locloud/backfront
+53 error node -v v0.10.35
+54 error npm -v 1.4.28
+55 error path /Users/lionelbertrand/.npm/restberry-errors/1.0.2
+56 error code EACCES
+57 error errno 3
+58 error stack Error: EACCES, mkdir '/Users/lionelbertrand/.npm/restberry-errors/1.0.2'
+59 verbose exit [ 3, true ]

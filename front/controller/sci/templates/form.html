@@ -1,10 +1,24 @@
 <div class="row">
-	<div class="page-header">
-		<h2>
-			{{title_form_sci}}
-		</h2>
-	</div>
-	<mt-wizard btn-progress-color="#D8D8D8" btn-bg-color="#FAFAFA" active-btn-bg-color="#E9E9E9">
+
+	<multi-step-container steps="steps">
+		<header layout="row" layout-align="space-between center">
+			<button ng-disabled="$isFirst()" class="btn btn-default pull-left" ng-click="$previousStep()">
+				<span class="fa fa-chevron-left"></span>
+				Précédent
+			</button>
+			<div class="page-header">
+				<h2 ng-bind-template="{{$getActiveStep().title}}">
+					{{title_form_sci}}
+				</h2>
+			</div>
+			<button ng-disabled="$isLast() || ($getActiveStep().hasForm && !$getActiveStep().valid)" class="btn btn-default pull-right" ng-click="$nextStep()">
+				Suivant
+				<span class="fa fa-chevron-right"></span>
+			</button>
+		</header>
+		<step-container></step-container>
+	</multi-step-container>
+	<!--<mt-wizard btn-progress-color="#D8D8D8" btn-bg-color="#FAFAFA" active-btn-bg-color="#E9E9E9">
 		<mt-wz-step title="Créer la sci ainsi que les associé(e)(s)" on-exit="SubmitSci(addSci)" on-back-exit="ReturnSubmitSci(addBien)">
 			<form name="addSci" sf-schema="schema" sf-form="form" sf-model="sci" class="row">
 
@@ -15,5 +29,5 @@
 
 			</form>
 		</mt-wz-step>
-	</mt-wizard>
+	</mt-wizard>-->
 </div>

@@ -1,13 +1,27 @@
 var restberry = require('restberry');
 var restberryExpress = require('restberry-express');
 var restberryMongoose = require('restberry-mongoose');
+var restberryError = require('restberry-errors');
 // var restberryAuth = require('restberry-auth');
 var restberryAuthLocal = require('restberry-auth-local');
+var RestberryObj = require('./node_modules/restberry/lib/obj');
 // var session = require('express-session');
 var expressJwt = require('express-jwt');
 var jwt = require('jsonwebtoken');
 
 var secret = 'shhhhhhared-secret';
+var token;
+
+RestberryObj.prototype.__isAuthorized = function(next, onError) {
+	var self = this;
+	if(token){
+		next(true);
+	}
+	else{
+		var err = {message: 'Can\'t authorize without an enabled auth.'};
+        self.onError(restberryError.Unauthenticated, err, onError);
+	}
+};
 
 restberry
 	.config({
@@ -69,7 +83,7 @@ restberry
                     secret: secret
                 })
                 .unless({
-                    path: ['/auth/check', '/login']
+                    path: ['/login']
                 }));
 	}))
 	.use(restberryMongoose.use(function (odm) {
@@ -82,26 +96,6 @@ restberry
 
 restberry
 	.routes
-	.addCustomRoute({
-		action: function (req, res, next) {
-			//   if(!req.session.passport.user){
-			res.status(401);
-			res.json({
-				status: false
-			});
-			//   }
-			//   else{
-			//     res.status(200);
-			//     res.json({status: true});
-			//   }
-			next();
-		},
-		path: '/check',
-		apiPath: '/auth', // overrides the one set on Restberry
-		loginRequired: false,
-		method: 'GET',
-		verbose: false
-	})
 	.addCustomRoute({
 		action: function (req, res, next) {
             var email = req.body.email;
@@ -117,9 +111,7 @@ restberry
                     else{
                         var salt = response._obj.password.salt;
                         if(restberryAuthLocal.encryptPassword(password, salt) === response._obj.password.encrypted){
-                            console.log(jwt);
-                            var token = jwt.sign(response._obj, secret, { expiresInMinutes: 60*5 });
-
+                            token = jwt.sign(response._obj, secret, { expiresInMinutes: 60*5 });
                             res
                                 .status(200)
                                 .json({token: token, status: true, role: response._obj.role});
@@ -138,21 +130,6 @@ restberry
 		loginRequired: false,
 		method: 'POST',
 		verbose: false
-	})
-	.addCustomRoute({
-		action: function (req, res, next) {
-			req.session.destroy();
-			req.logout();
-			res.status(200);
-			res.json({
-				status: true
-			});
-			next();
-		},
-		path: '/logout',
-		apiPath: '/user', // overrides the one set on Restberry
-		loginRequired: false,
-		method: 'GET',
 	});
 
 

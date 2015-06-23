@@ -4,14 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-mtWizard	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^	var mtWizard = angular.module('material.wizard', ['ngMaterial', 'ngAnimate']);$/;"	variable	line:9
-addStep	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^					this.addStep = function(stepScope) {$/;"	function	line:57
-next	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^					$scope.next = function() {$/;"	function	line:71
-previous	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^					$scope.previous = function() {$/;"	function	line:85
-goto	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^					$scope.goto = function(stepNr) {$/;"	function	line:91
-setStepActive	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^					function setStepActive(stepScope, active) {$/;"	function	line:102
-template	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^				template: function(element, attrs) {$/;"	function	line:110
-link	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^				link: function(scope, element, attrs) {$/;"	function	line:137
-updateProgressStyle	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^					var updateProgressStyle = function() {$/;"	function	line:138
-link	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^			link: function(scope, element, attrs, wizardCtrl) {$/;"	function	line:181
-link	/usr/local/zend/apache2/htdocs/locloud/front/bower_components/material-wizard/dist/material-wizard.js	/^				link: function(scope, element, attrs, ngModel, $rootScope) {$/;"	function	line:210
+Create	/usr/local/zend/apache2/htdocs/locloud/front/controller/sci/views/create.js	/^	function Create($scope, $http, baseUrl, ngNotify, $state) {$/;"	function	line:12
+ReturnSubmitSci	/usr/local/zend/apache2/htdocs/locloud/front/controller/sci/views/create.js	/^		\/\/ function ReturnSubmitSci(form) {$/;"	function	line:92
+SubmitSci	/usr/local/zend/apache2/htdocs/locloud/front/controller/sci/views/create.js	/^		\/\/ function SubmitSci(form) {$/;"	function	line:97
