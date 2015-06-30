@@ -1,7 +1,7 @@
 <ul class="sidebar-nav nav">
 	<li ng-repeat="menu in menus"  cr-granted="{{menu.acl}}">
 		<a ui-sref="{{menu.url}}" href="#" ui-sref-active="active">
-			<span class="fa {{menu.icon}}"></span> {{menu.name}}
+			<span class="fa {{menu.icon}}"><span class="icon-bg" style="background-color: {{menu.background}};"></span></span> {{menu.name}}
 		</a>
 	</li>
 </ul>

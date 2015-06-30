@@ -106,20 +106,16 @@ define([
 					$injector.get('cfpLoadingBar').complete();
 					// cfpLoadingBar;
 					switch (rejection.status){
-						case 302:
-							break;
 						case 401:
 							$injector.get('$state').go('logout');
 							break;
 						case 404:
-							// $injector.get('$state').go('locloud.error404');
-							break;
+						case 400:
 						case 500:
-							// $injector.get('$state').go('locloud.error500');
+						case 302:
 							break;
 						default:
-						// console.log(rejection.status);
-						// 	$injector.get('$state').go('locloud.error500')
+							$injector.get('ngNotify').set('Le serveur ne reponds pas', 'error');
 							break;
 					}
 					return $q.reject(rejection);

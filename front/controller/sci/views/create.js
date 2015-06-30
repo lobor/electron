@@ -10,29 +10,68 @@ define([
 	return ['$scope', '$http', 'baseUrl', 'ngNotify', '$state', Create];
 
 	function Create($scope, $http, baseUrl, ngNotify, $state) {
-		$scope.sci = {};
+		var _this = $scope;
+		$scope.idSci = null;
 		$scope.steps = [
 			{
 				template: CreateSciTpl,
 				title: 'Créez la SCI',
 				hasForm: true,
 				controller: ['$scope', function($scope){
-					$scope = angular.extend($scope, sciForm);
-					$scope.$broadcast('schemaFormRedraw')
-					console.log($scope.sci);
-					// $scope.$on('schemaFormValidate', function(){
-					// 		console.log(3);
-					// });
-					// console.log($scope.$broadcast('schemaFormValidate'));
-
-					$scope.$watch('sci', function(value){
-						if($scope.sci !== {}){
-							$scope.$broadcast('schemaFormValidate')
-							if($scope.addSci.$valid && !$scope.addSci.$pristine){
-								$scope.$setValidity(true)
-							}
+					$scope.validation = sciForm;
+					$scope.addAssocie = addAssocie;
+					$scope.sci = {};
+					// $scope.sci = {
+					// 	associes: [{
+					//
+					// 	}]
+					// };
+					function addAssocie(){
+						if(!$scope.sci.associes){
+							$scope.sci.associes = [];
 						}
-					}, true)
+						$scope.sci.associes.push({});
+					}
+					_this.submit = Submit;
+					//
+					$scope.$watch('sci', function(value){
+						if($scope.formIsValid){
+							$scope.$setValidity(true);
+						}
+						else {
+							$scope.$setValidity(false);
+						}
+					}, true);
+					//
+					function Submit() {
+						var sciData = angular.extend({},$scope.sci);
+						var biensData = angular.extend({},sciData);
+
+						delete sciData.biens;
+						// sciData.date_immatriculation = moment(sciData.date_immatriculation, 'DD MMMM YYYY');
+
+						angular.forEach(sciData.associes, function(associe, key){
+							delete sciData.associes[key].$$hashKey;
+							// sciData.associes[key].birthday = moment(associe.birthday, 'DD MMMM YYYY');
+						});
+
+						$http
+				    		.post(baseUrl + '/scis', sciData)
+				    		.then(function (data, status, headers, config) {
+									if(data.data.sci){
+										_this.idSci = data.data.sci.id;
+										ngNotify.set('La SCI a bien été enregistré', 'success');
+										$scope.$nextStep();
+									}
+									else{
+										ngNotify.set('Une erreur est apparu', 'error');
+									}
+									return data;
+								}, function (data, status, headers, config) {
+									ngNotify.set('Une erreur est apparu', 'error');
+									return false;
+				    		});
+					}
 				}]
 			},
 			{
@@ -41,9 +80,46 @@ define([
 				hasForm: true,
 				controller: ['$scope', function($scope){
 					$scope = angular.extend($scope, bienForm);
+					$scope.biens = {biens:[]};
+
+					$scope.$broadcast('schemaFormRedraw');
+
+					_this.submit = Submit;
+
+					$scope.$watch('biens', function(value){
+						if(!angular.equals($scope.biens, [])){
+							$scope.$broadcast('schemaFormValidate');
+							if($scope.addBien.$valid && !$scope.addBien.$pristine){
+								$scope.$setValidity(true);
+							}
+							else{
+								$scope.$setValidity(false);
+							}
+						}
+					}, true);
+
+					function Submit() {
+						var $httpSelf;
+						angular.forEach($scope.biens.biens, function(bien){
+							if(!bien.photos)
+								bien.photos = [];
+
+							$httpSelf = $http.post(baseUrl+'/scis/'+_this.idSci+'/biens', bien);
+						});
+
+						$httpSelf
+							.then(function(){
+								ngNotify.set('Les biens on été enregistré', 'success');
+								$state.go('locloud.sci');
+							}, function(){
+								ngNotify.set('Une erreur est apparu', 'error');
+							});
+					}
 				}]
 			}
 		];
+
+
 
 		// $scope.wizard = Wizards.create($scope, [
 		// 	{
@@ -81,7 +157,6 @@ define([
 
 		// $scope = angular.extend($scope, sciForm);
 		// $scope = angular.extend($scope, bienForm);
-		$scope.title_form_sci = 'Créer une SCI';
 		// $scope.sci = {};
 		// $scope.bien = {};
 		//
@@ -100,40 +175,40 @@ define([
 		// 	// First we broadcast an event so all fields validate themselves
 		// 	// $scope.$broadcast('schemaFormValidate');
 		// 	// if (form.$valid) {
-		// 	// 		var sciData = angular.extend({},$scope.sci);
-		// 	// 		var biensData = angular.extend({},sciData);
-		// 	//
-		// 	// 		delete sciData.biens;
-		// 	// 		sciData.date_immatriculation = moment(sciData.date_immatriculation, 'DD MMMM YYYY');
-		// 	//
-		// 	// 		angular.forEach(sciData.associes, function(associe, key){
-		// 	// 			sciData.associes[key].birthday = moment(associe.birthday, 'DD MMMM YYYY');
-		// 	// 		});
-		// 	//
-		// 	// 		$http
-		// 	//     		.post(baseUrl + '/scis', sciData)
-		// 	//     		.then(function (data, status, headers, config) {
-		// 	// 					if(data.data.sci){
-		// 	// 						ngNotify.set('La SCI a bien été enregistré', 'success');
-		// 	// 						$http
-		// 	// 							.post(baseUrl + '/scis/'+data.data.sci.id+'/biens', biensData)
-		// 	// 							.then(function (data, status, headers, config){
-		// 	// 									if(data.data.biens){
-		// 	// 										ngNotify.set('Les biens ont bien été enregistrés', 'success');
-		// 	// 										$state.go('locloud.sci');
-		// 	// 									}
-		// 	// 								}, function (data, status, headers, config){
-		// 	// 									ngNotify.set('Une erreur est apparu', 'error');
-		// 	// 								});
-		// 	// 					}
-		// 	// 					else{
-		// 	// 						ngNotify.set('Une erreur est apparu', 'error');
-		// 	// 					}
-		// 	// 					return data;
-		// 	// 				}, function (data, status, headers, config) {
-		// 	// 					ngNotify.set('Une erreur est apparu', 'error');
-		// 	// 					return false;
-		// 	//     		});
+					// var sciData = angular.extend({},$scope.sci);
+					// var biensData = angular.extend({},sciData);
+					//
+					// delete sciData.biens;
+					// sciData.date_immatriculation = moment(sciData.date_immatriculation, 'DD MMMM YYYY');
+					//
+					// angular.forEach(sciData.associes, function(associe, key){
+					// 	sciData.associes[key].birthday = moment(associe.birthday, 'DD MMMM YYYY');
+					// });
+					//
+					// $http
+			    	// 	.post(baseUrl + '/scis', sciData)
+			    	// 	.then(function (data, status, headers, config) {
+					// 			if(data.data.sci){
+					// 				ngNotify.set('La SCI a bien été enregistré', 'success');
+					// 				$http
+					// 					.post(baseUrl + '/scis/'+data.data.sci.id+'/biens', biensData)
+					// 					.then(function (data, status, headers, config){
+					// 							if(data.data.biens){
+					// 								ngNotify.set('Les biens ont bien été enregistrés', 'success');
+					// 								$state.go('locloud.sci');
+					// 							}
+					// 						}, function (data, status, headers, config){
+					// 							ngNotify.set('Une erreur est apparu', 'error');
+					// 						});
+					// 			}
+					// 			else{
+					// 				ngNotify.set('Une erreur est apparu', 'error');
+					// 			}
+					// 			return data;
+					// 		}, function (data, status, headers, config) {
+					// 			ngNotify.set('Une erreur est apparu', 'error');
+					// 			return false;
+			    	// 	});
 		// 	// }
 		// }
 	}

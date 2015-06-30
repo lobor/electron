@@ -9,9 +9,47 @@
 			a {
 			    display: block;
 			    text-decoration: none;
-			    // color: #999999;
-				padding-left: 20px;
-				padding-right: 20px;
+		      	color: #767676;
+				padding: 15px;
+				font-weight: 500;
+				.fa{
+					position: relative;
+					display: block;
+					float: left;
+					width: 50px;
+					height: 50px;
+					line-height: 50px;
+					border-right: 1px solid #E5E5E5;
+					text-align: center;
+					margin: -15px 10px -15px -15px;
+					&:before{
+						position: absolute;
+						width: 100%;
+						left: 0px;
+						z-index: 15;
+					}
+					.icon-bg{
+						position: absolute;
+						z-index: 12;
+						left: -47px;
+						width: 100%;
+						top: 0;
+						bottom: 0;
+						-moz-transition: left 0.2s ease-in-out;
+						-o-transition: left 0.2s ease-in-out;
+						-webkit-transition: left 0.2s ease-in-out;
+						transition: left 0.2s ease-in-out;
+					}
+				}
+				&.active, &:hover{
+					.fa{
+						color: #FFF;
+						.icon-bg{
+							z-index: 0;
+							left: 0px;
+						}
+					}
+				}
 			}
 			&:hover {
 				text-decoration: none;

@@ -1,9 +1,8 @@
 var restberry = require('restberry');
-var restberryMongoose = require('restberry-mongoose');
-var Promise = require("bluebird");
-var moment = require("moment");
+var _ = require('underscore');
 
-restberry.model('Sci')
+restberry
+    .model('Sci')
     .schema({
         name: {
     		type: String,
@@ -28,7 +27,7 @@ restberry.model('Sci')
     		type: String,
     		required: true
     	},
-        adress: {
+        address: {
     		type: String,
     		required: true
     	},
@@ -83,6 +82,29 @@ restberry.model('Sci')
             }
         }]
     })
+    .preRemove(function(next) {
+        var Bien = restberry.model('Bien');
+        Bien.remove({sci: this.id}, next);
+    })
     .loginRequired()
     .routes
-    .addCRUDRoutes();
+    .addCRUDRoutes({
+        actions: {
+            bien: function(req, res, next){
+                var Bien = restberry.model('Bien');
+                var query = {
+
+                };
+                Bien
+                    .find(query, function(scis){
+                        scis.toJSON(function(json) {
+                            Bien.hrefs(query, function(hrefs) {
+                                json = _.extend(hrefs, json);
+                                res._body = json;
+                                next(json);
+                            });
+                        });
+                    });
+            }
+        }
+    });

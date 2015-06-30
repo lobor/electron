@@ -1,0 +1,240 @@
+{
+	"name": {
+		"inputType": "text",
+		"label": "Nom de la SCI / Propriétaire",
+		"required":true,
+		"type": "email"
+	},
+	"rcs": {
+		"inputType": "text",
+		"label": "RCS",
+		"required":true
+	},
+	"date_immatriculation": {
+		"inputType": "text",
+		"format": "datepicker",
+		"label": "Date d'immatriculation",
+		"required":true
+	},
+	"capital": {
+		"inputType": "number",
+		"label": "Capital Social",
+		"required":true
+	},
+	"associes":{
+		"type": "array",
+		"title": "Associés",
+		"items": {
+			"type": "object",
+			"properties": {
+				"nom": {
+					"title": "Nom",
+					"type": "string",
+					"required":true
+				},
+				"prenom": {
+					"title": "Prenom",
+					"type": "string",
+					"required":true
+				},
+				"address": {
+					"title": "N° et rue",
+					"type": "string",
+					"required":true
+				},
+				"cp": {
+					"title": "Code postale",
+					"type": "number",
+					"required":true
+				},
+				"city": {
+					"title": "Ville",
+					"type": "string",
+					"required":true
+				},
+				"birthday": {
+					"title": "Date de naissance",
+					"type": "string",
+					"required":true
+				},
+				"city_birthday": {
+					"title": "Lieu de naissance",
+					"type": "string",
+					"required":true
+				},
+				"np_part": {
+					"title": "Nombre de part",
+					"type": "number",
+					"required":true
+				},
+				"percent_part": {
+					"title": "Pourcentage des parts",
+					"type": "number",
+					"required":true
+				}
+			}
+		}
+	},
+	"naf": {
+		"inputType": "text",
+		"label": "Code NAF",
+		"required":true
+	},
+	"adress": {
+		"inputType": "text",
+		"label": "N° et rue",
+		"required":true
+	},
+	"cp": {
+		"inputType": "number",
+		"label": "Code postale",
+		"required":true
+	},
+	"city": {
+		"inputType": "text",
+		"label": "Ville",
+		"required":true
+	},
+	"nb_part": {
+		"inputType": "number",
+		"label": "Nombre de parts totals",
+		"required":true
+	}
+	/*"schema": {
+		"type": "object",
+		"properties": {
+
+		}
+	},
+	"form": [
+		{
+			"type": "section",
+			"htmlClass": "column",
+			"items": [
+				{
+					"key": "name",
+					"htmlClass": "col-md row md-default-theme"
+				},
+				{
+						"key": "rcs",
+						"htmlClass": "col-md row md-default-theme"
+				},
+				{
+						"key": "date_immatriculation",
+						"format": "yyyy-mm-dd",
+						"type":"datepicker",
+						"htmlClass":"md-default-theme"
+				},
+				{
+						"key": "capital",
+						"htmlClass": "col-md row md-default-theme"
+				},
+				{
+						"key": "naf",
+						"htmlClass": "col-md row md-default-theme"
+				},
+				{
+						"key": "nb_part",
+						"htmlClass": "col-md row md-default-theme"
+				}
+			]
+		},
+		{
+			"type": "section",
+			"htmlClass": "column",
+			"items": [
+				{
+					"key": "adress",
+					"htmlClass": "col-md row md-default-theme"
+				},
+				{
+					"key": "cp",
+					"htmlClass": "col-md row md-default-theme"
+				},
+				{
+					"key": "city",
+					"htmlClass": "col-md row md-default-theme"
+				}
+			]
+		},
+		{
+			"key": "associes",
+			"add": "Ajouter",
+			"htmlClass": "row",
+			"labelHtmlClass":"column",
+			"style": {
+				"add": "btn-success"
+			},
+			"items": [
+				{
+					"type": "section",
+					"htmlClass": "row",
+					"items": [
+						{
+							"type": "section",
+							"htmlClass": "column",
+							"items": [
+								{
+									"key": "associes[].nom",
+									"htmlClass": "col-md row md-default-theme"
+								},
+								{
+									"key": "associes[].prenom",
+									"htmlClass": "col-md row md-default-theme"
+								}
+							]
+						},
+						{
+							"type": "section",
+							"htmlClass": "column",
+							"items": [
+								{
+									"key": "associes[].address",
+									"htmlClass": "col-md row md-default-theme"
+								},
+								{
+									"key": "associes[].cp",
+									"htmlClass": "col-md row md-default-theme"
+								},
+								{
+									"key": "associes[].city",
+									"htmlClass": "col-md row md-default-theme"
+								}
+							]
+						},
+						{
+							"type": "section",
+							"htmlClass": "column",
+							"items": [
+								{
+										"key": "associes[].birthday",
+										"format": "dd-mm-yyyy",
+										"htmlClass": "col-md row md-default-theme",
+										"type":"datepicker"
+								},
+								{
+									"key": "associes[].city_birthday",
+									"htmlClass": "col-md row md-default-theme"
+								}
+							]
+						},
+						{
+							"type": "section",
+							"htmlClass": "column",
+							"items": [
+								{
+									"key": "associes[].np_part",
+									"htmlClass": "col-md row md-default-theme"
+								},
+								{
+									"key": "associes[].percent_part",
+									"htmlClass": "col-md row md-default-theme"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]*/
+}

@@ -5,7 +5,7 @@ define([
 	'angular-grid',
 	'ng-notify',
 ], function(angular, formSci) {
-	angular.module('locloud.locataire', ['ui.router','angularGrid','schemaForm', 'ngNotify'])
+	angular.module('locloud.locataire', ['ui.router','angularGrid', 'ngNotify'])
 	.controller('LocataireMenuController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
 		$scope.menus = [
 			{

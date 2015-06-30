@@ -2,6 +2,16 @@
 	"schema": {
 		"type": "object",
 		"properties": {
+			"sci": {
+				"type": "string",
+				"title": "Sci",
+				"require":true
+			},
+			"bien": {
+				"type": "string",
+				"title": "Bien",
+				"require":true
+			},
 			"type": {
 				"type": "string",
 				"title": "Type du bien",
@@ -10,21 +20,6 @@
 			"identifiant": {
 				"type": "string",
 				"title": "Identifiant",
-				"require":true
-			},
-			"address": {
-				"type": "string",
-				"title": "N° et rue",
-				"require":true
-			},
-			"cp": {
-				"type": "number",
-				"title": "Code postale",
-				"require":true
-			},
-			"city": {
-				"type": "string",
-				"title": "Ville",
 				"require":true
 			},
 			"surface": {
@@ -59,6 +54,22 @@
 			"type": "section",
 			"htmlClass": "column",
 			"items": [
+				{
+					"key": "sci",
+					"htmlClass": "col-md row",
+					"type":"select",
+					"titleMap": [
+
+				  	]
+				},
+				{
+					"key": "bien",
+					"htmlClass": "col-md row",
+					"type":"select",
+					"titleMap": [
+
+				  	]
+				},
 				{
 					"key": "type",
 					"htmlClass": "col-md row",
@@ -109,24 +120,6 @@
 					"key": "note",
 					"htmlClass": "col-md row",
 					"type":"textarea"
-				}
-			]
-		},
-		{
-			"type": "section",
-			"htmlClass": "column",
-			"items": [
-				{
-					"key": "address",
-					"htmlClass": "col-md row"
-				},
-				{
-					"key": "cp",
-					"htmlClass": "col-md row"
-				},
-				{
-					"key": "city",
-					"htmlClass": "col-md row"
 				}
 			]
 		},

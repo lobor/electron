@@ -21,9 +21,21 @@ restberry.model('Bien')
 		photos: [{
 			type: String,
 			required: true
-		}]
+		}],
+		sci: {
+			type: restberry.odm.ObjectId,
+			ref: 'Sci'
+		},
 	})
 	.loginRequired()
-	.routes.addCRUDRoutes({
+	.routes
+	.addCreateRoute({
 		parentModel: 'Sci',
-	});
+	})
+    .addDeleteRoute()
+    .addPartialUpdateRoute()
+    .addReadManyRoute({
+		parentModel: 'Sci',
+	})
+    .addReadRoute()
+    .addUpdateRoute();

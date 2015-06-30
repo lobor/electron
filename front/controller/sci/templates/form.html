@@ -11,9 +11,12 @@
 					{{title_form_sci}}
 				</h2>
 			</div>
-			<button ng-disabled="$isLast() || ($getActiveStep().hasForm && !$getActiveStep().valid)" class="btn btn-default pull-right" ng-click="$nextStep()">
+			<button ng-if="!$isLast()" ng-disabled="$isLast() || ($getActiveStep().hasForm && !$getActiveStep().valid)" class="btn btn-default pull-right" ng-click="submit()">
 				Suivant
 				<span class="fa fa-chevron-right"></span>
+			</button>
+			<button ng-if="$isLast()" ng-disabled="($getActiveStep().hasForm && !$getActiveStep().valid)" class="btn btn-success pull-right" ng-click="submit()">
+				Valider
 			</button>
 		</header>
 		<step-container></step-container>

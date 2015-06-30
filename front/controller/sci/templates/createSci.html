@@ -1,3 +1,53 @@
-<form name="addSci" sf-schema="schema" sf-form="form" sf-model="sci" class="row">
+<form form-for="sci" validation-rules="validation" valid="formIsValid">
+	<div layout="row">
+		<text-field attribute="name" label="Nom de la SCI / Propriétaire" flex="16"></text-field>
 
+		<text-field attribute="rcs" label="RCS" flex="20"></text-field>
+
+		<text-field attribute="date_immatriculation" type="date" label="Date d'immatriculation" flex="16"></text-field>
+
+		<text-field attribute="naf" label="Code NAF" flex="16"></text-field>
+
+		<text-field attribute="capital" label="Capital Social" flex="16"></text-field>
+
+		<text-field attribute="nb_part" label="Nombre de parts totals" flex="16"></text-field>
+	</div>
+	<div layout="row">
+		<text-field attribute="address" label="N° et rue" flex="20"></text-field>
+
+		<text-field attribute="cp" label="Code postale" flex="20"></text-field>
+
+		<text-field attribute="city" label="Ville" flex="20"></text-field>
+	</div>
+	<div layout="row" layout-align="start center">
+		<collection-label attribute="associes" label="Associés"></collection-label>
+		<div class="md-button md-fab md-mini md-primary" ng-click="addAssocie()">
+    		<i class="fa fa-plus"></i>
+  		</div>
+	</div>
+	<md-list ng-repeat="associe in sci.associes">
+		<md-divider ></md-divider>
+		<md-list-item layout="row" layout-wrap>
+			<div layout="row" flex="100">
+				<text-field attribute="associes[{{$index}}].nom" label="Nom" flex="16"></text-field>
+
+				<text-field attribute="associes[{{$index}}].prenom" label="Prénom" flex="16"></text-field>
+
+				<text-field attribute="associes[{{$index}}].birthday" type="date" label="Date de naissance" flex="16"></text-field>
+
+				<text-field attribute="associes[{{$index}}].city_birthday" label="Lieu de naissance" flex="16"></text-field>
+
+				<text-field attribute="associes[{{$index}}].np_part" label="Nombre de part" flex="16"></text-field>
+
+				<text-field attribute="associes[{{$index}}].percent_part" label="Pourcentage des parts" flex="16"></text-field>
+			</div>
+			<div layout="row" flex="100">
+				<text-field attribute="associes[{{$index}}].address" label="N° et rue" flex="20"></text-field>
+
+				<text-field attribute="associes[{{$index}}].cp" label="Code postale" flex="20"></text-field>
+
+				<text-field attribute="associes[{{$index}}].city" label="Ville" flex="20"></text-field>
+			</div>
+		</md-list>
+	</div>
 </form>

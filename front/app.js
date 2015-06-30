@@ -5,12 +5,7 @@ define([
 	'config/routes',
 	'config/stateRoutes',
 	'config/loadingBar',
-	'config/validationMessagesError',
 	'config/datepicker',
-
-	// directives
-	'directives/decorators/materialDesign/datepicker',
-	'directives/decorators/materialDesign/fileUpload',
 
 	'crAcl',
 	'uiRouter',
@@ -23,8 +18,8 @@ define([
 	'angular-material-components',
 	'imgLiquid',
 	'angular-jwt',
-	'angular-schema-form-material',
-], function (angular, $routes, $stateRoutes, $loadingBar, $validationMessagesError) {
+	'angular-form-for'
+], function (angular, $routes, $stateRoutes, $loadingBar) {
 	return angular
 		.module('locloud', [
 			'ui.router',
@@ -42,12 +37,12 @@ define([
 			'locloud.user',
 			'locloud.install',
 			'angular-jwt',
-			'schemaForm'
+			'formFor',
+			'formFor.materialTemplates'
 		])
 		.run($stateRoutes)
 		.config($routes)
 		.config($loadingBar)
-		.config($validationMessagesError)
 		.config(['$httpProvider','jwtInterceptorProvider', function Config($httpProvider, jwtInterceptorProvider) {
 
 			// // Please note we're annotating the function so that the $injector works when the file is minified

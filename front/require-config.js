@@ -24,10 +24,7 @@ require.config({
 		'angularCookie': 'bower_components/angular-cookies/angular-cookies',
 		'angular-loading-bar': 'bower_components/angular-loading-bar/build/loading-bar',
 		'angular-grid': 'bower_components/ag-grid/dist/angularGrid.min',
-		'angular-schema-form': 'bower_components/angular-schema-form/dist/schema-form.min',
 		'angular-sanitize': 'bower_components/angular-sanitize/angular-sanitize.min',
-		'ObjectPath': 'bower_components/objectpath/lib/ObjectPath',
-		'tv4': 'bower_components/tv4/tv4',
 		'jquery': 'bower_components/jquery/dist/jquery.min',
 		'ng-notify': 'bower_components/ng-notify/dist/ng-notify.min',
 		'crAcl': 'bower_components/cr-acl/cr-acl',
@@ -37,14 +34,15 @@ require.config({
 		'moment': 'bower_components/moment/min/moment-with-locales.min',
 		'angular-aria': 'bower_components/angular-aria/angular-aria.min',
 		'angular-material': 'bower_components/angular-material/angular-material.min',
-		'angular-schema-form-material': 'bower_components/angular-schema-form-material/material-decorator.min',
 		'angular-material-components': 'bower_components/angular-material-components/dist/angular-material-components',
 		'ng-flow': 'bower_components/ng-flow/dist/ng-flow-standalone',
 		'ng-file-upload-shim': 'bower_components/ng-file-upload/dist/ng-file-upload-shim.min',
 		'ng-file-upload': 'bower_components/ng-file-upload/dist/ng-file-upload.min',
 		'imgLiquid': 'bower_components/imgLiquid/js/imgLiquid-min',
 		'angular-jwt': 'bower_components/angular-jwt/dist/angular-jwt.min',
-		'angular-multi-step-form': 'bower_components/angular-multi-step-form/dist/angular-multi-step-form.min'
+		'angular-multi-step-form': 'bower_components/angular-multi-step-form/dist/angular-multi-step-form.min',
+		'angular-form-for': 'bower_components/angular-form-for/dist/form-for',
+		'angular-form-for-material': 'bower_components/angular-form-for/dist/form-for.material-templates'
 	},
 	shim: {
 		'jquery': {
@@ -70,12 +68,12 @@ require.config({
 		'angularBootstrapTpl': ['angular', 'angularBootstrap'],
 		'angularBootstrap': ['angular', 'angular-animate'],
 		'crAcl': ['angular'],
-		'angular-schema-form': ['angular-sanitize', 'ObjectPath', 'tv4'],
-		'angular-schema-form-material': ['angular', 'angular-schema-form'],
 		'angular-material-components': ['angular', 'jquery', 'moment'],
 		'ng-flow': ['angular'],
 		'angular-multi-step-form': ['angular'],
 		'ng-file-upload-shim': ['angular'],
+		'angular-form-for-material': ['angular'],
+		'angular-form-for': ['angular', 'angular-form-for-material'],
 		'ng-file-upload': ['angular', 'ng-file-upload-shim'],
 		'imgLiquid': ['jquery'],
 		'angularMocks': {

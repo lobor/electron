@@ -25,7 +25,7 @@ define([
 		};
 
 		$http
-			.get(baseUrl+'/biens')
+			.get(baseUrl+'/lots')
 			.success(function (data, status, headers, config) {
 				$scope.gridOptions.rowData =  data.results;
 				$scope.gridOptions.api.onNewRows();

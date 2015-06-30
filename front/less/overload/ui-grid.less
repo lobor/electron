@@ -1,36 +1,97 @@
 // main: ../app.less
 
 [angular-grid]{
+  	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.14),0 4px 5px 0 rgba(0, 0, 0, 0.098),0 1px 10px 0 rgba(0, 0, 0, 0.084);
+	margin-bottom: 2rem;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+	.ag-root{
+		width: 100%;
+		max-width: 100%;
+		background: none;
+		background-color: #FFF;
+		border: 0px;
+        flex: 1;
+        flex-direction: column;
+        display: flex;
+	}
 	&, & .ag-header-viewport{
 		width: 100%;
 	}
+	.ag-header{
+		height: 55px !important;
+        position: relative !important;
+	}
+	.ag-body{
+		padding-top: 0px !important;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: #FFF;
+        .ag-body-viewport-wrapper, .ag-body-viewport, .ag-body-container{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            .ag-row{
+                top: 0px !important;
+                position: relative;
+            }
+        }
+	}
 	.ag-header-container{
 		display: flex;
+		background: none;
+		background-color: #FFF;
+		border: 0px;
 		.ag-header-cell{
 			flex: 1;
 			text-align: left;
 			font-weight: bold;
+			border: 0px;
+		  	border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+			background: none;
 			&:last-child{
 				border-right: 0px;
 			}
 			&[style="width: 88px;"]{
 				flex: initial;
 			}
+			.ag-header-cell-label{
+				padding-top: 0px;
+				padding-bottom: 0px;
+			  	padding-left: 20px;
+			}
+			.ag-header-cell-text{
+				line-height: 55px;
+				font-weight: 400;
+  				color: #757575;
+			}
 		}
 	}
 	.ag-body-container{
+        .ag-row{
+            height: 52px !important;
+        }
 		&, & .ag-row{
 			width: 100% !important;
 			display: flex;
 			.ag-cell{
 				flex: 1;
+				line-height: 52px;
+				font-weight: 400;
+  				color: #757575;
+				height: 52px;
+				border: 0px;
+				padding: 0px;
+				padding-left: 20px;
 				&:last-child{
 					border-right: 0px;
 				}
 				.md-button{
 					margin: 0px;
 					min-height: initial;
-					line-height: 30px;
+					line-height: 52px;
 				}
 				&.colButton{
 					min-width: 88px;
