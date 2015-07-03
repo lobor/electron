@@ -1,7 +1,7 @@
 'use strict';
 define([
 	'angular',
-	'json!controller/Locataire/forms/addSci.json',
+	'json!controller/locataire/forms/addSci.json',
 	'angular-grid',
 	'ng-notify',
 ], function(angular, formSci) {

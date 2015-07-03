@@ -1,79 +1,131 @@
 'use strict';
 define([
 	'angular',
-], function(angular) {
-	return ['$scope', '$http', 'baseUrl', 'ngNotify', '$state', '$stateParams', Edit];
+	'json!controller/lot/forms/lot.json'
+], function(angular, formLot) {
+	return ['$scope', '$element', '$http', 'baseUrl', 'ngNotify', '$state', '$stateParams', Edit];
 
-	function Edit($scope, $http, baseUrl, ngNotify, $state, $stateParams, dialogs){
-		$scope.title_form_sci = 'Éditer une SCI';
-		$http.
-			get(baseUrl+'/sci/get', {params:$stateParams}, {withCredentials:true}).
-			success(function (data, status, headers, config) {
+	function Edit($scope, $element, $http, baseUrl, ngNotify, $state, $stateParams){
+		$scope.lot = {};
+		$scope.validation = formLot;
+		$scope.title = 'Editer un lot';
+		$http
+			.get(baseUrl+'/lots/'+$stateParams.id)
+			.success(function (dataLot, status, headers, config) {
+				if(dataLot.lot){
+					var modelLot = angular.copy(dataLot.lot);
+					delete modelLot.href;
+					delete modelLot.id;
+					modelLot.sci = modelLot.sci.id;
+					modelLot.bien = modelLot.bien.id;
+					$scope.disable = false;
+					$http
+						.get(baseUrl+'/scis', {
+							params: {
+								fields:'name',
+							}
+						})
+						.success(function(data, status, headers){
+							$scope.typeOption = [{
+									"value": "Appartement",
+									"label": "Appartement"
+								},
+								{
+									"value": "Maison",
+									"label": "Maison"
+								},
+								{
+									"value": "Local commercial",
+									"label": "Local commercial"
+								},
+								{
+									"value": "Box",
+									"label": "Box"
+								}];
+							$scope.sciOption = [];
+							angular.forEach(data.scis, function(sci){
+								$scope.sciOption.push({
+									value: sci.id,
+									label: sci.name,
+								});
+							});
+							$scope.lot = modelLot;
+							$scope.$watch('lot.sci', function(value){
+								if(value){
+									$http
+										.get(baseUrl+'/scis/' + value + '/biens', {
+											params: {
+												fields:'name,sci',
+											}
+										})
+										.success(function(data, status, headers){
+											if(!angular.equals(data.biens,[])){
+												$scope.bienOption = [];
+												angular.forEach(data.biens, function(bien){
+													$scope.bienOption.push({
+														value: bien.id,
+														label: bien.name,
+													});
+												});
+												if($scope.lot.bien != modelLot.bien){
+													$scope.lot.bien = undefined;
+												}
 
-				if(data.status){
-					// console.log(data.results);
-					$scope = angular.extend($scope, formSci);
-					$scope.sci = data.results;
-					// console.log($scope.sci = {});
+												$scope.lot = modelLot;
+											}
+											else{
+												ngNotify.set('Aucun bien associé à cette SCI', 'error');
+											}
+										})
+										.error(function(){
+											ngNotify.set('Une erreur est apparu', 'error');
+										});
+								}
+							});
+							var i = 0;
+							$scope.$watch('lot', function(value){
+								if($scope.formIsValid || (!$scope.formIsValid && i === 0)){
+									$scope.disable = false;
+								}
+								else {
+									$scope.disable = true;
+								}
+								i++
+							}, true);
+
+							$scope.submit = Submit;
+
+							function Submit(){
+								var modelLot = angular.copy($scope.lot);
+								modelLot.photos = $scope.photo;
+
+								var fd = new FormData($element.find('form')[0]);
+
+								angular.forEach(modelLot.photos, function(photo){
+        							fd.append('file[]', photo);
+								});
+
+								$http
+									.post(baseUrl+'/lots/'+ dataLot.lot.id, fd, {headers: {'Content-Type': 'multipart/form-data'}})
+									.success(function(){
+										ngNotify.set('Le lot a bien été enregistré', 'success');
+										$state.go('locloud.lot')
+									})
+									.error(function(){
+										ngNotify.set('Une erreur est apparu', 'error');
+									});
+							}
+						})
+						.error(function(){
+							ngNotify.set('Une erreur est apparu', 'error');
+						});
+				}
+				else{
+					ngNotify.set('Une erreur est apparu', 'error');
 				}
 			})
-			.error(function (data, status, headers, config) {
+			.error(function(){
 				ngNotify.set('Une erreur est apparu', 'error');
 			});
-
-			$scope.deleteUser = function(modelValue,form){
-				console.log(modelValue,form);
-				var dlg = dialogs.confirm('Confirmation demandé', 'Êtes vous sûr de vouloir supprimer cet associé ?');
-					dlg.result.then(function(btn){
-						console.log(this);
-						// $http.
-						// 	post(baseUrl+'/sci/suppAssocie', {params:$stateParams}, {withCredentials:true}).
-						// 	success(function (data, status, headers, config) {
-						//
-						// 		if(data.status){
-						// 			// console.log(data.results);
-						// 			$scope = angular.extend($scope, formSci);
-						// 			$scope.sci = data.results;
-						// 			// console.log($scope.sci = {});
-						// 		}
-						// 	})
-						// 	.error(function (data, status, headers, config) {
-						// 		notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
-						// 	});
-					});
-				// $http.
-				// 	get(baseUrl+'/sci/get', {params:$stateParams}, {withCredentials:true}).
-				// 	success(function (data, status, headers, config) {
-				//
-				// 		if(data.status){
-				// 			// console.log(data.results);
-				// 			$scope = angular.extend($scope, formSci);
-				// 			$scope.sci = data.results;
-				// 			// console.log($scope.sci = {});
-				// 		}
-				// 	})
-				// 	.error(function (data, status, headers, config) {
-				// 		notify({ message:'Une erreur est apparu', classes:'alert-danger'} );
-				// 	});
-			};
-
-			$scope.onSubmit = function(form) {
-	    		// First we broadcast an event so all fields validate themselves
-	    		$scope.$broadcast('schemaFormValidate');
-
-	    		// Then we check if the form is valid
-	    		if (form.$valid) {
-					$http.
-		      		post(baseUrl+'/sci/update', $scope.sci, {withCredentials:true}).
-		      		success(function (data, status, headers, config) {
-						if(data.status){
-							ngNotify.set('La SCI a bien été enregistré', 'success');
-						}
-		      		})
-			      	.error(function (data, status, headers, config) {
-						ngNotify.set('Une erreur est apparu', 'error');
-			      	});
-	    		}
-			};
 	}
 });

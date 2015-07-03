@@ -77,9 +77,7 @@
 @import (less) "../bower_components/ng-notify/dist/ng-notify.min.css";
 // @import (less) "../bower_components/bootstrap-additions/dist/bootstrap-additions.css";
 @import (less) "../bower_components/angular-material/angular-material.css";
-@import (less) "../bower_components/angular-material-components/dist/angular-material-components.css";
-@import (css) "../bower_components/mdi/materialdesignicons.css";
-@import (less) "../bower_components/material-wizard/dist/material-wizard.min.css";
+@import (less) "../bower_components/mdi/css/materialdesignicons.css";
 @import (less) "../bower_components/angular-form-for/dist/form-for.css";
 @import (less) "../bower_components/angular-form-for/dist/form-for.material.css";
 
@@ -101,6 +99,11 @@
 
 @import "animation/spin.less";
 
+// Dev
+@import "../bower_components/tota11y/less/variables.less";
+@import "../bower_components/tota11y/less/base.less";
+@import "../bower_components/tota11y/less/tota11y.less";
+
 [ui-view="main"]{
     overflow: auto;
 }
@@ -118,4 +121,8 @@
 
 .hidden-safe{
     visibility: hidden;
+}
+
+h1{
+      margin: 0px;
 }

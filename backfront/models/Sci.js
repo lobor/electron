@@ -84,7 +84,16 @@ restberry
     })
     .preRemove(function(next) {
         var Bien = restberry.model('Bien');
-        Bien.remove({sci: this.id}, next);
+        var query = {
+            sci: this.id
+        };
+        Bien
+            .find(query, function(biens){
+                _.each(biens, function(bien){
+                    bien.remove(function(){});
+                })
+                next();
+            });
     })
     .loginRequired()
     .routes

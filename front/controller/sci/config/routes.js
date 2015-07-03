@@ -1,17 +1,20 @@
-'use strict';
 define([
 	'angular',
-], function(angular) {
+	'text!controller/sci/templates/layout.html',
+	'text!controller/sci/templates/list.html',
+	'text!controller/sci/templates/form.html'
+], function(angular, LayoutTpl, ListTpl, FormTpl) {
+	'use strict';
 	return ['$stateProvider', function($stateProvider) {
 		$stateProvider
 			.state('locloud.sci', {
 				url: "sci",
 				views: {
 					'main@locloud' : {
-						templateUrl: 'controller/sci/templates/layout.html',
+						template: LayoutTpl,
 					},
 					'sci-list@locloud.sci' : {
-						templateUrl: 'controller/sci/templates/list.html',
+						template: ListTpl,
 						controller: 'SciListController'
 					}
 				},
@@ -23,7 +26,7 @@ define([
 				url: "/create",
 				views: {
 					'main@locloud' : {
-						templateUrl: 'controller/sci/templates/form.html',
+						template: FormTpl,
 						controller: 'SciCreateController'
 					}
 				},
@@ -35,7 +38,7 @@ define([
 				url: "/edit/:id",
 				views: {
 					'main@locloud' : {
-						templateUrl: 'controller/sci/templates/form.html',
+						template: FormTpl,
 						controller: 'SciEditController'
 					}
 				},

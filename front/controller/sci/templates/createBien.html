@@ -1,3 +1,25 @@
-<form name="addBien" sf-schema="schemaBien" sf-form="formBien" sf-model="biens" class="row">
+<form form-for="biens" validation-rules="validation" valid="formIsValid">
+	<div layout="row" layout-align="start center">
+		<collection-label attribute="associes" label="Biens"></collection-label>
+		<div class="md-button md-fab md-mini md-primary" ng-click="addBien()">
+    		<i class="fa fa-plus"></i>
+  		</div>
+	</div>
+	<md-list ng-repeat="bien in biens.biens">
+		<md-divider ></md-divider>
+		<md-list-item layout="row" layout-wrap>
+			<div layout="row" flex="100">
+				<text-field attribute="biens[{{$index}}].name" label="Nom" flex="16"></text-field>
 
+				<text-field attribute="biens[{{$index}}].address" label="N° et rue" flex="20"></text-field>
+
+				<text-field attribute="biens[{{$index}}].cp" label="Code postale" flex="20"></text-field>
+
+				<text-field attribute="biens[{{$index}}].city" label="Ville" flex="20"></text-field>
+			</div>
+			<div layout="row" flex="100">
+
+			</div>
+		</md-list>
+	</div>
 </form>

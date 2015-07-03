@@ -1,98 +1,26 @@
 {
-	"schemaBien": {
-		"type": "object",
-		"properties": {
-			"biens":{
-				"type": "array",
-				"title": "Biens",
-				"items": {
-					"type": "object",
-					"properties": {
-						"name": {
-							"title": "Nom",
-							"type": "string",
-							"required":true
-						},
-						"address": {
-							"title": "N° et rue",
-							"type": "string",
-							"required":true
-						},
-						"cp": {
-							"title": "Code postale",
-							"type": "number",
-							"required":true
-						},
-						"city": {
-							"title": "Ville",
-							"type": "string",
-							"required":true
-						},
-						"photo": {
-							"type":"object",
-							"format":"file_upload",
-							"title": "Les photos"
-						}
-					}
+	"biens":{
+		"collection": {
+			"fields": {
+				"name": {
+					"required":true
+				},
+				"address": {
+					"required":true
+				},
+				"cp": {
+					"type": "positive integer",
+					"required":true
+				},
+				"city": {
+					"required":true
+				},
+				"photo": {
+					"type":"object",
+					"format":"file_upload",
+					"title": "Les photos"
 				}
 			}
 		}
-	},
-	"formBien": [
-		{
-			"key": "biens",
-			"add": "Ajouter",
-			"htmlClass": "row",
-			"labelHtmlClass":"column",
-			"style": {
-				"add": "btn-success"
-			},
-			"items": [
-				{
-					"type": "section",
-					"htmlClass": "row",
-					"items": [
-						{
-							"type": "section",
-							"htmlClass": "column",
-							"items": [
-								{
-									"key": "biens[].name",
-									"htmlClass": "col-md row md-default-theme"
-								}
-							]
-						},
-						{
-							"type": "section",
-							"htmlClass": "column",
-							"items": [
-								{
-									"key": "biens[].address",
-									"htmlClass": "col-md row md-default-theme"
-								},
-								{
-									"key": "biens[].cp",
-									"htmlClass": "col-md row md-default-theme"
-								},
-								{
-									"key": "biens[].city",
-									"htmlClass": "col-md row md-default-theme"
-								}
-							]
-						},
-						{
-							"type": "section",
-							"htmlClass": "column",
-							"items": [
-								{
-									"key": "biens[].photo",
-									"type":"file_upload"
-								}
-							]
-						}
-					]
-				}
-			]
-		}
-	]
+	}
 }

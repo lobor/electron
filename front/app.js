@@ -1,5 +1,3 @@
-'use strict';
-
 define([
 	'angular',
 	'config/routes',
@@ -15,11 +13,13 @@ define([
 	'angular-material',
 	'ng-notify',
 	'angularBootstrapTpl',
-	'angular-material-components',
 	'imgLiquid',
 	'angular-jwt',
-	'angular-form-for'
+	'angular-form-for',
+	'tota11y',
+	'decoratorForm/formFor/material/file-field',
 ], function (angular, $routes, $stateRoutes, $loadingBar) {
+	'use strict';
 	return angular
 		.module('locloud', [
 			'ui.router',
@@ -38,7 +38,7 @@ define([
 			'locloud.install',
 			'angular-jwt',
 			'formFor',
-			'formFor.materialTemplates'
+			'formFor.materialTemplates',
 		])
 		.run($stateRoutes)
 		.config($routes)

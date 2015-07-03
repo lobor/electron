@@ -2,6 +2,7 @@
 define([
 	'angular',
 	'uiRouter',
+	
 	// controller
 	'controller/auth/auth',
 	'controller/home/home',
@@ -122,7 +123,6 @@ define([
 				}
 			};
 		}];
-
 		$httpProvider.interceptors.push(interceptor);
-	}]
+	}];
 });

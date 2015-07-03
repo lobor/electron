@@ -14,7 +14,7 @@
     "http-status": "^0.2.0",
     "jsonwebtoken": "^5.0.2",
     "moment": "^2.10.3",
-    "restberry": "1.0.x",
+    "restberry": "1.1.1",
     "restberry-auth": "^0.2.1",
     "restberry-auth-local": "^0.2.4",
     "restberry-errors": "^1.0.2",

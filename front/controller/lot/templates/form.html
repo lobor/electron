@@ -4,7 +4,31 @@
 			{{title}}
 		</h2>
 	</div>
-	<form name="addSci" sf-schema="schema" sf-form="form" sf-model="sci" class="row" ng-submit="onSubmit(addSci)">
+	<form form-for="lot" validation-rules="validation" valid="formIsValid" ng-submit="submit()">
+		<div layout="row">
+			<select-field label="Sci" prevent-default-option attribute="sci" options="sciOption" flex="33"></select-field>
 
+			<select-field label="Bien" prevent-default-option attribute="bien" options="bienOption" flex="33"></select-field>
+
+			<select-field label="Type" prevent-default-option attribute="type" options="typeOption" flex="33"></select-field>
+		</div>
+		<div layout="row">
+			<text-field attribute="identifiant" label="Identifiant" flex="16"></text-field>
+
+			<text-field attribute="surface" label="Surface" flex="16"></text-field>
+
+			<text-field attribute="nb_piece" label="Nombre de pièces" flex="16"></text-field>
+		</div>
+		<div layout="row">
+			<text-field attribute="description" label="Description" flex="50" multiline> </text-field>
+
+			<text-field attribute="note" label="Notes" flex="50" multiline> </text-field>
+		</div>
+		<div layout="row">
+			<file-field attribute="photo" label="Photos" label-button="Choisissez les images"></file-field>
+		</div>
+		<div layout="row" layout-align="end">
+			<submit-button disable="disable" label="Enregistrer" buttonClass="md-primary md-raised md-button"></submit-button>
+		</div>
 	</form>
 </div>

@@ -1,17 +1,28 @@
 if (window.__karma__) {
-	var allTestFiles = [];
-	var TEST_REGEXP = /spec\.js$/;
+	// var allTestFiles = [];
+	// var TEST_REGEXP = /Spec\.js$/;
+	//
+	// var pathToModule = function (path) {
+	// 	return path.replace(/^\/base\/app\//, '').replace(/\.js$/, '');
+	// };
+	//
+	// Object.keys(window.__karma__.files).forEach(function (file) {
+	// 	if (TEST_REGEXP.test(file)) {
+	// 		// Normalize paths to RequireJS module names.
+	// 		allTestFiles.push(pathToModule(file));
+	// 	}
+	// });
 
-	var pathToModule = function (path) {
-		return path.replace(/^\/base\/app\//, '').replace(/\.js$/, '');
-	};
+	var tests = [];
 
-	Object.keys(window.__karma__.files).forEach(function (file) {
-		if (TEST_REGEXP.test(file)) {
-			// Normalize paths to RequireJS module names.
-			allTestFiles.push(pathToModule(file));
+	var TEST_REGEXP = /Spec\.js$/;
+	for (var file in window.__karma__.files) {
+		if (window.__karma__.files.hasOwnProperty(file)) {
+			if (TEST_REGEXP.test(file)) {
+				tests.push(file);
+			}
 		}
-	});
+	}
 }
 
 require.config({
@@ -19,7 +30,6 @@ require.config({
 		'text': 'bower_components/requirejs-plugins/lib/text',
 		'json': 'bower_components/requirejs-plugins/src/json',
 		'angular': 'bower_components/angular/angular',
-		'angularMocks': 'bower_components/angular-mocks/angular-mocks',
 		'uiRouter': 'bower_components/angular-ui-router/release/angular-ui-router',
 		'angularCookie': 'bower_components/angular-cookies/angular-cookies',
 		'angular-loading-bar': 'bower_components/angular-loading-bar/build/loading-bar',
@@ -34,7 +44,6 @@ require.config({
 		'moment': 'bower_components/moment/min/moment-with-locales.min',
 		'angular-aria': 'bower_components/angular-aria/angular-aria.min',
 		'angular-material': 'bower_components/angular-material/angular-material.min',
-		'angular-material-components': 'bower_components/angular-material-components/dist/angular-material-components',
 		'ng-flow': 'bower_components/ng-flow/dist/ng-flow-standalone',
 		'ng-file-upload-shim': 'bower_components/ng-file-upload/dist/ng-file-upload-shim.min',
 		'ng-file-upload': 'bower_components/ng-file-upload/dist/ng-file-upload.min',
@@ -42,7 +51,8 @@ require.config({
 		'angular-jwt': 'bower_components/angular-jwt/dist/angular-jwt.min',
 		'angular-multi-step-form': 'bower_components/angular-multi-step-form/dist/angular-multi-step-form.min',
 		'angular-form-for': 'bower_components/angular-form-for/dist/form-for',
-		'angular-form-for-material': 'bower_components/angular-form-for/dist/form-for.material-templates'
+		'angular-form-for-material': 'bower_components/angular-form-for/dist/form-for.material-templates',
+		'tota11y': 'bower_components/tota11y/build/tota11y.min',
 	},
 	shim: {
 		'jquery': {
@@ -68,7 +78,6 @@ require.config({
 		'angularBootstrapTpl': ['angular', 'angularBootstrap'],
 		'angularBootstrap': ['angular', 'angular-animate'],
 		'crAcl': ['angular'],
-		'angular-material-components': ['angular', 'jquery', 'moment'],
 		'ng-flow': ['angular'],
 		'angular-multi-step-form': ['angular'],
 		'ng-file-upload-shim': ['angular'],
@@ -76,34 +85,29 @@ require.config({
 		'angular-form-for': ['angular', 'angular-form-for-material'],
 		'ng-file-upload': ['angular', 'ng-file-upload-shim'],
 		'imgLiquid': ['jquery'],
-		'angularMocks': {
-			deps: ['angular'],
-			'exports': 'angular.mock'
-		}
 	},
 	priority: [
 		'angular'
 	],
-	deps: window.__karma__ ? allTestFiles : [],
+	deps: window.__karma__ ? tests : [],
 	callback: window.__karma__ ? window.__karma__.start : null,
-	baseUrl: window.__karma__ ? '/base/app' : '',
+	baseUrl: window.__karma__ ? '/base' : '',
 	config: {
 		moment: {
-            noGlobal: true
-        }
+			noGlobal: true
+		}
 	}
 });
 
 require([
 	'angular',
 	'app'
-	], function (angular, app) {
-		"use strict";
-		angular.element(document.getElementsByTagName('html')[0]);
-		angular.element().ready(function () {
+], function (angular, app) {
+	"use strict";
+	angular.element(document.getElementsByTagName('html')[0]);
+	angular.element().ready(function () {
 
-			// bootstrap the app manually
-			angular.bootstrap(document, ['locloud']);
-		});
-	}
-);
+		// bootstrap the app manually
+		angular.bootstrap(document, ['locloud']);
+	});
+});

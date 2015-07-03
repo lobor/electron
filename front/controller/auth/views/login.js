@@ -1,10 +1,10 @@
-'use strict';
 define([
 	'angular',
 ], function(angular) {
-	return ['$scope', '$http', '$window', 'baseUrl', '$rootScope', '$state', 'crAcl', LoginController];
+	'use strict';
+	return ['$scope', '$http', '$window', 'baseUrl', '$rootScope', '$state', /*'crAcl',*/ LoginController];
 
-	function LoginController($scope, $http, $window, baseUrl, $rootScope, $state, crAcl){
+	function LoginController($scope, $http, $window, baseUrl, $rootScope, $state/*, crAcl*/){
 		$rootScope.login = 'login';
 		$scope.user = {email: 'lionel.bertrand@ymail.com'};
   		$scope.message = '';
@@ -18,7 +18,7 @@ define([
 					if(data.status){
 						localStorage.setItem('id_token', data.token);
 
-						crAcl.setRole(data.role);
+						// crAcl.setRole(data.role);
 
 						$window.sessionStorage.setItem('role', data.role);
 

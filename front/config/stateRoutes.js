@@ -3,7 +3,6 @@
 define([
 	'angular',
 	'uiRouter',
-	'angularCookie',
 ], function(){
 	return ['$rootScope', '$state', '$controller', '$q', '$window', '$http', 'baseUrl', 'ngNotify', 'crAcl', 'jwtHelper', function($rootScope, $state, $controller, $q, $window, $http, baseUrl, ngNotify, crAcl, jwtHelper){
 		ngNotify.config({

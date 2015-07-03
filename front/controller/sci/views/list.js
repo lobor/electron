@@ -1,8 +1,9 @@
 'use strict';
 define([
 	'angular',
-	'text!controller/sci/templates/menuRow.html'
-], function(angular, menuRowTpl) {
+	'text!controller/sci/templates/menuRow.html',
+	'controller/sci/views/showMenuRow'
+], function(angular, menuRowTpl, ShowMenuRowController) {
 	return ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', '$mdBottomSheet', List];
 
 	function List($scope, $http, baseUrl, $state, ngNotify, $mdBottomSheet){
@@ -27,7 +28,7 @@ define([
 						params.$scope.menuRow = function(data){
 							$mdBottomSheet.show({
 						      	template: menuRowTpl,
-						      	controller: 'ShowMenuRowController',
+						      	controller: ShowMenuRowController,
 								locals: {
 									id: data.id,
 									sci: data.name

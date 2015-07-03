@@ -1,0 +1,19 @@
+  <label ng-if="label"
+         ng-bind="label"></label>
+
+  <button
+          aria-manager
+          id="{{model.uid}}"
+          name="{{attribute}}"
+          type="file"
+          class="md-button md-raised"
+          ng-model="files"
+          ngf-multiple="true"
+          ngf-keep="true"
+          ngf-select ngf-accept="'image/*'">{{labelButton}}</button>
+
+    <div thumbnail ng-repeat="file in files"></div>
+
+  <field-error ng-messages
+               uid="{{model.uid}}-error"
+               error="model.error"></field-error>

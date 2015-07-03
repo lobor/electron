@@ -19,13 +19,9 @@ define([
 				hasForm: true,
 				controller: ['$scope', function($scope){
 					$scope.validation = sciForm;
-					$scope.addAssocie = addAssocie;
 					$scope.sci = {};
-					// $scope.sci = {
-					// 	associes: [{
-					//
-					// 	}]
-					// };
+					$scope.addAssocie = addAssocie;
+
 					function addAssocie(){
 						if(!$scope.sci.associes){
 							$scope.sci.associes = [];
@@ -33,8 +29,8 @@ define([
 						$scope.sci.associes.push({});
 					}
 					_this.submit = Submit;
-					//
-					$scope.$watch('sci', function(value){
+
+					$scope.$watch('formIsValid', function(value){
 						if($scope.formIsValid){
 							$scope.$setValidity(true);
 						}
@@ -44,15 +40,11 @@ define([
 					}, true);
 					//
 					function Submit() {
-						var sciData = angular.extend({},$scope.sci);
-						var biensData = angular.extend({},sciData);
+						var sciData = angular.copy($scope.sci);
 
-						delete sciData.biens;
-						// sciData.date_immatriculation = moment(sciData.date_immatriculation, 'DD MMMM YYYY');
 
 						angular.forEach(sciData.associes, function(associe, key){
 							delete sciData.associes[key].$$hashKey;
-							// sciData.associes[key].birthday = moment(associe.birthday, 'DD MMMM YYYY');
 						});
 
 						$http
@@ -79,22 +71,27 @@ define([
 				title: 'Créez les lots',
 				hasForm: true,
 				controller: ['$scope', function($scope){
-					$scope = angular.extend($scope, bienForm);
 					$scope.biens = {biens:[]};
+					$scope.validation = bienForm;
+					$scope.addBien = addBien;
+
+					function addBien(){
+						if(!$scope.biens.biens){
+							$scope.biens.biens = [];
+						}
+						$scope.biens.biens.push({});
+					}
 
 					$scope.$broadcast('schemaFormRedraw');
 
 					_this.submit = Submit;
 
-					$scope.$watch('biens', function(value){
-						if(!angular.equals($scope.biens, [])){
-							$scope.$broadcast('schemaFormValidate');
-							if($scope.addBien.$valid && !$scope.addBien.$pristine){
-								$scope.$setValidity(true);
-							}
-							else{
-								$scope.$setValidity(false);
-							}
+					$scope.$watch('formIsValid', function(value){
+						if($scope.formIsValid){
+							$scope.$setValidity(true);
+						}
+						else {
+							$scope.$setValidity(false);
 						}
 					}, true);
 

@@ -35,6 +35,18 @@ define([
 				data:{
 					is_granted: ["ROLE_USER"]
 				}
+			})
+			.state('locloud.lot.edit', {
+				url: "/edit/:id",
+				views: {
+					'main@locloud': {
+						templateUrl: 'controller/lot/templates/form.html',
+						controller: 'LotEditController'
+					}
+				},
+				data:{
+					is_granted: ["ROLE_USER"]
+				}
 			});
 	}]
 });

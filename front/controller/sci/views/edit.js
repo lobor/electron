@@ -18,24 +18,39 @@ define([
 				title: 'Créez la SCI',
 				hasForm: true,
 				controller: ['$scope', function($scope){
-					$scope = angular.extend($scope, sciForm);
 					$scope.sci = {};
 					var oldSci;
 					$http
 						.get(baseUrl+'/scis/'+$stateParams.id)
 						.success(function (data, status, headers, config) {
 							if(data.sci){
+								$scope.validation = sciForm;
+
+								data.sci.date_immatriculation = new Date(data.sci.date_immatriculation);
+
+								angular.forEach(data.sci.associes, function(associe, key){
+									data.sci.associes[key].birthday = new Date(associe.birthday);
+								});
+
 								oldSci = angular.copy(data.sci);
 								$scope.sci = angular.copy(data.sci);
 								$scope.$setValidity(true);
 								_this.submit = Submit;
+								$scope.addAssocie = addAssocie;
 
-								$scope.$watch('sci', function(value){
+								var addAssocie = function(){
+									if(!$scope.sci.associes){
+										$scope.sci.associes = [];
+									}
+									$scope.sci.associes.push({});
+								};
+
+								$scope.$watch('formIsValid', function(value){
 									if($scope.sci !== {} && !angular.equals($scope.sci, oldSci)){
-										if($scope.addSci.$valid && !$scope.addSci.$pristine){
+										if($scope.formIsValid){
 											$scope.$setValidity(true);
 										}
-										else{
+										else {
 											$scope.$setValidity(false);
 										}
 									}
@@ -46,16 +61,16 @@ define([
 										$scope.$nextStep();
 									}
 									else{
-										var href = $scope.sci.href;
-										delete $scope.sci.href;
-										delete $scope.sci.id;
+										var data = angular.copy($scope.sci);
+										delete data.href;
+										delete data.id;
 
-										angular.forEach($scope.sci.associes, function(associe, key){
-											$scope.sci.associes[key].birthday = moment(associe.birthday, 'DD MMMM YYYY');
+										angular.forEach(data.associes, function(associe, key){
+											delete data.associes[key].$$hashKey;
 										});
 
 										$http
-								      		.put(baseUrl+'/'+href, $scope.sci)
+								      		.post(baseUrl+'/scis/'+$stateParams.id, data)
 								      		.success(function (data, status, headers, config) {
 												if(data.sci){
 													ngNotify.set('La SCI a bien été enregistré', 'success');
@@ -87,15 +102,25 @@ define([
 							if(data.biens){
 								oldBiens = {biens: angular.copy(data.biens)};
 								$scope.biens = {biens:[]};
+								$scope.addBien = addBien;
+
+								function addBien(){
+									if(!$scope.biens.biens){
+										$scope.biens.biens = [];
+									}
+									$scope.biens.biens.push({});
+								}
+
 								if(!angular.equals(data.biens, []))
 									$scope.biens = {biens: angular.copy(data.biens)};
-								_this.submit = Submit;
 
+								_this.submit = Submit;
 								$scope.$setValidity(true);
 
-								$scope.$watch('biens', function(value){
-									if(!angular.equals($scope.biens, []) && !angular.equals($scope.biens, oldBiens)){
-										if($scope.addBien.$valid && !$scope.addBien.$pristine){
+								$scope.$watch('formIsValid', function(value){
+									console.log(value);
+									if(!angular.equals($scope.biens, oldBiens)){
+										if($scope.formIsValid){
 											$scope.$setValidity(true);
 										}
 										else{
@@ -118,7 +143,7 @@ define([
 												var id = bien.id;
 												delete bien.href;
 												delete bien.id;
-												$httpSelf = $http.put(baseUrl+'/biens/'+id, bien);
+												$httpSelf = $http.post(baseUrl+'/biens/'+id, bien);
 											}
 											else{
 												$httpSelf = $http.post(baseUrl+'/scis/'+$stateParams.id+'/biens', bien);
@@ -132,18 +157,6 @@ define([
 											}, function(){
 												ngNotify.set('Une erreur est apparu', 'error');
 											});
-
-										// $http
-										//     		.post(baseUrl+'/'+href, $scope.sci)
-										//     		.success(function (data, status, headers, config) {
-										// 		if(data.sci){
-										// 			ngNotify.set('La SCI a bien été enregistré', 'success');
-										// 			$scope.$nextStep();
-										// 		}
-										//     		})
-									    //   	.error(function (data, status, headers, config) {
-										// 		ngNotify.set('Une erreur est apparu', 'error');
-									    //   	});
 									}
 								}
 							}

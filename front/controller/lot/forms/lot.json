@@ -1,141 +1,26 @@
 {
-	"schema": {
-		"type": "object",
-		"properties": {
-			"sci": {
-				"type": "string",
-				"title": "Sci",
-				"require":true
-			},
-			"bien": {
-				"type": "string",
-				"title": "Bien",
-				"require":true
-			},
-			"type": {
-				"type": "string",
-				"title": "Type du bien",
-				"require":true
-			},
-			"identifiant": {
-				"type": "string",
-				"title": "Identifiant",
-				"require":true
-			},
-			"surface": {
-				"type": "number",
-				"title": "Surface",
-				"require":true
-			},
-			"nb_piece": {
-				"type": "number",
-				"title": "Nombre de pièces",
-				"require":true
-			},
-			"description": {
-				"type": "string",
-				"title": "Description",
-				"require":true
-			},
-			"note": {
-				"type": "string",
-				"title": "Note",
-				"require":true
-			},
-			"photo": {
-				"type":"object",
-				"format":"file_upload",
-				"title": "Les photos"
-			}
-		}
+	"sci": {
+		"required":true
 	},
-	"form": [
-		{
-			"type": "section",
-			"htmlClass": "column",
-			"items": [
-				{
-					"key": "sci",
-					"htmlClass": "col-md row",
-					"type":"select",
-					"titleMap": [
-
-				  	]
-				},
-				{
-					"key": "bien",
-					"htmlClass": "col-md row",
-					"type":"select",
-					"titleMap": [
-
-				  	]
-				},
-				{
-					"key": "type",
-					"htmlClass": "col-md row",
-					"type":"select",
-					"titleMap": [
-				    	{
-							"value": "Appartement",
-							"name": "Appartement"
-						},
-				    	{
-							"value": "Maison",
-							"name": "Maison"
-						},
-				    	{
-							"value": "Local commercial",
-							"name": "Local commercial"
-						},
-				    	{
-							"value": "Box",
-							"name": "Box"
-						}
-				  	]
-				},
-				{
-					"key": "identifiant",
-					"htmlClass": "col-md row"
-				},
-				{
-					"key": "surface",
-					"htmlClass": "col-md row "
-				},
-				{
-					"key": "nb_piece",
-					"htmlClass": "col-md row"
-				}
-			]
-		},
-		{
-			"type": "section",
-			"htmlClass": "column",
-			"items": [
-				{
-					"key": "description",
-					"htmlClass": "col-md row",
-					"type":"textarea"
-				},
-				{
-					"key": "note",
-					"htmlClass": "col-md row",
-					"type":"textarea"
-				}
-			]
-		},
-		{
-			"type": "section",
-			"htmlClass": "column",
-			"items": [
-				{
-					"key": "photo",
-					"type":"file_upload"
-				}
-			]
-		},
-		{
-			"type": "submit",
-			"title": "Save"
-		}
-	]
+	"bien": {
+		"required":true
+	},
+	"type": {
+		"required":true
+	},
+	"identifiant": {
+		"required":true
+	},
+	"surface": {
+		"required":true
+	},
+	"nb_piece": {
+		"required":true
+	},
+	"description": {
+	},
+	"note": {
+	},
+	"photo": {
+	}
 }
