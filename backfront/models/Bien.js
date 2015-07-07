@@ -30,7 +30,7 @@ restberry.model('Bien')
 	.loginRequired()
 	.routes
 	.addCreateRoute({
-		parentModel: 'Sci',
+		parentModel: 'Sci'
 	})
     .addDeleteRoute()
     .addPartialUpdateRoute()
@@ -39,3 +39,26 @@ restberry.model('Bien')
 	})
     .addReadRoute()
     .addUpdateRoute();
+
+function parseFile(req, res, next){
+    if(req.body.photos){
+        req.body.photos = JSON.parse(req.body.photos);
+    }
+
+    if(req.files['file[]']){
+        if(!req.body.photos){
+            req.body.photos = [];
+        }
+
+        if(_.isArray(req.files['file[]'])){
+            for(var i = req.files['file[]'].length - 1; i >= 0; i--){
+                req.body.photos.push({image: req.files['file[]'][i].name, url: '/assets/biens/'});
+            }
+        }
+        else{
+            req.body.photos.push({image: req.files['file[]'].name, url: '/assets/biens/'});
+        }
+    }
+
+    next();
+}

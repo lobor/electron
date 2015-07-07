@@ -1,6 +1,7 @@
 var restberry = require('restberry');
 var _ = require('underscore');
 var promise = require('bluebird');
+var fs = require('fs');
 
 restberry.model('Lot')
     .schema({
@@ -35,7 +36,12 @@ restberry.model('Lot')
     		type: String
     	},
         photos: [{
-			type: String
+            image: {
+        		type: String
+        	},
+            url: {
+        		type: String
+        	}
 		}]
     })
     .loginRequired()
@@ -68,11 +74,56 @@ restberry.model('Lot')
         preAction: parseFile
     })
     .addPartialUpdateRoute({
-        preAction: parseFile
+        preAction: parseFile,
+    })
+    .addDeleteRoute({
+        actions: {
+            pictures: function(req, res, next){
+                var Lot = restberry.model('Lot');
+                var img = JSON.parse(req.query.picture);
+                Lot
+                    .findById(req.params.id, function(lot){
+                        var id;
+                        _.each(lot.photos, function(picture, index){
+                            if(picture.image == img.image){
+                                id = picture.id;
+                            }
+                        });
+                        lot.photos.id(id).remove();
+                        lot.save(function(){
+                            fs.unlink('.'+ img.url + img.image, function () {
+                                res.send({
+                                    status: "200",
+                                    responseType: "string",
+                                    response: "success"
+                                });
+                            });
+                        });
+                    });
+            }
+        }
     })
     .addCRUDRoutes();
 
 function parseFile(req, res, next){
-    // console.log(req);
-    // console.log(req.query);
+    if(req.body.photos){
+        req.body.photos = JSON.parse(req.body.photos);
+    }
+
+    if(req.files['file[]']){
+        if(!req.body.photos){
+            req.body.photos = [];
+        }
+
+        if(_.isArray(req.files['file[]'])){
+            for(var i = req.files['file[]'].length - 1; i >= 0; i--){
+                req.body.photos.push({image: req.files['file[]'][i].name, url: '/assets/lots/'});
+            }
+        }
+        else{
+            req.body.photos.push({image: req.files['file[]'].name, url: '/assets/lots/'});
+        }
+    }
+
+    next();
 }

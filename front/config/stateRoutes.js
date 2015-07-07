@@ -1,9 +1,9 @@
-'use strict';
 
 define([
 	'angular',
 	'uiRouter',
 ], function(){
+	'use strict';
 	return ['$rootScope', '$state', '$controller', '$q', '$window', '$http', 'baseUrl', 'ngNotify', 'crAcl', 'jwtHelper', function($rootScope, $state, $controller, $q, $window, $http, baseUrl, ngNotify, crAcl, jwtHelper){
 		ngNotify.config({
 		    theme: 'pure',
@@ -35,7 +35,7 @@ define([
 				if($window.sessionStorage.role){
 					$window.sessionStorage.removeItem('role');
 				}
-				crAcl.setRole('ROLE_GUEST');
+				// crAcl.setRole('ROLE_GUEST');
 				$state.go('login');
 			}
 		}

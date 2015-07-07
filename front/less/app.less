@@ -49,7 +49,6 @@
 
 
 
-
 @import '../bower_components/FoxBox/dist/less/variables.less';
 @import '../bower_components/FoxBox/dist/less/mixins.less';
 @import '../bower_components/FoxBox/dist/less/grid.less';
@@ -88,6 +87,7 @@
 @import "view/sci.less";
 @import "view/main.less";
 @import "view/fileUpload.less";
+@import "view/form.less";
 
 
 @import "overload/admin-theme.less";
@@ -125,4 +125,21 @@
 
 h1{
       margin: 0px;
+}
+
+.navbar.navbar-default, .navbar-header{
+    &:before, &:after{
+        display: initial;
+        content: none;
+    }
+}
+
+.md-menu{
+    button{
+          color: #CCC;
+    }
+}
+
+.md-open-menu-container{
+    z-index: 1000;
 }

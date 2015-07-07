@@ -47,7 +47,7 @@ require.config({
 		'ng-flow': 'bower_components/ng-flow/dist/ng-flow-standalone',
 		'ng-file-upload-shim': 'bower_components/ng-file-upload/dist/ng-file-upload-shim.min',
 		'ng-file-upload': 'bower_components/ng-file-upload/dist/ng-file-upload.min',
-		'imgLiquid': 'bower_components/imgLiquid/js/imgLiquid-min',
+		'imgLiquid': 'bower_components/imgLiquid/js/imgLiquid',
 		'angular-jwt': 'bower_components/angular-jwt/dist/angular-jwt.min',
 		'angular-multi-step-form': 'bower_components/angular-multi-step-form/dist/angular-multi-step-form.min',
 		'angular-form-for': 'bower_components/angular-form-for/dist/form-for',

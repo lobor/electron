@@ -3,7 +3,8 @@ define([
 	'config/routes',
 	'config/stateRoutes',
 	'config/loadingBar',
-	'config/datepicker',
+
+	'filter/assets',
 
 	'crAcl',
 	'uiRouter',
@@ -18,7 +19,7 @@ define([
 	'angular-form-for',
 	'tota11y',
 	'decoratorForm/formFor/material/file-field',
-], function (angular, $routes, $stateRoutes, $loadingBar) {
+], function (angular, $routes, $stateRoutes, $loadingBar, FilterAssets) {
 	'use strict';
 	return angular
 		.module('locloud', [
@@ -54,9 +55,10 @@ define([
 			$httpProvider.interceptors.push('jwtInterceptor');
 		}])
 		.constant('baseUrl', window.location.origin + ':3000')
+		.filter('assets', FilterAssets)
 		.directive('imgliquid', function () {
 			return {
-				restrict: 'A',
+				restrict: 'AE',
 				link: function (scope, element, attr) {
 					element.imgLiquid();
 					if (!element.find('img').attr('src')) {

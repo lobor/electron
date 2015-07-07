@@ -1,8 +1,7 @@
-'use strict';
 define([
 	'angular',
 	'uiRouter',
-	
+
 	// controller
 	'controller/auth/auth',
 	'controller/home/home',
@@ -13,6 +12,7 @@ define([
 	'controller/user/user',
 	'controller/install/install',
 ], function(angular) {
+	'use strict';
 	return ['$locationProvider', '$httpProvider', '$stateProvider', '$provide', '$mdThemingProvider', function($locationProvider, $httpProvider, $stateProvider, $provide, $mdThemingProvider) {
 		// console.log(ngMaterialProvider);
 
@@ -41,29 +41,6 @@ define([
 		          	is_granted: ["ROLE_GUEST"]
 		       	}
 			}).
-
-			// Locataire
-			state('locloud.locataire', {
-				url: "locataires",
-				views: {
-					'main' : {
-						templateUrl: 'controller/locataire/templates/layout.html',
-					},
-					'locataire-menu@locloud.locataire' : {
-						templateUrl: 'controller/locataire/templates/menu.html',
-						controller: 'LocataireMenuController'
-					},
-					'locataire-list@locloud.locataire' : {
-						templateUrl: 'controller/locataire/templates/list.html',
-						controller: 'LocataireListController'
-					}
-				},
-				data:{
-		          	is_granted: ["ROLE_USER"]
-		       	}
-			}).
-
-
 
 			// Dashboard
 			state('locloud.home', {
@@ -105,7 +82,6 @@ define([
 			return {
 				responseError: function(rejection) {
 					$injector.get('cfpLoadingBar').complete();
-					// cfpLoadingBar;
 					switch (rejection.status){
 						case 401:
 							$injector.get('$state').go('logout');

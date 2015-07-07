@@ -1,12 +1,11 @@
-'use strict';
 define([
 	'angular',
-	'text!controller/sci/templates/menuRow.html',
-	'controller/sci/views/showMenuRow'
-], function(angular, menuRowTpl, ShowMenuRowController) {
-	return ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', '$mdBottomSheet', List];
+	'text!controller/sci/templates/menuRow.html'
+], function(angular, menuRowTpl) {
+	'use strict';
+	return ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', '$mdBottomSheet', 'SciService', List];
 
-	function List($scope, $http, baseUrl, $state, ngNotify, $mdBottomSheet){
+	function List($scope, $http, baseUrl, $state, ngNotify, $mdBottomSheet, SciService){
 		$scope.gridOptions = {
 			columnDefs: [
 				{
@@ -28,7 +27,7 @@ define([
 						params.$scope.menuRow = function(data){
 							$mdBottomSheet.show({
 						      	template: menuRowTpl,
-						      	controller: ShowMenuRowController,
+						      	controller: 'ShowMenuRowController',
 								locals: {
 									id: data.id,
 									sci: data.name
@@ -45,18 +44,12 @@ define([
 			angularCompileRows: true
 		};
 
-		$http
-			.get(baseUrl+'/scis',{params:{fields:'name,associes'}})
-			.success(function (data, status, headers, config) {
-				angular.forEach(data.scis,function(sci, key){
-					data.scis[key].nbAssocies = data.scis[key].associes.length
-				});
-				// data.scis.nbAssocies = data.scis.associes.length;
-				$scope.gridOptions.rowData =  data.scis;
+		var sciDefered = SciService.getList();
+		$
+			.when(sciDefered)
+			.done(function(resultSci){
+				$scope.gridOptions.rowData =  resultSci.scis;
 				$scope.gridOptions.api.onNewRows();
-			})
-			.error(function (data, status, headers, config) {
-				ngNotify.set('Une erreur est apparu', 'error');
 			});
 	}
 });

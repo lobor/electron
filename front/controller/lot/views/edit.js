@@ -1,11 +1,11 @@
-'use strict';
 define([
 	'angular',
 	'json!controller/lot/forms/lot.json'
 ], function(angular, formLot) {
-	return ['$scope', '$element', '$http', 'baseUrl', 'ngNotify', '$state', '$stateParams', Edit];
+	'use strict';
+	return ['$scope', '$element', '$http', 'baseUrl', 'ngNotify', '$state', '$stateParams', '$mdDialog', Edit];
 
-	function Edit($scope, $element, $http, baseUrl, ngNotify, $state, $stateParams){
+	function Edit($scope, $element, $http, baseUrl, ngNotify, $state, $stateParams, $mdDialog){
 		$scope.lot = {};
 		$scope.validation = formLot;
 		$scope.title = 'Editer un lot';
@@ -90,26 +90,56 @@ define([
 								else {
 									$scope.disable = true;
 								}
-								i++
+								i++;
 							}, true);
 
 							$scope.submit = Submit;
+							$scope.deletePicture = deletePicture;
+
+							function deletePicture(index){
+								var confirm = $mdDialog
+									.confirm()
+									.title('Suppression d\'une photo')
+									.content('Souhaitez vous vraiment supprimer cette photo ?')
+									.ok('Supprimer')
+			      					.cancel('Annuler');
+
+								$mdDialog
+									.show(confirm)
+									.then(function() {
+											$http
+												.delete(baseUrl+'/lots/'+dataLot.lot.id, {params: {action:"pictures",picture: JSON.stringify(modelLot.photos[index])}})
+												.success(function (data, status, headers, config) {
+													$scope.lot.photos.splice(index, 1);
+													ngNotify.set('La photo a bien été supprimé', 'success');
+												})
+												.error(function (data, status, headers, config) {
+													ngNotify.set('Une erreur est apparu', 'error');
+												});
+								    });
+							}
 
 							function Submit(){
 								var modelLot = angular.copy($scope.lot);
-								modelLot.photos = $scope.photo;
 
-								var fd = new FormData($element.find('form')[0]);
+								var fd = new FormData();
+								$.map(modelLot, function(value, index){
+									if(index === 'photos' && !angular.equals(value, [])){
+										value = JSON.stringify(value);
+									}
+									fd.append(index, value);
+								});
+								modelLot.photos = $scope.photo;
 
 								angular.forEach(modelLot.photos, function(photo){
         							fd.append('file[]', photo);
 								});
 
 								$http
-									.post(baseUrl+'/lots/'+ dataLot.lot.id, fd, {headers: {'Content-Type': 'multipart/form-data'}})
+									.post(baseUrl+'/lots/'+ dataLot.lot.id, fd, {transformRequest: angular.identity, headers: {'Content-Type': undefined}})
 									.success(function(){
 										ngNotify.set('Le lot a bien été enregistré', 'success');
-										$state.go('locloud.lot')
+										$state.go('locloud.lot');
 									})
 									.error(function(){
 										ngNotify.set('Une erreur est apparu', 'error');

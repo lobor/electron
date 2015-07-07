@@ -1,4 +1,3 @@
-'use strict';
 define([
 	'angular',
 	'controller/lot/config/routes',
@@ -8,6 +7,7 @@ define([
 	'angular-grid',
 	'ng-file-upload'
 ], function (angular, routes, ListController, CreateController, EditController) {
+	'use strict';
 	angular.module('locloud.lot', ['angularGrid', 'ngFileUpload', 'ngMaterial'])
 		.config(routes)
 		.controller('LotListController', ListController)

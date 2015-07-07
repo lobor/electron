@@ -17,9 +17,17 @@
 
 				<text-field attribute="biens[{{$index}}].city" label="Ville" flex="20"></text-field>
 			</div>
-			<div layout="row" flex="100">
-
+			<!-- <div layout="row">
+				<file-field attribute="biens[{{$index}}].photo" label="Photos" label-button="Choisissez les images"></file-field>
 			</div>
+			<div layout="row">
+				<md-card ng-repeat="photo in biens[{{$index}}].photos">
+					<img ng-src="{{photo | assets}}" src="{{photo | assets}}" class="md-card-image" alt="Washed Out" style="width: 100px">
+					<div class="md-actions" layout="row" layout-align="end center">
+						<div ng-click="deletePicture($index)" class="md-button">Delete</div>
+					</div>
+				</md-card>
+			</div> -->
 		</md-list>
 	</div>
 </form>

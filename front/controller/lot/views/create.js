@@ -1,11 +1,12 @@
 define([
 	'angular',
-	'json!controller/lot/forms/lot.json'
-], function (angular, formLot) {
+	'json!controller/lot/forms/lot.json',
+	'jquery'
+], function (angular, formLot, $) {
 	'use strict';
-	return ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', Create];
+	return ['$scope', '$http', 'baseUrl', '$state', 'ngNotify', '$element', Create];
 
-	function Create ($scope, $http, baseUrl, $state, ngNotify) {
+	function Create ($scope, $http, baseUrl, $state, ngNotify, $element) {
 		$scope.lot = {};
 		$scope.validation = formLot;
 		$scope.disable = true;
@@ -86,12 +87,22 @@ define([
 
 				function Submit(){
 					var modelLot = angular.copy($scope.lot);
-					modelLot.photo = angular.copy($scope.photo);
+
+					var fd = new FormData();
+					$.map(modelLot, function(value, index){
+						fd.append(index, value);
+					});
+
+
+					angular.forEach($scope.photo, function(photo){
+						fd.append('file[]', photo);
+					});
+
 					$http
-						.post(baseUrl+'/lots', $scope.lot)
+						.post(baseUrl+'/lots/', fd, {transformRequest: angular.identity, headers: {'Content-Type': undefined}})
 						.success(function(){
 							ngNotify.set('Le lot a bien été enregistré', 'success');
-							$state.go('locloud.lot')
+							$state.go('locloud.lot');
 						})
 						.error(function(){
 							ngNotify.set('Une erreur est apparu', 'error');

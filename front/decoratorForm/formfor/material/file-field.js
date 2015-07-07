@@ -52,7 +52,13 @@ define([
 				template: '<div imgLiquid data-fill="true" ng-model="imgLiquid"><img src="" /></div>',
 				link: function (scope, element, attributes) {
 					var file = scope.file;
-					var modelParent = scope.$parent.$parent;
+					var modelParent;
+					if(scope.$parent.$parent.$index !== undefined){
+						modelParent = scope.$parent.$parent.$parent;
+					}
+					else{
+						modelParent = scope.$parent.$parent;
+					}
 					if(!modelParent.photo){
 						modelParent.photo = [];
 					}
