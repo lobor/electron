@@ -1,12 +1,12 @@
-'use strict';
 define([
 	'angular',
+	'material-calendar'
 ], function(angular) {
-	angular.module('locloud.home', [])
-	.controller('HomeController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
-		// $http.get(baseUrl+'/auth/api/restricted').
-		// success(function(data, status, headers, config){
-		// 	// console.log(data, status, headers, config);
-		// });
-	}]);
+	'use strict';
+	angular.module('locloud.home', ['materialCalendar'])
+		.controller('HomeController', ['$scope', '$http', 'baseUrl', function($scope, $http, baseUrl) {
+			$scope.$on("md-calendar.date.click", function(date) {
+				console.log(date);
+			});
+		}]);
 });

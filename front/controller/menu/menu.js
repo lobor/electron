@@ -3,10 +3,10 @@ define([
 	'angular',
 ], function(angular) {
 	angular.module('locloud.menu', ['cr.acl']).
-	controller('MenuController', ['$scope', '$state', '$window', 'crAcl', MenuController]);
+	controller('MenuController', ['$scope', '$state', '$window', 'crAcl', '$mdUtil', '$mdSidenav', MenuController]);
 
 
-	function MenuController($scope, $state, $window,crAcl){
+	function MenuController($scope, $state, $window,crAcl, $mdUtil){
 		$scope.style = 'display: none;';
 		$scope.menus = [
 			{
@@ -46,5 +46,6 @@ define([
 			}
 		];
 		$scope.style = '';
+		
 	}
 });

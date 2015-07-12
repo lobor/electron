@@ -23,6 +23,7 @@ define([
 				views: {
 					'container' : {
 						templateUrl: 'layout.html',
+						controller: 'ResponsiveController'
 					},
 					'menu@locloud' : {
 						templateUrl: 'controller/menu/templates/menu.html',
@@ -72,7 +73,8 @@ define([
 		// config rest html 5
 		$locationProvider.html5Mode(true);
 		$httpProvider.defaults.useXDomain = true;
-		$httpProvider.defaults.withCredentials = true;
+		// $httpProvider.defaults.withCredentials = true;
+		// $httpProvider.defaults.origin = 'http://www.locloud.com';
 
 		$mdThemingProvider.alwaysWatchTheme(true);
 

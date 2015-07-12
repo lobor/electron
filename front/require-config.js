@@ -53,6 +53,7 @@ require.config({
 		'angular-form-for': 'bower_components/angular-form-for/dist/form-for',
 		'angular-form-for-material': 'bower_components/angular-form-for/dist/form-for.material-templates',
 		'tota11y': 'bower_components/tota11y/build/tota11y.min',
+		'material-calendar': 'bower_components/material-calendar/dist/angular-material-calendar'
 	},
 	shim: {
 		'jquery': {
@@ -78,6 +79,7 @@ require.config({
 		'angularBootstrapTpl': ['angular', 'angularBootstrap'],
 		'angularBootstrap': ['angular', 'angular-animate'],
 		'crAcl': ['angular'],
+		'material-calendar': ['angular'],
 		'ng-flow': ['angular'],
 		'angular-multi-step-form': ['angular'],
 		'ng-file-upload-shim': ['angular'],

@@ -1,0 +1,1395 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/usr/local/zend/apache2/htdocs/locloud/front',
+5 verbose install   [ 'angular',
+5 verbose install     'angular-mocks',
+5 verbose install     'angular-route',
+5 verbose install     'angular-ui-router',
+5 verbose install     'gulp',
+5 verbose install     'gulp-karma',
+5 verbose install     'jasmine-core',
+5 verbose install     'jquery',
+5 verbose install     'karma',
+5 verbose install     'karma-chrome-luncher',
+5 verbose install     'karma-coverage',
+5 verbose install     'karma-html-reporter',
+5 verbose install     'karma-jasmin',
+5 verbose install     'karma-phantomjs-luncher',
+5 verbose install     'karma-requirejs',
+5 verbose install     'phantomjs',
+5 verbose install     'requirejs' ] ]
+6 info preinstall front@0.0.0
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'angular@^1.4.1', null ]
+9 verbose cache add name=undefined spec="angular@^1.4.1" args=["angular@^1.4.1",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'angular@^1.4.1',
+10 verbose parsed url   path: 'angular@^1.4.1',
+10 verbose parsed url   href: 'angular@^1.4.1' }
+11 verbose cache add [ 'angular-mocks@1.3.16', null ]
+12 verbose cache add name=undefined spec="angular-mocks@1.3.16" args=["angular-mocks@1.3.16",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'angular-mocks@1.3.16',
+13 verbose parsed url   path: 'angular-mocks@1.3.16',
+13 verbose parsed url   href: 'angular-mocks@1.3.16' }
+14 verbose cache add [ 'angular-route@^1.4.1', null ]
+15 verbose cache add name=undefined spec="angular-route@^1.4.1" args=["angular-route@^1.4.1",null]
+16 verbose parsed url { protocol: null,
+16 verbose parsed url   slashes: null,
+16 verbose parsed url   auth: null,
+16 verbose parsed url   host: null,
+16 verbose parsed url   port: null,
+16 verbose parsed url   hostname: null,
+16 verbose parsed url   hash: null,
+16 verbose parsed url   search: null,
+16 verbose parsed url   query: null,
+16 verbose parsed url   pathname: 'angular-route@^1.4.1',
+16 verbose parsed url   path: 'angular-route@^1.4.1',
+16 verbose parsed url   href: 'angular-route@^1.4.1' }
+17 verbose cache add [ 'angular-ui-router@^0.2.15', null ]
+18 verbose cache add name=undefined spec="angular-ui-router@^0.2.15" args=["angular-ui-router@^0.2.15",null]
+19 verbose parsed url { protocol: null,
+19 verbose parsed url   slashes: null,
+19 verbose parsed url   auth: null,
+19 verbose parsed url   host: null,
+19 verbose parsed url   port: null,
+19 verbose parsed url   hostname: null,
+19 verbose parsed url   hash: null,
+19 verbose parsed url   search: null,
+19 verbose parsed url   query: null,
+19 verbose parsed url   pathname: 'angular-ui-router@^0.2.15',
+19 verbose parsed url   path: 'angular-ui-router@^0.2.15',
+19 verbose parsed url   href: 'angular-ui-router@^0.2.15' }
+20 verbose cache add name="angular" spec="^1.4.1" args=["angular","^1.4.1"]
+21 verbose parsed url { protocol: null,
+21 verbose parsed url   slashes: null,
+21 verbose parsed url   auth: null,
+21 verbose parsed url   host: null,
+21 verbose parsed url   port: null,
+21 verbose parsed url   hostname: null,
+21 verbose parsed url   hash: null,
+21 verbose parsed url   search: null,
+21 verbose parsed url   query: null,
+21 verbose parsed url   pathname: '^1.4.1',
+21 verbose parsed url   path: '^1.4.1',
+21 verbose parsed url   href: '^1.4.1' }
+22 verbose addNamed [ 'angular', '^1.4.1' ]
+23 verbose addNamed [ null, '>=1.4.1-0 <2.0.0-0' ]
+24 verbose cache add name="angular-mocks" spec="1.3.16" args=["angular-mocks","1.3.16"]
+25 verbose parsed url { protocol: null,
+25 verbose parsed url   slashes: null,
+25 verbose parsed url   auth: null,
+25 verbose parsed url   host: null,
+25 verbose parsed url   port: null,
+25 verbose parsed url   hostname: null,
+25 verbose parsed url   hash: null,
+25 verbose parsed url   search: null,
+25 verbose parsed url   query: null,
+25 verbose parsed url   pathname: '1.3.16',
+25 verbose parsed url   path: '1.3.16',
+25 verbose parsed url   href: '1.3.16' }
+26 verbose addNamed [ 'angular-mocks', '1.3.16' ]
+27 verbose addNamed [ '1.3.16', '1.3.16' ]
+28 verbose cache add name="angular-route" spec="^1.4.1" args=["angular-route","^1.4.1"]
+29 verbose parsed url { protocol: null,
+29 verbose parsed url   slashes: null,
+29 verbose parsed url   auth: null,
+29 verbose parsed url   host: null,
+29 verbose parsed url   port: null,
+29 verbose parsed url   hostname: null,
+29 verbose parsed url   hash: null,
+29 verbose parsed url   search: null,
+29 verbose parsed url   query: null,
+29 verbose parsed url   pathname: '^1.4.1',
+29 verbose parsed url   path: '^1.4.1',
+29 verbose parsed url   href: '^1.4.1' }
+30 verbose addNamed [ 'angular-route', '^1.4.1' ]
+31 verbose addNamed [ null, '>=1.4.1-0 <2.0.0-0' ]
+32 verbose cache add [ 'gulp@^3.9.0', null ]
+33 verbose cache add name=undefined spec="gulp@^3.9.0" args=["gulp@^3.9.0",null]
+34 verbose parsed url { protocol: null,
+34 verbose parsed url   slashes: null,
+34 verbose parsed url   auth: null,
+34 verbose parsed url   host: null,
+34 verbose parsed url   port: null,
+34 verbose parsed url   hostname: null,
+34 verbose parsed url   hash: null,
+34 verbose parsed url   search: null,
+34 verbose parsed url   query: null,
+34 verbose parsed url   pathname: 'gulp@^3.9.0',
+34 verbose parsed url   path: 'gulp@^3.9.0',
+34 verbose parsed url   href: 'gulp@^3.9.0' }
+35 verbose cache add [ 'gulp-karma@0.0.4', null ]
+36 verbose cache add name=undefined spec="gulp-karma@0.0.4" args=["gulp-karma@0.0.4",null]
+37 verbose parsed url { protocol: null,
+37 verbose parsed url   slashes: null,
+37 verbose parsed url   auth: null,
+37 verbose parsed url   host: null,
+37 verbose parsed url   port: null,
+37 verbose parsed url   hostname: null,
+37 verbose parsed url   hash: null,
+37 verbose parsed url   search: null,
+37 verbose parsed url   query: null,
+37 verbose parsed url   pathname: 'gulp-karma@0.0.4',
+37 verbose parsed url   path: 'gulp-karma@0.0.4',
+37 verbose parsed url   href: 'gulp-karma@0.0.4' }
+38 verbose cache add [ 'jasmine-core@latest', null ]
+39 verbose cache add name=undefined spec="jasmine-core@latest" args=["jasmine-core@latest",null]
+40 verbose parsed url { protocol: null,
+40 verbose parsed url   slashes: null,
+40 verbose parsed url   auth: null,
+40 verbose parsed url   host: null,
+40 verbose parsed url   port: null,
+40 verbose parsed url   hostname: null,
+40 verbose parsed url   hash: null,
+40 verbose parsed url   search: null,
+40 verbose parsed url   query: null,
+40 verbose parsed url   pathname: 'jasmine-core@latest',
+40 verbose parsed url   path: 'jasmine-core@latest',
+40 verbose parsed url   href: 'jasmine-core@latest' }
+41 verbose cache add name="angular-ui-router" spec="^0.2.15" args=["angular-ui-router","^0.2.15"]
+42 verbose parsed url { protocol: null,
+42 verbose parsed url   slashes: null,
+42 verbose parsed url   auth: null,
+42 verbose parsed url   host: null,
+42 verbose parsed url   port: null,
+42 verbose parsed url   hostname: null,
+42 verbose parsed url   hash: null,
+42 verbose parsed url   search: null,
+42 verbose parsed url   query: null,
+42 verbose parsed url   pathname: '^0.2.15',
+42 verbose parsed url   path: '^0.2.15',
+42 verbose parsed url   href: '^0.2.15' }
+43 verbose addNamed [ 'angular-ui-router', '^0.2.15' ]
+44 verbose addNamed [ null, '>=0.2.15-0 <0.3.0-0' ]
+45 silly lockFile 66293497-angular-1-4-1 angular@^1.4.1
+46 verbose lock angular@^1.4.1 /Users/lionelbertrand/.npm/66293497-angular-1-4-1.lock
+47 silly lockFile 637aeefb-angular-mocks-1-3-16 angular-mocks@1.3.16
+48 verbose lock angular-mocks@1.3.16 /Users/lionelbertrand/.npm/637aeefb-angular-mocks-1-3-16.lock
+49 silly lockFile 75f513a2-angular-route-1-4-1 angular-route@^1.4.1
+50 verbose lock angular-route@^1.4.1 /Users/lionelbertrand/.npm/75f513a2-angular-route-1-4-1.lock
+51 silly lockFile 459556bd-angular-ui-router-0-2-15 angular-ui-router@^0.2.15
+52 verbose lock angular-ui-router@^0.2.15 /Users/lionelbertrand/.npm/459556bd-angular-ui-router-0-2-15.lock
+53 verbose cache add name="gulp" spec="^3.9.0" args=["gulp","^3.9.0"]
+54 verbose parsed url { protocol: null,
+54 verbose parsed url   slashes: null,
+54 verbose parsed url   auth: null,
+54 verbose parsed url   host: null,
+54 verbose parsed url   port: null,
+54 verbose parsed url   hostname: null,
+54 verbose parsed url   hash: null,
+54 verbose parsed url   search: null,
+54 verbose parsed url   query: null,
+54 verbose parsed url   pathname: '^3.9.0',
+54 verbose parsed url   path: '^3.9.0',
+54 verbose parsed url   href: '^3.9.0' }
+55 verbose addNamed [ 'gulp', '^3.9.0' ]
+56 verbose addNamed [ null, '>=3.9.0-0 <4.0.0-0' ]
+57 silly lockFile a7ccee77-gulp-3-9-0 gulp@^3.9.0
+58 verbose lock gulp@^3.9.0 /Users/lionelbertrand/.npm/a7ccee77-gulp-3-9-0.lock
+59 verbose cache add name="gulp-karma" spec="0.0.4" args=["gulp-karma","0.0.4"]
+60 verbose parsed url { protocol: null,
+60 verbose parsed url   slashes: null,
+60 verbose parsed url   auth: null,
+60 verbose parsed url   host: null,
+60 verbose parsed url   port: null,
+60 verbose parsed url   hostname: null,
+60 verbose parsed url   hash: null,
+60 verbose parsed url   search: null,
+60 verbose parsed url   query: null,
+60 verbose parsed url   pathname: '0.0.4',
+60 verbose parsed url   path: '0.0.4',
+60 verbose parsed url   href: '0.0.4' }
+61 verbose addNamed [ 'gulp-karma', '0.0.4' ]
+62 verbose addNamed [ '0.0.4', '0.0.4' ]
+63 silly lockFile d909131b-gulp-karma-0-0-4 gulp-karma@0.0.4
+64 verbose lock gulp-karma@0.0.4 /Users/lionelbertrand/.npm/d909131b-gulp-karma-0-0-4.lock
+65 verbose cache add [ 'jquery@^2.1.4', null ]
+66 verbose cache add name=undefined spec="jquery@^2.1.4" args=["jquery@^2.1.4",null]
+67 verbose parsed url { protocol: null,
+67 verbose parsed url   slashes: null,
+67 verbose parsed url   auth: null,
+67 verbose parsed url   host: null,
+67 verbose parsed url   port: null,
+67 verbose parsed url   hostname: null,
+67 verbose parsed url   hash: null,
+67 verbose parsed url   search: null,
+67 verbose parsed url   query: null,
+67 verbose parsed url   pathname: 'jquery@^2.1.4',
+67 verbose parsed url   path: 'jquery@^2.1.4',
+67 verbose parsed url   href: 'jquery@^2.1.4' }
+68 verbose cache add [ 'karma@latest', null ]
+69 verbose cache add name=undefined spec="karma@latest" args=["karma@latest",null]
+70 verbose parsed url { protocol: null,
+70 verbose parsed url   slashes: null,
+70 verbose parsed url   auth: null,
+70 verbose parsed url   host: null,
+70 verbose parsed url   port: null,
+70 verbose parsed url   hostname: null,
+70 verbose parsed url   hash: null,
+70 verbose parsed url   search: null,
+70 verbose parsed url   query: null,
+70 verbose parsed url   pathname: 'karma@latest',
+70 verbose parsed url   path: 'karma@latest',
+70 verbose parsed url   href: 'karma@latest' }
+71 verbose cache add name="jasmine-core" spec="latest" args=["jasmine-core","latest"]
+72 verbose parsed url { protocol: null,
+72 verbose parsed url   slashes: null,
+72 verbose parsed url   auth: null,
+72 verbose parsed url   host: null,
+72 verbose parsed url   port: null,
+72 verbose parsed url   hostname: null,
+72 verbose parsed url   hash: null,
+72 verbose parsed url   search: null,
+72 verbose parsed url   query: null,
+72 verbose parsed url   pathname: 'latest',
+72 verbose parsed url   path: 'latest',
+72 verbose parsed url   href: 'latest' }
+73 verbose addNamed [ 'jasmine-core', 'latest' ]
+74 verbose addNamed [ null, null ]
+75 silly lockFile a4c5edbf-jasmine-core-latest jasmine-core@latest
+76 verbose lock jasmine-core@latest /Users/lionelbertrand/.npm/a4c5edbf-jasmine-core-latest.lock
+77 verbose cache add name="jquery" spec="^2.1.4" args=["jquery","^2.1.4"]
+78 verbose parsed url { protocol: null,
+78 verbose parsed url   slashes: null,
+78 verbose parsed url   auth: null,
+78 verbose parsed url   host: null,
+78 verbose parsed url   port: null,
+78 verbose parsed url   hostname: null,
+78 verbose parsed url   hash: null,
+78 verbose parsed url   search: null,
+78 verbose parsed url   query: null,
+78 verbose parsed url   pathname: '^2.1.4',
+78 verbose parsed url   path: '^2.1.4',
+78 verbose parsed url   href: '^2.1.4' }
+79 verbose addNamed [ 'jquery', '^2.1.4' ]
+80 verbose addNamed [ null, '>=2.1.4-0 <3.0.0-0' ]
+81 silly lockFile 6f5fcb58-jquery-2-1-4 jquery@^2.1.4
+82 verbose lock jquery@^2.1.4 /Users/lionelbertrand/.npm/6f5fcb58-jquery-2-1-4.lock
+83 verbose cache add [ 'karma-chrome-luncher@latest', null ]
+84 verbose cache add name=undefined spec="karma-chrome-luncher@latest" args=["karma-chrome-luncher@latest",null]
+85 verbose parsed url { protocol: null,
+85 verbose parsed url   slashes: null,
+85 verbose parsed url   auth: null,
+85 verbose parsed url   host: null,
+85 verbose parsed url   port: null,
+85 verbose parsed url   hostname: null,
+85 verbose parsed url   hash: null,
+85 verbose parsed url   search: null,
+85 verbose parsed url   query: null,
+85 verbose parsed url   pathname: 'karma-chrome-luncher@latest',
+85 verbose parsed url   path: 'karma-chrome-luncher@latest',
+85 verbose parsed url   href: 'karma-chrome-luncher@latest' }
+86 verbose cache add [ 'karma-coverage@^0.4.2', null ]
+87 verbose cache add name=undefined spec="karma-coverage@^0.4.2" args=["karma-coverage@^0.4.2",null]
+88 verbose parsed url { protocol: null,
+88 verbose parsed url   slashes: null,
+88 verbose parsed url   auth: null,
+88 verbose parsed url   host: null,
+88 verbose parsed url   port: null,
+88 verbose parsed url   hostname: null,
+88 verbose parsed url   hash: null,
+88 verbose parsed url   search: null,
+88 verbose parsed url   query: null,
+88 verbose parsed url   pathname: 'karma-coverage@^0.4.2',
+88 verbose parsed url   path: 'karma-coverage@^0.4.2',
+88 verbose parsed url   href: 'karma-coverage@^0.4.2' }
+89 verbose cache add name="karma" spec="latest" args=["karma","latest"]
+90 verbose parsed url { protocol: null,
+90 verbose parsed url   slashes: null,
+90 verbose parsed url   auth: null,
+90 verbose parsed url   host: null,
+90 verbose parsed url   port: null,
+90 verbose parsed url   hostname: null,
+90 verbose parsed url   hash: null,
+90 verbose parsed url   search: null,
+90 verbose parsed url   query: null,
+90 verbose parsed url   pathname: 'latest',
+90 verbose parsed url   path: 'latest',
+90 verbose parsed url   href: 'latest' }
+91 verbose addNamed [ 'karma', 'latest' ]
+92 verbose addNamed [ null, null ]
+93 silly lockFile 3f9391e6-karma-latest karma@latest
+94 verbose lock karma@latest /Users/lionelbertrand/.npm/3f9391e6-karma-latest.lock
+95 silly addNameRange { name: 'angular', range: '>=1.4.1-0 <2.0.0-0', hasData: false }
+96 silly addNameRange { name: 'angular-ui-router',
+96 silly addNameRange   range: '>=0.2.15-0 <0.3.0-0',
+96 silly addNameRange   hasData: false }
+97 silly addNameRange { name: 'angular-route',
+97 silly addNameRange   range: '>=1.4.1-0 <2.0.0-0',
+97 silly addNameRange   hasData: false }
+98 silly addNameRange { name: 'gulp', range: '>=3.9.0-0 <4.0.0-0', hasData: false }
+99 verbose cache add name="karma-chrome-luncher" spec="latest" args=["karma-chrome-luncher","latest"]
+100 verbose parsed url { protocol: null,
+100 verbose parsed url   slashes: null,
+100 verbose parsed url   auth: null,
+100 verbose parsed url   host: null,
+100 verbose parsed url   port: null,
+100 verbose parsed url   hostname: null,
+100 verbose parsed url   hash: null,
+100 verbose parsed url   search: null,
+100 verbose parsed url   query: null,
+100 verbose parsed url   pathname: 'latest',
+100 verbose parsed url   path: 'latest',
+100 verbose parsed url   href: 'latest' }
+101 verbose addNamed [ 'karma-chrome-luncher', 'latest' ]
+102 verbose addNamed [ null, null ]
+103 silly lockFile 7e550aee-karma-chrome-luncher-latest karma-chrome-luncher@latest
+104 verbose lock karma-chrome-luncher@latest /Users/lionelbertrand/.npm/7e550aee-karma-chrome-luncher-latest.lock
+105 verbose cache add [ 'karma-html-reporter@^0.2.6', null ]
+106 verbose cache add name=undefined spec="karma-html-reporter@^0.2.6" args=["karma-html-reporter@^0.2.6",null]
+107 verbose parsed url { protocol: null,
+107 verbose parsed url   slashes: null,
+107 verbose parsed url   auth: null,
+107 verbose parsed url   host: null,
+107 verbose parsed url   port: null,
+107 verbose parsed url   hostname: null,
+107 verbose parsed url   hash: null,
+107 verbose parsed url   search: null,
+107 verbose parsed url   query: null,
+107 verbose parsed url   pathname: 'karma-html-reporter@^0.2.6',
+107 verbose parsed url   path: 'karma-html-reporter@^0.2.6',
+107 verbose parsed url   href: 'karma-html-reporter@^0.2.6' }
+108 verbose cache add [ 'karma-jasmin@latest', null ]
+109 verbose cache add name=undefined spec="karma-jasmin@latest" args=["karma-jasmin@latest",null]
+110 verbose parsed url { protocol: null,
+110 verbose parsed url   slashes: null,
+110 verbose parsed url   auth: null,
+110 verbose parsed url   host: null,
+110 verbose parsed url   port: null,
+110 verbose parsed url   hostname: null,
+110 verbose parsed url   hash: null,
+110 verbose parsed url   search: null,
+110 verbose parsed url   query: null,
+110 verbose parsed url   pathname: 'karma-jasmin@latest',
+110 verbose parsed url   path: 'karma-jasmin@latest',
+110 verbose parsed url   href: 'karma-jasmin@latest' }
+111 verbose cache add [ 'karma-phantomjs-luncher@latest', null ]
+112 verbose cache add name=undefined spec="karma-phantomjs-luncher@latest" args=["karma-phantomjs-luncher@latest",null]
+113 verbose parsed url { protocol: null,
+113 verbose parsed url   slashes: null,
+113 verbose parsed url   auth: null,
+113 verbose parsed url   host: null,
+113 verbose parsed url   port: null,
+113 verbose parsed url   hostname: null,
+113 verbose parsed url   hash: null,
+113 verbose parsed url   search: null,
+113 verbose parsed url   query: null,
+113 verbose parsed url   pathname: 'karma-phantomjs-luncher@latest',
+113 verbose parsed url   path: 'karma-phantomjs-luncher@latest',
+113 verbose parsed url   href: 'karma-phantomjs-luncher@latest' }
+114 verbose cache add [ 'karma-requirejs@latest', null ]
+115 verbose cache add name=undefined spec="karma-requirejs@latest" args=["karma-requirejs@latest",null]
+116 verbose parsed url { protocol: null,
+116 verbose parsed url   slashes: null,
+116 verbose parsed url   auth: null,
+116 verbose parsed url   host: null,
+116 verbose parsed url   port: null,
+116 verbose parsed url   hostname: null,
+116 verbose parsed url   hash: null,
+116 verbose parsed url   search: null,
+116 verbose parsed url   query: null,
+116 verbose parsed url   pathname: 'karma-requirejs@latest',
+116 verbose parsed url   path: 'karma-requirejs@latest',
+116 verbose parsed url   href: 'karma-requirejs@latest' }
+117 verbose cache add [ 'phantomjs@latest', null ]
+118 verbose cache add name=undefined spec="phantomjs@latest" args=["phantomjs@latest",null]
+119 verbose parsed url { protocol: null,
+119 verbose parsed url   slashes: null,
+119 verbose parsed url   auth: null,
+119 verbose parsed url   host: null,
+119 verbose parsed url   port: null,
+119 verbose parsed url   hostname: null,
+119 verbose parsed url   hash: null,
+119 verbose parsed url   search: null,
+119 verbose parsed url   query: null,
+119 verbose parsed url   pathname: 'phantomjs@latest',
+119 verbose parsed url   path: 'phantomjs@latest',
+119 verbose parsed url   href: 'phantomjs@latest' }
+120 verbose cache add [ 'requirejs@latest', null ]
+121 verbose cache add name=undefined spec="requirejs@latest" args=["requirejs@latest",null]
+122 verbose parsed url { protocol: null,
+122 verbose parsed url   slashes: null,
+122 verbose parsed url   auth: null,
+122 verbose parsed url   host: null,
+122 verbose parsed url   port: null,
+122 verbose parsed url   hostname: null,
+122 verbose parsed url   hash: null,
+122 verbose parsed url   search: null,
+122 verbose parsed url   query: null,
+122 verbose parsed url   pathname: 'requirejs@latest',
+122 verbose parsed url   path: 'requirejs@latest',
+122 verbose parsed url   href: 'requirejs@latest' }
+123 verbose cache add name="karma-coverage" spec="^0.4.2" args=["karma-coverage","^0.4.2"]
+124 verbose parsed url { protocol: null,
+124 verbose parsed url   slashes: null,
+124 verbose parsed url   auth: null,
+124 verbose parsed url   host: null,
+124 verbose parsed url   port: null,
+124 verbose parsed url   hostname: null,
+124 verbose parsed url   hash: null,
+124 verbose parsed url   search: null,
+124 verbose parsed url   query: null,
+124 verbose parsed url   pathname: '^0.4.2',
+124 verbose parsed url   path: '^0.4.2',
+124 verbose parsed url   href: '^0.4.2' }
+125 verbose addNamed [ 'karma-coverage', '^0.4.2' ]
+126 verbose addNamed [ null, '>=0.4.2-0 <0.5.0-0' ]
+127 silly lockFile b2b880de-karma-coverage-0-4-2 karma-coverage@^0.4.2
+128 verbose lock karma-coverage@^0.4.2 /Users/lionelbertrand/.npm/b2b880de-karma-coverage-0-4-2.lock
+129 info addNameTag [ 'jasmine-core', 'latest' ]
+130 silly addNameRange { name: 'jquery', range: '>=2.1.4-0 <3.0.0-0', hasData: false }
+131 verbose cache add name="karma-html-reporter" spec="^0.2.6" args=["karma-html-reporter","^0.2.6"]
+132 verbose parsed url { protocol: null,
+132 verbose parsed url   slashes: null,
+132 verbose parsed url   auth: null,
+132 verbose parsed url   host: null,
+132 verbose parsed url   port: null,
+132 verbose parsed url   hostname: null,
+132 verbose parsed url   hash: null,
+132 verbose parsed url   search: null,
+132 verbose parsed url   query: null,
+132 verbose parsed url   pathname: '^0.2.6',
+132 verbose parsed url   path: '^0.2.6',
+132 verbose parsed url   href: '^0.2.6' }
+133 verbose addNamed [ 'karma-html-reporter', '^0.2.6' ]
+134 verbose addNamed [ null, '>=0.2.6-0 <0.3.0-0' ]
+135 silly lockFile fecbbf7d-karma-html-reporter-0-2-6 karma-html-reporter@^0.2.6
+136 verbose lock karma-html-reporter@^0.2.6 /Users/lionelbertrand/.npm/fecbbf7d-karma-html-reporter-0-2-6.lock
+137 verbose cache add name="karma-jasmin" spec="latest" args=["karma-jasmin","latest"]
+138 verbose parsed url { protocol: null,
+138 verbose parsed url   slashes: null,
+138 verbose parsed url   auth: null,
+138 verbose parsed url   host: null,
+138 verbose parsed url   port: null,
+138 verbose parsed url   hostname: null,
+138 verbose parsed url   hash: null,
+138 verbose parsed url   search: null,
+138 verbose parsed url   query: null,
+138 verbose parsed url   pathname: 'latest',
+138 verbose parsed url   path: 'latest',
+138 verbose parsed url   href: 'latest' }
+139 verbose addNamed [ 'karma-jasmin', 'latest' ]
+140 verbose addNamed [ null, null ]
+141 silly lockFile 4074b345-karma-jasmin-latest karma-jasmin@latest
+142 verbose lock karma-jasmin@latest /Users/lionelbertrand/.npm/4074b345-karma-jasmin-latest.lock
+143 verbose cache add name="karma-phantomjs-luncher" spec="latest" args=["karma-phantomjs-luncher","latest"]
+144 verbose parsed url { protocol: null,
+144 verbose parsed url   slashes: null,
+144 verbose parsed url   auth: null,
+144 verbose parsed url   host: null,
+144 verbose parsed url   port: null,
+144 verbose parsed url   hostname: null,
+144 verbose parsed url   hash: null,
+144 verbose parsed url   search: null,
+144 verbose parsed url   query: null,
+144 verbose parsed url   pathname: 'latest',
+144 verbose parsed url   path: 'latest',
+144 verbose parsed url   href: 'latest' }
+145 verbose addNamed [ 'karma-phantomjs-luncher', 'latest' ]
+146 verbose addNamed [ null, null ]
+147 silly lockFile ef31b185-karma-phantomjs-luncher-latest karma-phantomjs-luncher@latest
+148 verbose lock karma-phantomjs-luncher@latest /Users/lionelbertrand/.npm/ef31b185-karma-phantomjs-luncher-latest.lock
+149 verbose cache add name="karma-requirejs" spec="latest" args=["karma-requirejs","latest"]
+150 verbose parsed url { protocol: null,
+150 verbose parsed url   slashes: null,
+150 verbose parsed url   auth: null,
+150 verbose parsed url   host: null,
+150 verbose parsed url   port: null,
+150 verbose parsed url   hostname: null,
+150 verbose parsed url   hash: null,
+150 verbose parsed url   search: null,
+150 verbose parsed url   query: null,
+150 verbose parsed url   pathname: 'latest',
+150 verbose parsed url   path: 'latest',
+150 verbose parsed url   href: 'latest' }
+151 verbose addNamed [ 'karma-requirejs', 'latest' ]
+152 verbose addNamed [ null, null ]
+153 silly lockFile d5f0fa0a-karma-requirejs-latest karma-requirejs@latest
+154 verbose lock karma-requirejs@latest /Users/lionelbertrand/.npm/d5f0fa0a-karma-requirejs-latest.lock
+155 verbose cache add name="phantomjs" spec="latest" args=["phantomjs","latest"]
+156 verbose parsed url { protocol: null,
+156 verbose parsed url   slashes: null,
+156 verbose parsed url   auth: null,
+156 verbose parsed url   host: null,
+156 verbose parsed url   port: null,
+156 verbose parsed url   hostname: null,
+156 verbose parsed url   hash: null,
+156 verbose parsed url   search: null,
+156 verbose parsed url   query: null,
+156 verbose parsed url   pathname: 'latest',
+156 verbose parsed url   path: 'latest',
+156 verbose parsed url   href: 'latest' }
+157 verbose addNamed [ 'phantomjs', 'latest' ]
+158 verbose addNamed [ null, null ]
+159 silly lockFile 420f9158-phantomjs-latest phantomjs@latest
+160 verbose lock phantomjs@latest /Users/lionelbertrand/.npm/420f9158-phantomjs-latest.lock
+161 verbose cache add name="requirejs" spec="latest" args=["requirejs","latest"]
+162 verbose parsed url { protocol: null,
+162 verbose parsed url   slashes: null,
+162 verbose parsed url   auth: null,
+162 verbose parsed url   host: null,
+162 verbose parsed url   port: null,
+162 verbose parsed url   hostname: null,
+162 verbose parsed url   hash: null,
+162 verbose parsed url   search: null,
+162 verbose parsed url   query: null,
+162 verbose parsed url   pathname: 'latest',
+162 verbose parsed url   path: 'latest',
+162 verbose parsed url   href: 'latest' }
+163 verbose addNamed [ 'requirejs', 'latest' ]
+164 verbose addNamed [ null, null ]
+165 silly lockFile 27500c20-requirejs-latest requirejs@latest
+166 verbose lock requirejs@latest /Users/lionelbertrand/.npm/27500c20-requirejs-latest.lock
+167 info addNameTag [ 'karma', 'latest' ]
+168 info addNameTag [ 'karma-chrome-luncher', 'latest' ]
+169 silly addNameRange { name: 'karma-coverage',
+169 silly addNameRange   range: '>=0.4.2-0 <0.5.0-0',
+169 silly addNameRange   hasData: false }
+170 verbose request where is /karma-chrome-luncher
+171 verbose request registry https://registry.npmjs.org/
+172 verbose request id 48d91d9f885dd64e
+173 verbose url raw /karma-chrome-luncher
+174 verbose url resolving [ 'https://registry.npmjs.org/', './karma-chrome-luncher' ]
+175 verbose url resolved https://registry.npmjs.org/karma-chrome-luncher
+176 verbose request where is https://registry.npmjs.org/karma-chrome-luncher
+177 info trying registry request attempt 1 at 17:18:50
+178 http GET https://registry.npmjs.org/karma-chrome-luncher
+179 silly addNameRange { name: 'karma-html-reporter',
+179 silly addNameRange   range: '>=0.2.6-0 <0.3.0-0',
+179 silly addNameRange   hasData: false }
+180 info addNameTag [ 'karma-jasmin', 'latest' ]
+181 info addNameTag [ 'karma-phantomjs-luncher', 'latest' ]
+182 info addNameTag [ 'karma-requirejs', 'latest' ]
+183 info addNameTag [ 'phantomjs', 'latest' ]
+184 info addNameTag [ 'requirejs', 'latest' ]
+185 verbose request where is /karma-jasmin
+186 verbose request registry https://registry.npmjs.org/
+187 verbose url raw /karma-jasmin
+188 verbose url resolving [ 'https://registry.npmjs.org/', './karma-jasmin' ]
+189 verbose url resolved https://registry.npmjs.org/karma-jasmin
+190 verbose request where is https://registry.npmjs.org/karma-jasmin
+191 info trying registry request attempt 1 at 17:18:50
+192 http GET https://registry.npmjs.org/karma-jasmin
+193 verbose request where is /karma-phantomjs-luncher
+194 verbose request registry https://registry.npmjs.org/
+195 verbose url raw /karma-phantomjs-luncher
+196 verbose url resolving [ 'https://registry.npmjs.org/', './karma-phantomjs-luncher' ]
+197 verbose url resolved https://registry.npmjs.org/karma-phantomjs-luncher
+198 verbose request where is https://registry.npmjs.org/karma-phantomjs-luncher
+199 info trying registry request attempt 1 at 17:18:50
+200 http GET https://registry.npmjs.org/karma-phantomjs-luncher
+201 verbose request where is /angular
+202 verbose request registry https://registry.npmjs.org/
+203 verbose url raw /angular
+204 verbose url resolving [ 'https://registry.npmjs.org/', './angular' ]
+205 verbose url resolved https://registry.npmjs.org/angular
+206 verbose request where is https://registry.npmjs.org/angular
+207 info trying registry request attempt 1 at 17:18:50
+208 verbose etag "6S731EJ6B0P6Z89QVHP33F153"
+209 http GET https://registry.npmjs.org/angular
+210 verbose request where is /angular-mocks
+211 verbose request registry https://registry.npmjs.org/
+212 verbose url raw /angular-mocks
+213 verbose url resolving [ 'https://registry.npmjs.org/', './angular-mocks' ]
+214 verbose url resolved https://registry.npmjs.org/angular-mocks
+215 verbose request where is https://registry.npmjs.org/angular-mocks
+216 info trying registry request attempt 1 at 17:18:50
+217 verbose etag "BYWNGXCQV0E72B9I6WJZV0R4X"
+218 http GET https://registry.npmjs.org/angular-mocks
+219 verbose request where is /angular-ui-router
+220 verbose request registry https://registry.npmjs.org/
+221 verbose url raw /angular-ui-router
+222 verbose url resolving [ 'https://registry.npmjs.org/', './angular-ui-router' ]
+223 verbose url resolved https://registry.npmjs.org/angular-ui-router
+224 verbose request where is https://registry.npmjs.org/angular-ui-router
+225 info trying registry request attempt 1 at 17:18:50
+226 verbose etag "CL7RR8ECV3LJ8F1LW7DMFQG7"
+227 http GET https://registry.npmjs.org/angular-ui-router
+228 verbose request where is /angular-route
+229 verbose request registry https://registry.npmjs.org/
+230 verbose url raw /angular-route
+231 verbose url resolving [ 'https://registry.npmjs.org/', './angular-route' ]
+232 verbose url resolved https://registry.npmjs.org/angular-route
+233 verbose request where is https://registry.npmjs.org/angular-route
+234 info trying registry request attempt 1 at 17:18:50
+235 verbose etag "ASJXEEA3H99EEI6Q7RI6JM05Q"
+236 http GET https://registry.npmjs.org/angular-route
+237 verbose request where is /gulp
+238 verbose request registry https://registry.npmjs.org/
+239 verbose url raw /gulp
+240 verbose url resolving [ 'https://registry.npmjs.org/', './gulp' ]
+241 verbose url resolved https://registry.npmjs.org/gulp
+242 verbose request where is https://registry.npmjs.org/gulp
+243 info trying registry request attempt 1 at 17:18:50
+244 verbose etag "7V22I0CTVZXZIY4W52C9MY35R"
+245 http GET https://registry.npmjs.org/gulp
+246 verbose request where is /gulp-karma
+247 verbose request registry https://registry.npmjs.org/
+248 verbose url raw /gulp-karma
+249 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-karma' ]
+250 verbose url resolved https://registry.npmjs.org/gulp-karma
+251 verbose request where is https://registry.npmjs.org/gulp-karma
+252 info trying registry request attempt 1 at 17:18:50
+253 verbose etag "CTPZO1HI4U7E9R6H02NUY0A2R"
+254 http GET https://registry.npmjs.org/gulp-karma
+255 verbose request where is /jasmine-core
+256 verbose request registry https://registry.npmjs.org/
+257 verbose url raw /jasmine-core
+258 verbose url resolving [ 'https://registry.npmjs.org/', './jasmine-core' ]
+259 verbose url resolved https://registry.npmjs.org/jasmine-core
+260 verbose request where is https://registry.npmjs.org/jasmine-core
+261 info trying registry request attempt 1 at 17:18:50
+262 verbose etag "1TZCO7A1HQY0JQEXPXM87UKUF"
+263 http GET https://registry.npmjs.org/jasmine-core
+264 verbose request where is /jquery
+265 verbose request registry https://registry.npmjs.org/
+266 verbose url raw /jquery
+267 verbose url resolving [ 'https://registry.npmjs.org/', './jquery' ]
+268 verbose url resolved https://registry.npmjs.org/jquery
+269 verbose request where is https://registry.npmjs.org/jquery
+270 info trying registry request attempt 1 at 17:18:51
+271 verbose etag "A0AC2T38GUBY6BBX68W2NWHG3"
+272 http GET https://registry.npmjs.org/jquery
+273 verbose request where is /karma
+274 verbose request registry https://registry.npmjs.org/
+275 verbose url raw /karma
+276 verbose url resolving [ 'https://registry.npmjs.org/', './karma' ]
+277 verbose url resolved https://registry.npmjs.org/karma
+278 verbose request where is https://registry.npmjs.org/karma
+279 info trying registry request attempt 1 at 17:18:51
+280 verbose etag "1PZ82SBFEFP6NQQDD6JLWKUYY"
+281 http GET https://registry.npmjs.org/karma
+282 verbose request where is /karma-coverage
+283 verbose request registry https://registry.npmjs.org/
+284 verbose url raw /karma-coverage
+285 verbose url resolving [ 'https://registry.npmjs.org/', './karma-coverage' ]
+286 verbose url resolved https://registry.npmjs.org/karma-coverage
+287 verbose request where is https://registry.npmjs.org/karma-coverage
+288 info trying registry request attempt 1 at 17:18:51
+289 verbose etag "3FWRUSIWLDFEUJ3SOUM97AFFV"
+290 http GET https://registry.npmjs.org/karma-coverage
+291 verbose request where is /karma-html-reporter
+292 verbose request registry https://registry.npmjs.org/
+293 verbose url raw /karma-html-reporter
+294 verbose url resolving [ 'https://registry.npmjs.org/', './karma-html-reporter' ]
+295 verbose url resolved https://registry.npmjs.org/karma-html-reporter
+296 verbose request where is https://registry.npmjs.org/karma-html-reporter
+297 info trying registry request attempt 1 at 17:18:51
+298 verbose etag "3RZ5OS48TNASNO3PXHOKSLMEZ"
+299 http GET https://registry.npmjs.org/karma-html-reporter
+300 verbose request where is /karma-requirejs
+301 verbose request registry https://registry.npmjs.org/
+302 verbose url raw /karma-requirejs
+303 verbose url resolving [ 'https://registry.npmjs.org/', './karma-requirejs' ]
+304 verbose url resolved https://registry.npmjs.org/karma-requirejs
+305 verbose request where is https://registry.npmjs.org/karma-requirejs
+306 info trying registry request attempt 1 at 17:18:51
+307 verbose etag "4196EIJK2MUDYCE5OEEPO38T"
+308 http GET https://registry.npmjs.org/karma-requirejs
+309 verbose request where is /phantomjs
+310 verbose request registry https://registry.npmjs.org/
+311 verbose url raw /phantomjs
+312 verbose url resolving [ 'https://registry.npmjs.org/', './phantomjs' ]
+313 verbose url resolved https://registry.npmjs.org/phantomjs
+314 verbose request where is https://registry.npmjs.org/phantomjs
+315 info trying registry request attempt 1 at 17:18:51
+316 verbose etag "8LEQ1O62B31VAJHQEAQ8SP4BU"
+317 http GET https://registry.npmjs.org/phantomjs
+318 verbose request where is /requirejs
+319 verbose request registry https://registry.npmjs.org/
+320 verbose url raw /requirejs
+321 verbose url resolving [ 'https://registry.npmjs.org/', './requirejs' ]
+322 verbose url resolved https://registry.npmjs.org/requirejs
+323 verbose request where is https://registry.npmjs.org/requirejs
+324 info trying registry request attempt 1 at 17:18:51
+325 verbose etag "ANEYZ8CMJ58040C5V6Y5KSVSJ"
+326 http GET https://registry.npmjs.org/requirejs
+327 http 304 https://registry.npmjs.org/angular
+328 silly registry.get cb [ 304,
+328 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+328 silly registry.get     via: '1.1 varnish',
+328 silly registry.get     'cache-control': 'max-age=60',
+328 silly registry.get     etag: '"6S731EJ6B0P6Z89QVHP33F153"',
+328 silly registry.get     age: '53',
+328 silly registry.get     connection: 'keep-alive',
+328 silly registry.get     'x-served-by': 'cache-fra1246-FRA',
+328 silly registry.get     'x-cache': 'HIT',
+328 silly registry.get     'x-cache-hits': '1',
+328 silly registry.get     'x-timer': 'S1436368731.347992,VS0,VE0',
+328 silly registry.get     vary: 'Accept' } ]
+329 verbose etag https://registry.npmjs.org/angular from cache
+330 silly addNameRange number 2 { name: 'angular', range: '>=1.4.1-0 <2.0.0-0', hasData: true }
+331 silly addNameRange versions [ 'angular',
+331 silly addNameRange   [ '0.0.1',
+331 silly addNameRange     '0.0.1-1',
+331 silly addNameRange     '0.0.1-2',
+331 silly addNameRange     '0.0.2',
+331 silly addNameRange     '0.0.3',
+331 silly addNameRange     '0.0.4',
+331 silly addNameRange     '1.0.0',
+331 silly addNameRange     '1.0.1',
+331 silly addNameRange     '1.0.2',
+331 silly addNameRange     '1.0.3',
+331 silly addNameRange     '1.0.4',
+331 silly addNameRange     '1.0.5',
+331 silly addNameRange     '1.0.6',
+331 silly addNameRange     '1.0.7',
+331 silly addNameRange     '1.0.8',
+331 silly addNameRange     '1.1.0',
+331 silly addNameRange     '1.1.1',
+331 silly addNameRange     '1.1.2',
+331 silly addNameRange     '1.1.3',
+331 silly addNameRange     '1.1.4',
+331 silly addNameRange     '1.1.5',
+331 silly addNameRange     '1.2.0',
+331 silly addNameRange     '1.2.1',
+331 silly addNameRange     '1.2.2',
+331 silly addNameRange     '1.2.3',
+331 silly addNameRange     '1.2.4',
+331 silly addNameRange     '1.2.5',
+331 silly addNameRange     '1.2.6',
+331 silly addNameRange     '1.2.7',
+331 silly addNameRange     '1.2.8',
+331 silly addNameRange     '1.2.9',
+331 silly addNameRange     '1.2.10',
+331 silly addNameRange     '1.2.11',
+331 silly addNameRange     '1.2.12',
+331 silly addNameRange     '1.2.13',
+331 silly addNameRange     '1.2.14',
+331 silly addNameRange     '1.2.15',
+331 silly addNameRange     '1.2.16',
+331 silly addNameRange     '1.2.17',
+331 silly addNameRange     '1.2.18',
+331 silly addNameRange     '1.2.19',
+331 silly addNameRange     '1.2.20',
+331 silly addNameRange     '1.2.21',
+331 silly addNameRange     '1.2.22',
+331 silly addNameRange     '1.2.23',
+331 silly addNameRange     '1.3.0-rc.5',
+331 silly addNameRange     '1.3.0',
+331 silly addNameRange     '1.3.1',
+331 silly addNameRange     '1.3.2',
+331 silly addNameRange     '1.3.3',
+331 silly addNameRange     '1.3.4-build.3588',
+331 silly addNameRange     '1.2.27',
+331 silly addNameRange     '1.3.4',
+331 silly addNameRange     '1.3.5',
+331 silly addNameRange     '1.3.6',
+331 silly addNameRange     '1.3.7',
+331 silly addNameRange     '1.2.28',
+331 silly addNameRange     '1.3.8',
+331 silly addNameRange     '1.4.0-beta.0',
+331 silly addNameRange     '1.3.9',
+331 silly addNameRange     '1.3.10',
+331 silly addNameRange     '1.4.0-beta.1',
+331 silly addNameRange     '1.4.0-beta.2',
+331 silly addNameRange     '1.3.11',
+331 silly addNameRange     '1.4.0-beta.3',
+331 silly addNameRange     '1.3.12',
+331 silly addNameRange     '1.3.13',
+331 silly addNameRange     '1.4.0-beta.4',
+331 silly addNameRange     '1.3.14',
+331 silly addNameRange     '1.4.0-beta.5',
+331 silly addNameRange     '1.4.0-beta.6',
+331 silly addNameRange     '1.3.15',
+331 silly addNameRange     '1.4.0-rc.0',
+331 silly addNameRange     '1.4.0-rc.1',
+331 silly addNameRange     '1.4.0-rc.2',
+331 silly addNameRange     '1.4.0',
+331 silly addNameRange     '1.3.16',
+331 silly addNameRange     '1.4.1',
+331 silly addNameRange     '1.4.2',
+331 silly addNameRange     '1.3.17' ] ]
+332 verbose addNamed [ 'angular', '1.4.2' ]
+333 verbose addNamed [ '1.4.2', '1.4.2' ]
+334 silly lockFile 31a2cade-angular-1-4-2 angular@1.4.2
+335 verbose lock angular@1.4.2 /Users/lionelbertrand/.npm/31a2cade-angular-1-4-2.lock
+336 silly lockFile 31a2cade-angular-1-4-2 angular@1.4.2
+337 silly lockFile 31a2cade-angular-1-4-2 angular@1.4.2
+338 silly lockFile 66293497-angular-1-4-1 angular@^1.4.1
+339 silly lockFile 66293497-angular-1-4-1 angular@^1.4.1
+340 http 404 https://registry.npmjs.org/karma-jasmin
+341 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+341 verbose headers   'content-type': 'application/json',
+341 verbose headers   'cache-control': 'max-age=0',
+341 verbose headers   'content-length': '51',
+341 verbose headers   'accept-ranges': 'bytes',
+341 verbose headers   date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+341 verbose headers   via: '1.1 varnish',
+341 verbose headers   age: '0',
+341 verbose headers   connection: 'keep-alive',
+341 verbose headers   'x-served-by': 'cache-fra1240-FRA',
+341 verbose headers   'x-cache': 'MISS',
+341 verbose headers   'x-cache-hits': '0',
+341 verbose headers   'x-timer': 'S1436368731.380919,VS0,VE107' }
+342 silly registry.get cb [ 404,
+342 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+342 silly registry.get     'content-type': 'application/json',
+342 silly registry.get     'cache-control': 'max-age=0',
+342 silly registry.get     'content-length': '51',
+342 silly registry.get     'accept-ranges': 'bytes',
+342 silly registry.get     date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+342 silly registry.get     via: '1.1 varnish',
+342 silly registry.get     age: '0',
+342 silly registry.get     connection: 'keep-alive',
+342 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+342 silly registry.get     'x-cache': 'MISS',
+342 silly registry.get     'x-cache-hits': '0',
+342 silly registry.get     'x-timer': 'S1436368731.380919,VS0,VE107' } ]
+343 silly lockFile 4074b345-karma-jasmin-latest karma-jasmin@latest
+344 silly lockFile 4074b345-karma-jasmin-latest karma-jasmin@latest
+345 http 304 https://registry.npmjs.org/angular-ui-router
+346 silly registry.get cb [ 304,
+346 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+346 silly registry.get     via: '1.1 varnish',
+346 silly registry.get     'cache-control': 'max-age=60',
+346 silly registry.get     etag: '"CL7RR8ECV3LJ8F1LW7DMFQG7"',
+346 silly registry.get     age: '0',
+346 silly registry.get     connection: 'keep-alive',
+346 silly registry.get     'x-served-by': 'cache-fra1246-FRA',
+346 silly registry.get     'x-cache': 'HIT',
+346 silly registry.get     'x-cache-hits': '1',
+346 silly registry.get     'x-timer': 'S1436368731.387895,VS0,VE101',
+346 silly registry.get     vary: 'Accept' } ]
+347 verbose etag https://registry.npmjs.org/angular-ui-router from cache
+348 silly addNameRange number 2 { name: 'angular-ui-router',
+348 silly addNameRange   range: '>=0.2.15-0 <0.3.0-0',
+348 silly addNameRange   hasData: true }
+349 silly addNameRange versions [ 'angular-ui-router',
+349 silly addNameRange   [ '0.2.7',
+349 silly addNameRange     '0.2.8',
+349 silly addNameRange     '0.2.10',
+349 silly addNameRange     '0.2.11',
+349 silly addNameRange     '0.2.13',
+349 silly addNameRange     '0.2.14',
+349 silly addNameRange     '0.2.15' ] ]
+350 verbose addNamed [ 'angular-ui-router', '0.2.15' ]
+351 verbose addNamed [ '0.2.15', '0.2.15' ]
+352 silly lockFile 4ad6a632-angular-ui-router-0-2-15 angular-ui-router@0.2.15
+353 verbose lock angular-ui-router@0.2.15 /Users/lionelbertrand/.npm/4ad6a632-angular-ui-router-0-2-15.lock
+354 silly lockFile 4ad6a632-angular-ui-router-0-2-15 angular-ui-router@0.2.15
+355 silly lockFile 4ad6a632-angular-ui-router-0-2-15 angular-ui-router@0.2.15
+356 silly lockFile 459556bd-angular-ui-router-0-2-15 angular-ui-router@^0.2.15
+357 silly lockFile 459556bd-angular-ui-router-0-2-15 angular-ui-router@^0.2.15
+358 http 404 https://registry.npmjs.org/karma-phantomjs-luncher
+359 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+359 verbose headers   'content-type': 'application/json',
+359 verbose headers   'cache-control': 'max-age=0',
+359 verbose headers   'content-length': '51',
+359 verbose headers   'accept-ranges': 'bytes',
+359 verbose headers   date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+359 verbose headers   via: '1.1 varnish',
+359 verbose headers   age: '0',
+359 verbose headers   connection: 'keep-alive',
+359 verbose headers   'x-served-by': 'cache-fra1240-FRA',
+359 verbose headers   'x-cache': 'MISS',
+359 verbose headers   'x-cache-hits': '0',
+359 verbose headers   'x-timer': 'S1436368731.348549,VS0,VE180' }
+360 silly registry.get cb [ 404,
+360 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+360 silly registry.get     'content-type': 'application/json',
+360 silly registry.get     'cache-control': 'max-age=0',
+360 silly registry.get     'content-length': '51',
+360 silly registry.get     'accept-ranges': 'bytes',
+360 silly registry.get     date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+360 silly registry.get     via: '1.1 varnish',
+360 silly registry.get     age: '0',
+360 silly registry.get     connection: 'keep-alive',
+360 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+360 silly registry.get     'x-cache': 'MISS',
+360 silly registry.get     'x-cache-hits': '0',
+360 silly registry.get     'x-timer': 'S1436368731.348549,VS0,VE180' } ]
+361 silly lockFile ef31b185-karma-phantomjs-luncher-latest karma-phantomjs-luncher@latest
+362 silly lockFile ef31b185-karma-phantomjs-luncher-latest karma-phantomjs-luncher@latest
+363 http 304 https://registry.npmjs.org/angular-route
+364 silly registry.get cb [ 304,
+364 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+364 silly registry.get     via: '1.1 varnish',
+364 silly registry.get     'cache-control': 'max-age=60',
+364 silly registry.get     etag: '"ASJXEEA3H99EEI6Q7RI6JM05Q"',
+364 silly registry.get     age: '40',
+364 silly registry.get     connection: 'keep-alive',
+364 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+364 silly registry.get     'x-cache': 'HIT',
+364 silly registry.get     'x-cache-hits': '1',
+364 silly registry.get     'x-timer': 'S1436368731.534411,VS0,VE0',
+364 silly registry.get     vary: 'Accept' } ]
+365 verbose etag https://registry.npmjs.org/angular-route from cache
+366 silly addNameRange number 2 { name: 'angular-route',
+366 silly addNameRange   range: '>=1.4.1-0 <2.0.0-0',
+366 silly addNameRange   hasData: true }
+367 silly addNameRange versions [ 'angular-route',
+367 silly addNameRange   [ '1.2.17-build.163.1',
+367 silly addNameRange     '1.3.0-rc.5',
+367 silly addNameRange     '1.3.0',
+367 silly addNameRange     '1.3.1',
+367 silly addNameRange     '1.3.2',
+367 silly addNameRange     '1.3.3',
+367 silly addNameRange     '1.3.4-build.3588',
+367 silly addNameRange     '1.2.27',
+367 silly addNameRange     '1.3.4',
+367 silly addNameRange     '1.3.5',
+367 silly addNameRange     '1.3.6',
+367 silly addNameRange     '1.3.7',
+367 silly addNameRange     '1.2.28',
+367 silly addNameRange     '1.3.8',
+367 silly addNameRange     '1.4.0-beta.0',
+367 silly addNameRange     '1.3.9',
+367 silly addNameRange     '1.3.10',
+367 silly addNameRange     '1.4.0-beta.1',
+367 silly addNameRange     '1.4.0-beta.2',
+367 silly addNameRange     '1.3.11',
+367 silly addNameRange     '1.4.0-beta.3',
+367 silly addNameRange     '1.3.12',
+367 silly addNameRange     '1.3.13',
+367 silly addNameRange     '1.4.0-beta.4',
+367 silly addNameRange     '1.3.14',
+367 silly addNameRange     '1.4.0-beta.5',
+367 silly addNameRange     '1.4.0-beta.6',
+367 silly addNameRange     '1.3.15',
+367 silly addNameRange     '1.4.0-rc.0',
+367 silly addNameRange     '1.4.0-rc.1',
+367 silly addNameRange     '1.4.0-rc.2',
+367 silly addNameRange     '1.4.0',
+367 silly addNameRange     '1.3.16',
+367 silly addNameRange     '1.4.1',
+367 silly addNameRange     '1.4.2',
+367 silly addNameRange     '1.3.17' ] ]
+368 verbose addNamed [ 'angular-route', '1.4.2' ]
+369 verbose addNamed [ '1.4.2', '1.4.2' ]
+370 silly lockFile adfe7bd3-angular-route-1-4-2 angular-route@1.4.2
+371 verbose lock angular-route@1.4.2 /Users/lionelbertrand/.npm/adfe7bd3-angular-route-1-4-2.lock
+372 http 304 https://registry.npmjs.org/gulp
+373 silly registry.get cb [ 304,
+373 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+373 silly registry.get     via: '1.1 varnish',
+373 silly registry.get     'cache-control': 'max-age=60',
+373 silly registry.get     etag: '"7V22I0CTVZXZIY4W52C9MY35R"',
+373 silly registry.get     age: '6',
+373 silly registry.get     connection: 'keep-alive',
+373 silly registry.get     'x-served-by': 'cache-fra1246-FRA',
+373 silly registry.get     'x-cache': 'HIT',
+373 silly registry.get     'x-cache-hits': '1',
+373 silly registry.get     'x-timer': 'S1436368731.537715,VS0,VE0',
+373 silly registry.get     vary: 'Accept' } ]
+374 verbose etag https://registry.npmjs.org/gulp from cache
+375 silly lockFile adfe7bd3-angular-route-1-4-2 angular-route@1.4.2
+376 silly lockFile adfe7bd3-angular-route-1-4-2 angular-route@1.4.2
+377 silly addNameRange number 2 { name: 'gulp', range: '>=3.9.0-0 <4.0.0-0', hasData: true }
+378 silly addNameRange versions [ 'gulp',
+378 silly addNameRange   [ '0.0.1',
+378 silly addNameRange     '0.0.2',
+378 silly addNameRange     '0.0.3',
+378 silly addNameRange     '0.0.4',
+378 silly addNameRange     '0.0.5',
+378 silly addNameRange     '0.0.7',
+378 silly addNameRange     '0.0.8',
+378 silly addNameRange     '0.0.9',
+378 silly addNameRange     '0.1.0',
+378 silly addNameRange     '0.2.0',
+378 silly addNameRange     '1.0.0',
+378 silly addNameRange     '1.1.0',
+378 silly addNameRange     '1.2.0',
+378 silly addNameRange     '1.2.1',
+378 silly addNameRange     '2.0.0',
+378 silly addNameRange     '2.0.1',
+378 silly addNameRange     '2.1.0',
+378 silly addNameRange     '2.2.0',
+378 silly addNameRange     '2.3.0',
+378 silly addNameRange     '2.4.0',
+378 silly addNameRange     '2.4.1',
+378 silly addNameRange     '2.6.0',
+378 silly addNameRange     '2.6.1',
+378 silly addNameRange     '2.7.0',
+378 silly addNameRange     '3.0.0',
+378 silly addNameRange     '3.1.1',
+378 silly addNameRange     '3.1.2',
+378 silly addNameRange     '3.1.3',
+378 silly addNameRange     '3.1.4',
+378 silly addNameRange     '3.2.0',
+378 silly addNameRange     '3.2.1',
+378 silly addNameRange     '3.2.2',
+378 silly addNameRange     '3.2.3',
+378 silly addNameRange     '3.2.4',
+378 silly addNameRange     '3.2.5',
+378 silly addNameRange     '3.3.0',
+378 silly addNameRange     '3.3.1',
+378 silly addNameRange     '3.3.2',
+378 silly addNameRange     '3.3.4',
+378 silly addNameRange     '3.4.0',
+378 silly addNameRange     '3.5.0',
+378 silly addNameRange     '3.5.1',
+378 silly addNameRange     '3.5.2',
+378 silly addNameRange     '3.5.5',
+378 silly addNameRange     '3.5.6',
+378 silly addNameRange     '3.6.0',
+378 silly addNameRange     '3.6.1',
+378 silly addNameRange     '3.6.2',
+378 silly addNameRange     '3.7.0',
+378 silly addNameRange     '3.8.0',
+378 silly addNameRange     '3.8.1',
+378 silly addNameRange     '3.8.2',
+378 silly addNameRange     '3.8.3',
+378 silly addNameRange     '3.8.4',
+378 silly addNameRange     '3.8.5',
+378 silly addNameRange     '3.8.6',
+378 silly addNameRange     '3.8.7',
+378 silly addNameRange     '3.8.8',
+378 silly addNameRange     '3.8.9',
+378 silly addNameRange     '3.8.10',
+378 silly addNameRange     '3.8.11',
+378 silly addNameRange     '3.9.0' ] ]
+379 verbose addNamed [ 'gulp', '3.9.0' ]
+380 verbose addNamed [ '3.9.0', '3.9.0' ]
+381 silly lockFile c2697a61-gulp-3-9-0 gulp@3.9.0
+382 verbose lock gulp@3.9.0 /Users/lionelbertrand/.npm/c2697a61-gulp-3-9-0.lock
+383 silly lockFile 75f513a2-angular-route-1-4-1 angular-route@^1.4.1
+384 silly lockFile 75f513a2-angular-route-1-4-1 angular-route@^1.4.1
+385 silly lockFile c2697a61-gulp-3-9-0 gulp@3.9.0
+386 silly lockFile c2697a61-gulp-3-9-0 gulp@3.9.0
+387 silly lockFile a7ccee77-gulp-3-9-0 gulp@^3.9.0
+388 silly lockFile a7ccee77-gulp-3-9-0 gulp@^3.9.0
+389 http 304 https://registry.npmjs.org/jasmine-core
+390 silly registry.get cb [ 304,
+390 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+390 silly registry.get     via: '1.1 varnish',
+390 silly registry.get     'cache-control': 'max-age=60',
+390 silly registry.get     etag: '"1TZCO7A1HQY0JQEXPXM87UKUF"',
+390 silly registry.get     age: '11',
+390 silly registry.get     connection: 'keep-alive',
+390 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+390 silly registry.get     'x-cache': 'HIT',
+390 silly registry.get     'x-cache-hits': '1',
+390 silly registry.get     'x-timer': 'S1436368731.584505,VS0,VE0',
+390 silly registry.get     vary: 'Accept' } ]
+391 verbose etag https://registry.npmjs.org/jasmine-core from cache
+392 verbose addNamed [ 'jasmine-core', '2.3.4' ]
+393 verbose addNamed [ '2.3.4', '2.3.4' ]
+394 silly lockFile c7eacfd7-jasmine-core-2-3-4 jasmine-core@2.3.4
+395 verbose lock jasmine-core@2.3.4 /Users/lionelbertrand/.npm/c7eacfd7-jasmine-core-2-3-4.lock
+396 silly lockFile c7eacfd7-jasmine-core-2-3-4 jasmine-core@2.3.4
+397 silly lockFile c7eacfd7-jasmine-core-2-3-4 jasmine-core@2.3.4
+398 silly lockFile a4c5edbf-jasmine-core-latest jasmine-core@latest
+399 silly lockFile a4c5edbf-jasmine-core-latest jasmine-core@latest
+400 http 304 https://registry.npmjs.org/jquery
+401 silly registry.get cb [ 304,
+401 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+401 silly registry.get     via: '1.1 varnish',
+401 silly registry.get     'cache-control': 'max-age=60',
+401 silly registry.get     etag: '"A0AC2T38GUBY6BBX68W2NWHG3"',
+401 silly registry.get     age: '5',
+401 silly registry.get     connection: 'keep-alive',
+401 silly registry.get     'x-served-by': 'cache-fra1246-FRA',
+401 silly registry.get     'x-cache': 'HIT',
+401 silly registry.get     'x-cache-hits': '1',
+401 silly registry.get     'x-timer': 'S1436368731.587727,VS0,VE0',
+401 silly registry.get     vary: 'Accept' } ]
+402 verbose etag https://registry.npmjs.org/jquery from cache
+403 silly addNameRange number 2 { name: 'jquery', range: '>=2.1.4-0 <3.0.0-0', hasData: true }
+404 silly addNameRange versions [ 'jquery',
+404 silly addNameRange   [ '1.5.1',
+404 silly addNameRange     '1.6.2',
+404 silly addNameRange     '1.6.3',
+404 silly addNameRange     '1.7.2',
+404 silly addNameRange     '1.7.3',
+404 silly addNameRange     '1.8.2',
+404 silly addNameRange     '1.8.3',
+404 silly addNameRange     '2.1.0-beta2',
+404 silly addNameRange     '2.1.0-beta3',
+404 silly addNameRange     '1.11.0-beta3',
+404 silly addNameRange     '1.11.0-rc1',
+404 silly addNameRange     '2.1.0-rc1',
+404 silly addNameRange     '1.11.0',
+404 silly addNameRange     '2.1.0',
+404 silly addNameRange     '2.1.1-beta1',
+404 silly addNameRange     '1.11.1-beta1',
+404 silly addNameRange     '2.1.1-rc1',
+404 silly addNameRange     '1.11.1-rc1',
+404 silly addNameRange     '2.1.1-rc2',
+404 silly addNameRange     '1.11.1-rc2',
+404 silly addNameRange     '2.1.1',
+404 silly addNameRange     '1.11.1',
+404 silly addNameRange     '1.9.1',
+404 silly addNameRange     '2.1.2',
+404 silly addNameRange     '1.11.2',
+404 silly addNameRange     '2.1.3',
+404 silly addNameRange     '2.1.4',
+404 silly addNameRange     '1.11.3' ] ]
+405 verbose addNamed [ 'jquery', '2.1.4' ]
+406 verbose addNamed [ '2.1.4', '2.1.4' ]
+407 silly lockFile f774660c-jquery-2-1-4 jquery@2.1.4
+408 verbose lock jquery@2.1.4 /Users/lionelbertrand/.npm/f774660c-jquery-2-1-4.lock
+409 silly lockFile f774660c-jquery-2-1-4 jquery@2.1.4
+410 silly lockFile f774660c-jquery-2-1-4 jquery@2.1.4
+411 silly lockFile 6f5fcb58-jquery-2-1-4 jquery@^2.1.4
+412 silly lockFile 6f5fcb58-jquery-2-1-4 jquery@^2.1.4
+413 http 304 https://registry.npmjs.org/karma
+414 silly registry.get cb [ 304,
+414 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+414 silly registry.get     via: '1.1 varnish',
+414 silly registry.get     'cache-control': 'max-age=60',
+414 silly registry.get     etag: '"1PZ82SBFEFP6NQQDD6JLWKUYY"',
+414 silly registry.get     age: '10',
+414 silly registry.get     connection: 'keep-alive',
+414 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+414 silly registry.get     'x-cache': 'HIT',
+414 silly registry.get     'x-cache-hits': '1',
+414 silly registry.get     'x-timer': 'S1436368731.637653,VS0,VE4',
+414 silly registry.get     vary: 'Accept' } ]
+415 verbose etag https://registry.npmjs.org/karma from cache
+416 http 304 https://registry.npmjs.org/karma-coverage
+417 silly registry.get cb [ 304,
+417 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+417 silly registry.get     via: '1.1 varnish',
+417 silly registry.get     'cache-control': 'max-age=60',
+417 silly registry.get     etag: '"3FWRUSIWLDFEUJ3SOUM97AFFV"',
+417 silly registry.get     age: '5',
+417 silly registry.get     connection: 'keep-alive',
+417 silly registry.get     'x-served-by': 'cache-fra1246-FRA',
+417 silly registry.get     'x-cache': 'HIT',
+417 silly registry.get     'x-cache-hits': '1',
+417 silly registry.get     'x-timer': 'S1436368731.640999,VS0,VE0',
+417 silly registry.get     vary: 'Accept' } ]
+418 verbose etag https://registry.npmjs.org/karma-coverage from cache
+419 http 304 https://registry.npmjs.org/karma-html-reporter
+420 silly registry.get cb [ 304,
+420 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+420 silly registry.get     via: '1.1 varnish',
+420 silly registry.get     'cache-control': 'max-age=60',
+420 silly registry.get     etag: '"3RZ5OS48TNASNO3PXHOKSLMEZ"',
+420 silly registry.get     age: '40',
+420 silly registry.get     connection: 'keep-alive',
+420 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+420 silly registry.get     'x-cache': 'HIT',
+420 silly registry.get     'x-cache-hits': '1',
+420 silly registry.get     'x-timer': 'S1436368731.690265,VS0,VE0',
+420 silly registry.get     vary: 'Accept' } ]
+421 verbose etag https://registry.npmjs.org/karma-html-reporter from cache
+422 http 304 https://registry.npmjs.org/karma-requirejs
+423 silly registry.get cb [ 304,
+423 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+423 silly registry.get     via: '1.1 varnish',
+423 silly registry.get     'cache-control': 'max-age=60',
+423 silly registry.get     etag: '"4196EIJK2MUDYCE5OEEPO38T"',
+423 silly registry.get     age: '40',
+423 silly registry.get     connection: 'keep-alive',
+423 silly registry.get     'x-served-by': 'cache-fra1246-FRA',
+423 silly registry.get     'x-cache': 'HIT',
+423 silly registry.get     'x-cache-hits': '1',
+423 silly registry.get     'x-timer': 'S1436368731.692331,VS0,VE0',
+423 silly registry.get     vary: 'Accept' } ]
+424 verbose etag https://registry.npmjs.org/karma-requirejs from cache
+425 silly addNameRange number 2 { name: 'karma-coverage',
+425 silly addNameRange   range: '>=0.4.2-0 <0.5.0-0',
+425 silly addNameRange   hasData: true }
+426 silly addNameRange versions [ 'karma-coverage',
+426 silly addNameRange   [ '0.0.1',
+426 silly addNameRange     '0.0.2',
+426 silly addNameRange     '0.0.3',
+426 silly addNameRange     '0.0.4',
+426 silly addNameRange     '0.0.5',
+426 silly addNameRange     '0.1.0',
+426 silly addNameRange     '0.1.1',
+426 silly addNameRange     '0.1.2',
+426 silly addNameRange     '0.1.3',
+426 silly addNameRange     '0.1.4',
+426 silly addNameRange     '0.1.5',
+426 silly addNameRange     '0.2.0',
+426 silly addNameRange     '0.2.1',
+426 silly addNameRange     '0.2.2',
+426 silly addNameRange     '0.2.3',
+426 silly addNameRange     '0.2.4',
+426 silly addNameRange     '0.2.5',
+426 silly addNameRange     '0.2.6',
+426 silly addNameRange     '0.2.7',
+426 silly addNameRange     '0.3.0',
+426 silly addNameRange     '0.3.1',
+426 silly addNameRange     '0.4.0',
+426 silly addNameRange     '0.4.1',
+426 silly addNameRange     '0.4.2' ] ]
+427 verbose addNamed [ 'karma-coverage', '0.4.2' ]
+428 verbose addNamed [ '0.4.2', '0.4.2' ]
+429 silly lockFile 2d997050-karma-coverage-0-4-2 karma-coverage@0.4.2
+430 verbose lock karma-coverage@0.4.2 /Users/lionelbertrand/.npm/2d997050-karma-coverage-0-4-2.lock
+431 verbose addNamed [ 'karma', '0.12.37' ]
+432 verbose addNamed [ '0.12.37', '0.12.37' ]
+433 silly lockFile 43ccbf2f-karma-0-12-37 karma@0.12.37
+434 verbose lock karma@0.12.37 /Users/lionelbertrand/.npm/43ccbf2f-karma-0-12-37.lock
+435 verbose addNamed [ 'karma-requirejs', '0.2.2' ]
+436 verbose addNamed [ '0.2.2', '0.2.2' ]
+437 silly lockFile 15265a5e-karma-requirejs-0-2-2 karma-requirejs@0.2.2
+438 verbose lock karma-requirejs@0.2.2 /Users/lionelbertrand/.npm/15265a5e-karma-requirejs-0-2-2.lock
+439 silly addNameRange number 2 { name: 'karma-html-reporter',
+439 silly addNameRange   range: '>=0.2.6-0 <0.3.0-0',
+439 silly addNameRange   hasData: true }
+440 silly addNameRange versions [ 'karma-html-reporter',
+440 silly addNameRange   [ '0.1.0',
+440 silly addNameRange     '0.1.1',
+440 silly addNameRange     '0.2.1',
+440 silly addNameRange     '0.1.3',
+440 silly addNameRange     '0.2.2',
+440 silly addNameRange     '0.2.3',
+440 silly addNameRange     '0.2.4',
+440 silly addNameRange     '0.2.5',
+440 silly addNameRange     '0.2.6' ] ]
+441 verbose addNamed [ 'karma-html-reporter', '0.2.6' ]
+442 verbose addNamed [ '0.2.6', '0.2.6' ]
+443 silly lockFile bbf59895-karma-html-reporter-0-2-6 karma-html-reporter@0.2.6
+444 verbose lock karma-html-reporter@0.2.6 /Users/lionelbertrand/.npm/bbf59895-karma-html-reporter-0-2-6.lock
+445 silly lockFile 2d997050-karma-coverage-0-4-2 karma-coverage@0.4.2
+446 silly lockFile 2d997050-karma-coverage-0-4-2 karma-coverage@0.4.2
+447 silly lockFile 43ccbf2f-karma-0-12-37 karma@0.12.37
+448 silly lockFile 43ccbf2f-karma-0-12-37 karma@0.12.37
+449 silly lockFile b2b880de-karma-coverage-0-4-2 karma-coverage@^0.4.2
+450 silly lockFile b2b880de-karma-coverage-0-4-2 karma-coverage@^0.4.2
+451 silly lockFile 3f9391e6-karma-latest karma@latest
+452 silly lockFile 3f9391e6-karma-latest karma@latest
+453 silly lockFile 15265a5e-karma-requirejs-0-2-2 karma-requirejs@0.2.2
+454 silly lockFile 15265a5e-karma-requirejs-0-2-2 karma-requirejs@0.2.2
+455 silly lockFile d5f0fa0a-karma-requirejs-latest karma-requirejs@latest
+456 silly lockFile d5f0fa0a-karma-requirejs-latest karma-requirejs@latest
+457 silly lockFile bbf59895-karma-html-reporter-0-2-6 karma-html-reporter@0.2.6
+458 silly lockFile bbf59895-karma-html-reporter-0-2-6 karma-html-reporter@0.2.6
+459 silly lockFile fecbbf7d-karma-html-reporter-0-2-6 karma-html-reporter@^0.2.6
+460 silly lockFile fecbbf7d-karma-html-reporter-0-2-6 karma-html-reporter@^0.2.6
+461 http 304 https://registry.npmjs.org/requirejs
+462 silly registry.get cb [ 304,
+462 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+462 silly registry.get     via: '1.1 varnish',
+462 silly registry.get     'cache-control': 'max-age=60',
+462 silly registry.get     etag: '"ANEYZ8CMJ58040C5V6Y5KSVSJ"',
+462 silly registry.get     age: '30',
+462 silly registry.get     connection: 'keep-alive',
+462 silly registry.get     'x-served-by': 'cache-fra1246-FRA',
+462 silly registry.get     'x-cache': 'HIT',
+462 silly registry.get     'x-cache-hits': '1',
+462 silly registry.get     'x-timer': 'S1436368731.734210,VS0,VE0',
+462 silly registry.get     vary: 'Accept' } ]
+463 verbose etag https://registry.npmjs.org/requirejs from cache
+464 http 304 https://registry.npmjs.org/phantomjs
+465 silly registry.get cb [ 304,
+465 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+465 silly registry.get     via: '1.1 varnish',
+465 silly registry.get     'cache-control': 'max-age=60',
+465 silly registry.get     etag: '"8LEQ1O62B31VAJHQEAQ8SP4BU"',
+465 silly registry.get     age: '3',
+465 silly registry.get     connection: 'keep-alive',
+465 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+465 silly registry.get     'x-cache': 'HIT',
+465 silly registry.get     'x-cache-hits': '185',
+465 silly registry.get     'x-timer': 'S1436368731.734894,VS0,VE0',
+465 silly registry.get     vary: 'Accept' } ]
+466 verbose etag https://registry.npmjs.org/phantomjs from cache
+467 verbose addNamed [ 'requirejs', '2.1.18' ]
+468 verbose addNamed [ '2.1.18', '2.1.18' ]
+469 silly lockFile 4313c4d7-requirejs-2-1-18 requirejs@2.1.18
+470 verbose lock requirejs@2.1.18 /Users/lionelbertrand/.npm/4313c4d7-requirejs-2-1-18.lock
+471 verbose addNamed [ 'phantomjs', '1.9.17' ]
+472 verbose addNamed [ '1.9.17', '1.9.17' ]
+473 silly lockFile a8c5e632-phantomjs-1-9-17 phantomjs@1.9.17
+474 verbose lock phantomjs@1.9.17 /Users/lionelbertrand/.npm/a8c5e632-phantomjs-1-9-17.lock
+475 silly lockFile 4313c4d7-requirejs-2-1-18 requirejs@2.1.18
+476 silly lockFile 4313c4d7-requirejs-2-1-18 requirejs@2.1.18
+477 silly lockFile 27500c20-requirejs-latest requirejs@latest
+478 silly lockFile 27500c20-requirejs-latest requirejs@latest
+479 silly lockFile a8c5e632-phantomjs-1-9-17 phantomjs@1.9.17
+480 silly lockFile a8c5e632-phantomjs-1-9-17 phantomjs@1.9.17
+481 silly lockFile 420f9158-phantomjs-latest phantomjs@latest
+482 silly lockFile 420f9158-phantomjs-latest phantomjs@latest
+483 http 304 https://registry.npmjs.org/angular-mocks
+484 silly registry.get cb [ 304,
+484 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+484 silly registry.get     via: '1.1 varnish',
+484 silly registry.get     'cache-control': 'max-age=60',
+484 silly registry.get     etag: '"BYWNGXCQV0E72B9I6WJZV0R4X"',
+484 silly registry.get     age: '0',
+484 silly registry.get     connection: 'keep-alive',
+484 silly registry.get     'x-served-by': 'cache-fra1241-FRA',
+484 silly registry.get     'x-cache': 'HIT',
+484 silly registry.get     'x-cache-hits': '1',
+484 silly registry.get     'x-timer': 'S1436368731.392332,VS0,VE417',
+484 silly registry.get     vary: 'Accept' } ]
+485 verbose etag https://registry.npmjs.org/angular-mocks from cache
+486 silly lockFile 637aeefb-angular-mocks-1-3-16 angular-mocks@1.3.16
+487 silly lockFile 637aeefb-angular-mocks-1-3-16 angular-mocks@1.3.16
+488 http 304 https://registry.npmjs.org/gulp-karma
+489 silly registry.get cb [ 304,
+489 silly registry.get   { date: 'Wed, 08 Jul 2015 15:18:51 GMT',
+489 silly registry.get     via: '1.1 varnish',
+489 silly registry.get     'cache-control': 'max-age=60',
+489 silly registry.get     etag: '"CTPZO1HI4U7E9R6H02NUY0A2R"',
+489 silly registry.get     age: '0',
+489 silly registry.get     connection: 'keep-alive',
+489 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+489 silly registry.get     'x-cache': 'HIT',
+489 silly registry.get     'x-cache-hits': '1',
+489 silly registry.get     'x-timer': 'S1436368731.576359,VS0,VE409',
+489 silly registry.get     vary: 'Accept' } ]
+490 verbose etag https://registry.npmjs.org/gulp-karma from cache
+491 silly lockFile d909131b-gulp-karma-0-0-4 gulp-karma@0.0.4
+492 silly lockFile d909131b-gulp-karma-0-0-4 gulp-karma@0.0.4
+493 http 404 https://registry.npmjs.org/karma-chrome-luncher
+494 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+494 verbose headers   'content-type': 'application/json',
+494 verbose headers   'cache-control': 'max-age=0',
+494 verbose headers   'content-length': '51',
+494 verbose headers   'accept-ranges': 'bytes',
+494 verbose headers   date: 'Wed, 08 Jul 2015 15:18:52 GMT',
+494 verbose headers   via: '1.1 varnish',
+494 verbose headers   age: '0',
+494 verbose headers   connection: 'keep-alive',
+494 verbose headers   'x-served-by': 'cache-fra1246-FRA',
+494 verbose headers   'x-cache': 'MISS',
+494 verbose headers   'x-cache-hits': '0',
+494 verbose headers   'x-timer': 'S1436368731.371891,VS0,VE681' }
+495 silly registry.get cb [ 404,
+495 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+495 silly registry.get     'content-type': 'application/json',
+495 silly registry.get     'cache-control': 'max-age=0',
+495 silly registry.get     'content-length': '51',
+495 silly registry.get     'accept-ranges': 'bytes',
+495 silly registry.get     date: 'Wed, 08 Jul 2015 15:18:52 GMT',
+495 silly registry.get     via: '1.1 varnish',
+495 silly registry.get     age: '0',
+495 silly registry.get     connection: 'keep-alive',
+495 silly registry.get     'x-served-by': 'cache-fra1246-FRA',
+495 silly registry.get     'x-cache': 'MISS',
+495 silly registry.get     'x-cache-hits': '0',
+495 silly registry.get     'x-timer': 'S1436368731.371891,VS0,VE681' } ]
+496 silly lockFile 7e550aee-karma-chrome-luncher-latest karma-chrome-luncher@latest
+497 silly lockFile 7e550aee-karma-chrome-luncher-latest karma-chrome-luncher@latest
+498 error 404 404 Not Found: karma-jasmin
+498 error 404
+498 error 404 'karma-jasmin' is not in the npm registry.
+498 error 404 You should bug the author to publish it
+498 error 404 It was specified as a dependency of 'front'
+498 error 404
+498 error 404 Note that you can also install from a
+498 error 404 tarball, folder, or http url, or git url.
+499 error System Darwin 14.4.0
+500 error command "node" "/usr/local/bin/npm" "install"
+501 error cwd /usr/local/zend/apache2/htdocs/locloud/front
+502 error node -v v0.10.35
+503 error npm -v 1.4.28
+504 error code E404
+505 verbose exit [ 1, true ]

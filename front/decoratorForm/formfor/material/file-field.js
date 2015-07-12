@@ -49,7 +49,7 @@ define([
 		.directive('thumbnail', ['$compile', function ($compile) {
 			return {
 				restrict: 'AE',
-				template: '<div imgLiquid data-fill="true" ng-model="imgLiquid"><img src="" /></div>',
+				template: '<div imgLiquid data-fill="true"  class="md-whiteframe-z2" ng-model="imgLiquid"><img src="" /></div>',
 				link: function (scope, element, attributes) {
 					var file = scope.file;
 					var modelParent;

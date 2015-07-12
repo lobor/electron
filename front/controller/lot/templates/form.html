@@ -25,15 +25,15 @@
 			<text-field attribute="note" label="Notes" flex="50" multiline> </text-field>
 		</div>
 		<div layout="row">
-			<file-field attribute="photo" label="Photos" label-button="Choisissez les images"></file-field>
-		</div>
-		<div layout="row">
-			<md-card ng-repeat="photo in lot.photos">
+			<md-card ng-repeat="photo in lot.photos" class="md-whiteframe-z2">
 				<img ng-src="{{photo | assets}}" src="{{photo | assets}}" class="md-card-image" alt="Washed Out" style="width: 100px">
 				<div class="md-actions" layout="row" layout-align="end center">
 					<div ng-click="deletePicture($index)" class="md-button">Delete</div>
 				</div>
 			</md-card>
+		</div>
+		<div layout="row">
+			<file-field attribute="photo" label="" label-button="Choisissez les images"></file-field>
 		</div>
 		<div layout="row" layout-align="end">
 			<submit-button disable="disable" label="Enregistrer" button-class="md-primary md-raised md-button"></submit-button>

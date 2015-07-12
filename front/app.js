@@ -19,7 +19,7 @@ define([
 	'angular-form-for',
 	'tota11y',
 	'decoratorForm/formFor/material/file-field',
-], function (angular, $routes, $stateRoutes, $loadingBar, FilterAssets) {
+], function(angular, $routes, $stateRoutes, $loadingBar, FilterAssets) {
 	'use strict';
 	return angular
 		.module('locloud', [
@@ -44,11 +44,11 @@ define([
 		.run($stateRoutes)
 		.config($routes)
 		.config($loadingBar)
-		.config(['$httpProvider','jwtInterceptorProvider', function Config($httpProvider, jwtInterceptorProvider) {
+		.config(['$httpProvider', 'jwtInterceptorProvider', function Config($httpProvider, jwtInterceptorProvider) {
 
 			// // Please note we're annotating the function so that the $injector works when the file is minified
-			jwtInterceptorProvider.tokenGetter = [function () {
-			// 	myService.doSomething();
+			jwtInterceptorProvider.tokenGetter = [function() {
+				// 	myService.doSomething();
 				return localStorage.getItem('id_token');
 			}];
 
@@ -56,15 +56,15 @@ define([
 		}])
 		.constant('baseUrl', window.location.origin + ':3000')
 		.filter('assets', FilterAssets)
-		.directive('imgliquid', function () {
+		.directive('imgliquid', function() {
 			return {
 				restrict: 'AE',
-				link: function (scope, element, attr) {
+				link: function(scope, element, attr) {
 					element.imgLiquid();
 					if (!element.find('img').attr('src')) {
 						var reader = new FileReader();
 						var file = scope.file;
-						reader.onloadend = function () {
+						reader.onloadend = function() {
 							element.css('background-image', 'url("' + reader.result + '")');
 						};
 
@@ -74,5 +74,16 @@ define([
 					}
 				}
 			};
-		});
+		})
+		.controller('ResponsiveController', ['$scope', '$mdUtil', '$mdSidenav', function($scope, $mdUtil, $mdSidenav) {
+			$scope.toggleLeft = function() {
+				$mdSidenav('sidebar').toggle();
+					// console.log(3);
+					// $mdSidenav('sidebar')
+					// 	.close()
+					// 	.then(function() {
+					// 		$log.debug("close LEFT is done");
+					// 	});
+			}
+		}]);
 });
