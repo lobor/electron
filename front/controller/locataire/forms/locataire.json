@@ -1,0 +1,74 @@
+{
+	"name": {
+		"required":true
+	},
+	"rcs": {
+		"required":true
+	},
+	"date_immatriculation": {
+		"inputType": "text",
+		"format": "datepicker",
+		"label": "Date d'immatriculation",
+		"required":true
+	},
+	"capital": {
+		"type": "positive integer",
+		"required":true
+	},
+	"naf": {
+		"required":true
+	},
+	"address": {
+		"required":true
+	},
+	"cp": {
+		"type": "positive integer",
+		"required":true
+	},
+	"city": {
+		"required":true
+	},
+	"nb_part": {
+		"type": "positive integer",
+		"required":true
+	},
+	"labelAssocie": {
+		"attribute":"associes"
+	},
+	"associes":{
+		"collection": {
+			"fields": {
+				"nom": {
+					"required":true
+				},
+				"prenom": {
+					"required":true
+				},
+				"address": {
+					"required":true
+				},
+				"cp": {
+					"type": "positive integer",
+					"required":true
+				},
+				"city": {
+					"required":true
+				},
+				"birthday": {
+					"required":true
+				},
+				"city_birthday": {
+					"required":true
+				},
+				"np_part": {
+					"type": "positive integer",
+					"required":true
+				},
+				"percent_part": {
+					"type": "positive integer",
+					"required":true
+				}
+			}
+		}
+	}
+}

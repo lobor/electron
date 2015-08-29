@@ -4,25 +4,56 @@
 			{{title}}
 		</h2>
 	</div>
-	<form form-for="lot" validation-rules="validation" valid="formIsValid" ng-submit="submit()">
+	<form form-for="locataire" validation-rules="validation" valid="formIsValid" ng-submit="submit()">
 		<div layout="row">
-			<select-field label="Sci" prevent-default-option attribute="sci" options="sciOption" flex="33"></select-field>
-
-			<select-field label="Bien" prevent-default-option attribute="bien" options="bienOption" flex="33"></select-field>
-
 			<select-field label="Type" prevent-default-option attribute="type" options="typeOption" flex="33"></select-field>
 		</div>
 		<div layout="row">
-			<text-field attribute="identifiant" label="Identifiant" flex="16"></text-field>
+			<select-field label="Civilité" prevent-default-option attribute="civilite" options="civiliteOption" flex="33"></select-field>
 
-			<text-field attribute="surface" label="Surface" flex="16"></text-field>
+			<text-field attribute="prenom" label="Prénom" flex="16"></text-field>
 
-			<text-field attribute="nb_piece" label="Nombre de pièces" flex="16"></text-field>
+			<text-field attribute="nom" label="Nom" flex="16"></text-field>
+
+			<text-field attribute="birthday" label="Date de naissance" type="date" flex="16"></text-field>
+
+			<text-field attribute="city_birthday" label="Lieu de naissance" flex="16"></text-field>
 		</div>
 		<div layout="row">
-			<text-field attribute="description" label="Description" flex="50" multiline> </text-field>
+			<text-field attribute="email" label="Email" flex="33" > </text-field>
 
-			<text-field attribute="note" label="Notes" flex="50" multiline> </text-field>
+			<text-field attribute="fax" label="Fax" flex="33" > </text-field>
+
+			<text-field attribute="portable" label="Portable" flex="33" > </text-field>
+		</div>
+		<div layout="row">
+			<text-field attribute="profession" label="Profession" flex="50" > </text-field>
+
+			<text-field attribute="revenus" label="Revenus" flex="50" > </text-field>
+		</div>
+		<div layout="row">
+			<text-field attribute="information" label="Information complémentaires" flex="50" multiline> </text-field>
+
+			<text-field attribute="new_address" label="Nouvelle adresse" flex="50" > </text-field>
+		</div>
+		<div layout="row">
+			<text-field attribute="garant" label="Garant(s)" flex multiline> </text-field>
+		</div>
+		<div layout="row">
+			<text-field attribute="code_banque" label="Code banque" flex="20" > </text-field>
+
+			<text-field attribute="code_guichet" label="Code guichet" flex="20" > </text-field>
+
+			<text-field attribute="num_compte" label="Numéro de compte" flex="20" > </text-field>
+
+			<text-field attribute="key_rib" label="Clé RIB" flex="20" > </text-field>
+
+			<text-field attribute="banque" label="Banque" flex="20" > </text-field>
+		</div>
+		<div layout="row">
+			<text-field attribute="iban" label="IBAN" flex="20" > </text-field>
+
+			<text-field attribute="swift_bic" label="Swift/bic" flex="20" > </text-field>
 		</div>
 		<div layout="row">
 			<file-field attribute="photo" label="Photos" label-button="Choisissez les images"></file-field>
